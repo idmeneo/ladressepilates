@@ -63,12 +63,12 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 					<div class="row d-lg-none justify-content-center mt-4">
 						<div class="col-5">
 							<div class="kf-oval kf-oval--left mx-auto">
-								<img src="<?php echo esc_url( $krizia_asset_uri . 'movement-detail.png' ); ?>" alt="Mouvement de pilates au sol">
+								<img src="<?php echo esc_url( $krizia_asset_uri . 'movement-detail.jpg' ); ?>" alt="Mouvement de pilates au sol">
 							</div>
 						</div>
 						<div class="col-5">
 							<div class="kf-oval kf-oval--right mx-auto">
-								<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-portrait.png' ); ?>" alt="Eleve allongee sur reformer">
+								<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-portrait.jpg' ); ?>" alt="Eleve allongee sur reformer">
 							</div>
 						</div>
 					</div>
@@ -127,7 +127,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--practice">
+			<section class="kf-section kf-section--practice" id="formation">
 				<div class="container-fluid px-0">
 					<div class="row no-gutters justify-content-center align-items-stretch">
 						<div class="col-12 col-lg-5 d-flex align-items-center">

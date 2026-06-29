@@ -1070,7 +1070,7 @@ body.home header#masthead {
   background: transparent !important;
   box-shadow: none;
   left: 0;
-  padding: 1.2rem 0;
+  padding: 1.35rem 0;
   position: absolute;
   top: 0;
   width: 100%;
@@ -1082,7 +1082,13 @@ body.admin-bar.home header#masthead {
 }
 
 body.home header#masthead .container {
-  max-width: 1180px;
+  max-width: 100%;
+  padding-left: clamp(1.5rem, 5vw, 7rem);
+  padding-right: clamp(1.5rem, 5vw, 7rem);
+}
+
+body.home header#masthead .navbar {
+  min-height: 104px;
 }
 
 body.home .navbar-brand > a,
@@ -1101,31 +1107,65 @@ body.home .navbar-brand img {
   width: auto;
 }
 
+body.home .navbar-brand {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  margin-right: clamp(2.5rem, 6vw, 7rem);
+}
+
+body.home .navbar-brand .krizia-home-logo {
+  max-height: 112px;
+  width: auto;
+}
+
+body.home #main-nav {
+  flex-grow: 1;
+}
+
+body.home #masthead .navbar-nav {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  width: auto;
+}
+
 body.home:not(.theme-preset-active) #masthead .navbar-nav > li > a,
-body.home #masthead .navbar-nav > li > a {
+body.home #masthead .navbar-nav > li > a,
+body.home #masthead .krizia-header-booking {
   color: rgba(255, 255, 255, 0.86);
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  padding: 0.5rem 0.7rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  padding: 0.5rem clamp(0.95rem, 2.1vw, 2.25rem);
   text-transform: uppercase;
 }
 
 body.home:not(.theme-preset-active) #masthead .navbar-nav > li > a:hover,
 body.home:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a,
-body.home #masthead .navbar-nav > li > a:hover {
+body.home #masthead .navbar-nav > li > a:hover,
+body.home #masthead .krizia-header-booking:hover,
+body.home #masthead .krizia-header-booking:focus {
   color: #fff;
+  text-decoration: none;
 }
 
-body.home #masthead .navbar-nav > li:last-child > a {
-  border: 1px solid rgba(255, 255, 255, 0.72);
+body.home #masthead .navbar-nav:not(.krizia-home-menu) > li:last-child > a,
+body.home #masthead .krizia-header-booking {
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.84);
   border-radius: 999px;
-  margin-left: 0.5rem;
-  min-width: 92px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: auto;
+  min-width: 172px;
+  padding: 0.9rem 1.65rem;
   text-align: center;
+}
+
+body.home #masthead .navbar-nav:not(.krizia-home-menu) > li:last-child {
+  margin-left: auto;
 }
 
 body.home .navbar-light .navbar-toggler {
@@ -1831,9 +1871,34 @@ body.home footer#colophon {
     padding: 0.9rem;
   }
 
-  body.home #masthead .navbar-nav > li:last-child > a {
+  body.home #masthead .navbar-nav:not(.krizia-home-menu) > li:last-child > a,
+  body.home #masthead .krizia-header-booking {
     margin-left: 0;
     margin-top: 0.4rem;
+  }
+
+  body.home #masthead .navbar-nav:not(.krizia-home-menu) > li:last-child {
+    margin-left: 0;
+  }
+
+  body.home header#masthead .navbar {
+    min-height: 78px;
+  }
+
+  body.home .navbar-brand .krizia-home-logo {
+    max-height: 74px;
+  }
+
+  body.home #masthead .navbar-nav {
+    align-items: flex-start;
+  }
+
+  body.home:not(.theme-preset-active) #masthead .navbar-nav > li > a,
+  body.home #masthead .navbar-nav > li > a,
+  body.home #masthead .krizia-header-booking {
+    letter-spacing: 0.22em;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 

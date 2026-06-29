@@ -39,7 +39,15 @@
         <div class="container">
             <nav class="navbar navbar-expand-xl p-0">
                 <div class="navbar-brand">
-                    <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
+                    <?php
+                    $krizia_home_logo_path = get_template_directory() . '/assets/images/logo-white.png';
+                    $krizia_home_logo_uri  = get_template_directory_uri() . '/assets/images/logo-white.png';
+                    ?>
+                    <?php if ( is_front_page() && file_exists( $krizia_home_logo_path ) ) : ?>
+                        <a href="<?php echo esc_url( home_url( '/' )); ?>" class="krizia-home-logo-link">
+                            <img class="krizia-home-logo" src="<?php echo esc_url( $krizia_home_logo_uri ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                        </a>
+                    <?php elseif ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
                         <a href="<?php echo esc_url( home_url( '/' )); ?>">
                             <img src="<?php echo esc_url(get_theme_mod( 'wp_bootstrap_starter_logo' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
                         </a>
@@ -52,19 +60,31 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <?php
-                wp_nav_menu(array(
-                'theme_location'    => 'primary',
-                'container'       => 'div',
-                'container_id'    => 'main-nav',
-                'container_class' => 'collapse navbar-collapse justify-content-end',
-                'menu_id'         => false,
-                'menu_class'      => 'navbar-nav',
-                'depth'           => 3,
-                'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-                'walker'          => new wp_bootstrap_navwalker()
-                ));
-                ?>
+                <?php if ( is_front_page() ) : ?>
+                    <div id="main-nav" class="collapse navbar-collapse">
+                        <ul class="navbar-nav krizia-home-menu">
+                            <li class="nav-item"><a class="nav-link" href="#studio"><?php esc_html_e( 'Le studio', 'krizia' ); ?></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#cours"><?php esc_html_e( 'Cours privés', 'krizia' ); ?></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#formation"><?php esc_html_e( 'Formation continue', 'krizia' ); ?></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#reservation"><?php esc_html_e( 'Contact', 'krizia' ); ?></a></li>
+                        </ul>
+                        <a class="krizia-header-booking" href="#reservation"><?php esc_html_e( 'Réserver', 'krizia' ); ?></a>
+                    </div>
+                <?php else : ?>
+                    <?php
+                    wp_nav_menu(array(
+                    'theme_location'    => 'primary',
+                    'container'       => 'div',
+                    'container_id'    => 'main-nav',
+                    'container_class' => 'collapse navbar-collapse justify-content-end',
+                    'menu_id'         => false,
+                    'menu_class'      => 'navbar-nav',
+                    'depth'           => 3,
+                    'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                    'walker'          => new wp_bootstrap_navwalker()
+                    ));
+                    ?>
+                <?php endif; ?>
 
             </nav>
         </div>
