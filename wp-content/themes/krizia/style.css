@@ -2083,3 +2083,192 @@ body.home footer#colophon {
     min-height: 360px;
   }
 }
+
+/* Layout corrections from the supplied mockup */
+.kf-hero-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Spectral", Georgia, serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.kf-hero-heading {
+  color: #fff;
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.kf-section--private,
+.kf-section--courses {
+  background: #f6f3ee;
+}
+
+.kf-section--private {
+  min-height: 500px;
+}
+
+.kf-section--private .kf-container {
+  position: relative;
+  z-index: 2;
+}
+
+.kf-private-oval {
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.kf-private-oval img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.kf-private-oval--left {
+  aspect-ratio: 0.72;
+  border-radius: 999px 999px 0 0;
+  bottom: 2rem;
+  left: -3.5rem;
+  width: clamp(170px, 18vw, 260px);
+}
+
+.kf-private-oval--right {
+  aspect-ratio: 0.78;
+  border-radius: 999px;
+  right: clamp(0.5rem, 6vw, 7rem);
+  top: 2.6rem;
+  width: clamp(170px, 17vw, 250px);
+}
+
+.kf-section-dot {
+  border: 1px solid #caa883;
+  border-radius: 999px;
+  height: 8px;
+  width: 8px;
+}
+
+.kf-course-line {
+  color: #6c5a4f;
+  display: block;
+  font-size: 0.74rem;
+  margin-top: 0.6rem;
+}
+
+.kf-event-date em {
+  background: #a06034;
+  border-radius: 999px;
+  color: #fff;
+  display: inline-block;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.55rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-top: 0.55rem;
+  padding: 0.35rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.kf-mini-link,
+.kf-read-link {
+  color: #8b4d22;
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.kf-mini-link {
+  border: 1px solid rgba(139, 77, 34, 0.35);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+}
+
+.kf-read-link {
+  margin-top: 0.85rem;
+}
+
+.kf-read-link:hover,
+.kf-read-link:focus,
+.kf-mini-link:hover,
+.kf-mini-link:focus {
+  color: #653617;
+  text-decoration: none;
+}
+
+.kf-newsletter {
+  background-position: center;
+  background-size: cover;
+  min-height: 310px;
+}
+
+.kf-newsletter h2 {
+  color: #fff;
+}
+
+.kf-newsletter .kf-section-kicker {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.kf-newsletter-input {
+  border: 0;
+  border-radius: 0;
+  font-size: 0.82rem;
+  height: 42px;
+  min-width: min(320px, 100%);
+  padding: 0.75rem 1rem;
+}
+
+.kf-newsletter .kf-button {
+  border-radius: 0;
+  height: 42px;
+}
+
+.kf-contact .kf-monogram {
+  height: 74px;
+  margin-bottom: 1.25rem;
+  width: 74px;
+}
+
+.kf-contact-info h2 {
+  font-size: clamp(1.6rem, 2vw, 2.1rem);
+}
+
+@media screen and (min-width: 992px) {
+  .kf-section--private.py-5 {
+    padding-bottom: 6rem !important;
+    padding-top: 6rem !important;
+  }
+
+  .kf-section--courses.pb-5 {
+    padding-bottom: 5.4rem !important;
+  }
+
+  .kf-agenda-card {
+    margin-top: -3.2rem;
+  }
+
+  .kf-section--faq.py-5 {
+    padding-bottom: 6rem !important;
+    padding-top: 6rem !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .kf-newsletter .form-inline {
+    display: block;
+  }
+
+  .kf-newsletter-input,
+  .kf-newsletter .kf-button {
+    width: 100%;
+  }
+
+  .kf-newsletter .kf-button {
+    margin-top: 0.75rem;
+  }
+}
