@@ -172,6 +172,7 @@ function wp_bootstrap_starter_scripts() {
 	// load bootstrap css
 	// load AItheme styles
 	// load WP Bootstrap Starter styles
+	wp_enqueue_style( 'krizia-google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap', array(), null );
 	wp_enqueue_style( 'wp-bootstrap-starter-style', get_stylesheet_uri() );
     if(get_theme_mod( 'theme_option_setting' ) && get_theme_mod( 'theme_option_setting' ) !== 'default') {
         wp_enqueue_style( 'wp-bootstrap-starter-'.get_theme_mod( 'theme_option_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/theme-option/'.get_theme_mod( 'theme_option_setting' ).'.css', false, '' );
