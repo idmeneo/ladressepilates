@@ -40,10 +40,9 @@
             <nav class="navbar navbar-expand-xl p-0">
                 <div class="navbar-brand">
                     <?php
-                    $krizia_home_logo_path = get_template_directory() . '/assets/images/logo-white.png';
-                    $krizia_home_logo_uri  = get_template_directory_uri() . '/assets/images/logo-white.png';
+                    $krizia_home_logo_uri = get_template_directory_uri() . '/assets/images/logo-white.png';
                     ?>
-                    <?php if ( is_front_page() && file_exists( $krizia_home_logo_path ) ) : ?>
+                    <?php if ( is_front_page() ) : ?>
                         <a href="<?php echo esc_url( home_url( '/' )); ?>" class="krizia-home-logo-link">
                             <img class="krizia-home-logo" src="<?php echo esc_url( $krizia_home_logo_uri ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
                         </a>
