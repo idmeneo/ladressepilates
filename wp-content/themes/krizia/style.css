@@ -1367,7 +1367,7 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 .kf-hero {
-  min-height: 760px;
+  min-height: 860px;
   padding: 10rem 0 5rem;
   width: 100%;
 }
@@ -1892,7 +1892,7 @@ body.home .navbar-light .navbar-toggler-icon {
 
   .kf-hero {
     background-position: 58% center;
-    min-height: 690px;
+    min-height: 740px;
     padding-bottom: 4rem;
     padding-top: 8rem;
   }
