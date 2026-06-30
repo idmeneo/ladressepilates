@@ -75,44 +75,51 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--courses pb-5" id="cours">
-				<div class="container kf-container">
+			<section class="kf-section kf-section--courses position-relative" id="cours">
+				<div class="container-fluid kf-courses-container px-4 px-xl-5">
 					<div class="row justify-content-center text-center">
-						<div class="col-12 col-lg-7">
-							<p class="kf-section-kicker mb-2">Les formules</p>
+						<div class="col-12">
+							<h2 class="kf-courses-title mb-5">Les formules</h2>
 						</div>
 					</div>
-					<div class="row justify-content-center">
-						<div class="col-12 col-md-4 col-lg-3 mb-3 mb-md-0">
+					<div class="row justify-content-center kf-courses-row">
+						<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 							<article class="card kf-course-card h-100 border-0 text-center">
-								<div class="card-body d-flex flex-column align-items-center p-4">
-									<h3 class="card-title text-uppercase">Visiteurs</h3>
-									<p class="card-text kf-text mt-2">Decouverte L'Adresse Pilates</p>
-									<span class="kf-course-line">1 cours prive</span>
-									<span class="kf-price mt-auto mb-3">180&euro;</span>
-									<a class="btn kf-button kf-button--brown" href="#reservation">Reserver</a>
+								<div class="card-body d-flex flex-column align-items-center justify-content-center">
+									<h3 class="card-title">Visiteur</h3>
+									<span class="kf-course-title-line" aria-hidden="true"></span>
+									<p class="card-text kf-course-tagline">D&eacute;couvrir l&rsquo;Adresse Pilates</p>
+									<span class="kf-course-separator" aria-hidden="true"></span>
+									<span class="kf-course-line">3 cours priv&eacute;s</span>
+									<span class="kf-price">285 &euro;</span>
+									<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 								</div>
 							</article>
 						</div>
-						<div class="col-12 col-md-4 col-lg-3 mb-3 mb-md-0">
+						<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
 							<article class="card kf-course-card kf-course-card--featured h-100 text-center">
-								<div class="card-body d-flex flex-column align-items-center p-4">
-									<h3 class="card-title text-uppercase">Regulier</h3>
-									<p class="card-text kf-text mt-2">Pilates en regle</p>
-									<span class="kf-course-line">10 cours prives</span>
-									<span class="kf-price mt-auto mb-3">900&euro;</span>
-									<a class="btn kf-button kf-button--brown" href="#reservation">Reserver</a>
+								<span class="kf-course-badge">Coup de coeur</span>
+								<div class="card-body d-flex flex-column align-items-center justify-content-center">
+									<h3 class="card-title">R&eacute;gulier</h3>
+									<span class="kf-course-title-line" aria-hidden="true"></span>
+									<p class="card-text kf-course-tagline">Prendre ses rep&egrave;res</p>
+									<span class="kf-course-separator" aria-hidden="true"></span>
+									<span class="kf-course-line">10 cours priv&eacute;s</span>
+									<span class="kf-price">900 &euro;</span>
+									<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 								</div>
 							</article>
 						</div>
-						<div class="col-12 col-md-4 col-lg-3">
+						<div class="col-12 col-md-6 col-lg-4">
 							<article class="card kf-course-card h-100 border-0 text-center">
-								<div class="card-body d-flex flex-column align-items-center p-4">
-									<h3 class="card-title text-uppercase">Resident</h3>
-									<p class="card-text kf-text mt-2">Approfondir sa pratique</p>
-									<span class="kf-course-line">20 cours prives</span>
-									<span class="kf-price mt-auto mb-3">1 700&euro;</span>
-									<a class="btn kf-button kf-button--brown" href="#reservation">Reserver</a>
+								<div class="card-body d-flex flex-column align-items-center justify-content-center">
+									<h3 class="card-title">R&eacute;sident</h3>
+									<span class="kf-course-title-line" aria-hidden="true"></span>
+									<p class="card-text kf-course-tagline">Approfondir sa pratique</p>
+									<span class="kf-course-separator" aria-hidden="true"></span>
+									<span class="kf-course-line">20 cours priv&eacute;s</span>
+									<span class="kf-price">1 700 &euro;</span>
+									<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 								</div>
 							</article>
 						</div>
