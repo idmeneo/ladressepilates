@@ -43,20 +43,20 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--private py-5 position-relative overflow-hidden">
+			<section class="kf-section kf-section--private py-5 position-relative">
 				<div class="kf-private-oval kf-private-oval--left d-none d-lg-block">
-					<img src="<?php echo esc_url( $krizia_asset_uri . 'movement-detail.png' ); ?>" alt="Mouvement de pilates au sol">
+					<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-portrait.png' ); ?>" alt="Mouvement de pilates au sol">
 				</div>
 				<div class="kf-private-oval kf-private-oval--right d-none d-lg-block">
-					<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-portrait.png' ); ?>" alt="Eleve allongee sur reformer">
+					<img src="<?php echo esc_url( $krizia_asset_uri . 'movement-detail.png' ); ?>" alt="Eleve allongee sur reformer">
 				</div>
 				<div class="container kf-container">
 					<div class="row justify-content-center text-center">
 						<div class="col-12 col-lg-6">
-							<p class="kf-section-kicker mb-2">Les cours prives</p>
-							<h2>Le premier de vos accompagnements</h2>
-							<p class="kf-text mt-3 mb-0">Le processus est un accompagnement efficace et adapte a chaque corps. Les cours prives offrent une prise en charge totalement individualisee, chaque seance propose un programme de travail et une progression construite pour poser confiance, alignement et clarte.</p>
-							<p class="kf-text mt-3 mb-0">Les enseignants de L'Adresse Pilates assurent une formation continue afin de maintenir un haut niveau d'exigence et de precision.</p>
+							<h2 class="kf-private-title">Les cours priv&eacute;s</h2>
+							<p class="kf-private-kicker">La promesse d&rsquo;un accompagnement</p>
+							<p class="kf-private-text mt-5 mb-0">La promesse d&rsquo;un accompagnement s&eacute;rieux, efficace et adapt&eacute; &agrave; chaque corps. Les cours priv&eacute;s offrent une prise en charge totalement individualis&eacute;e. Chaque s&eacute;ance repose sur une analyse du corps et une programmation &eacute;volutive, pens&eacute;e pour construire une progression durable. Ici, rien n&rsquo;est standardis&eacute; : <strong>chaque mouvement est ajust&eacute;, chaque s&eacute;ance est construite autour de vos besoins r&eacute;els.</strong></p>
+							<p class="kf-private-text kf-private-text--small mt-5 mb-0">Les enseignants de L&rsquo;Adresse Pilates suivent une formation continue afin de maintenir un haut niveau d&rsquo;exigence et de pr&eacute;cision dans leur pratique.</p>
 							<div class="kf-section-dot mx-auto mt-4" aria-hidden="true"></div>
 						</div>
 					</div>

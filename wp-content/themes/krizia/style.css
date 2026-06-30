@@ -1483,9 +1483,52 @@ body.home .navbar-light .navbar-toggler-icon {
   z-index: 2;
 }
 
+.krizia-front .kf-private-title {
+  border: 0;
+  clear: none;
+  color: #3d2b22;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  line-height: 1.15;
+  margin: 0;
+  margin-right: -0.32em;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.krizia-front .kf-private-kicker {
+  color: #8b4d22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 1.35;
+  margin-right: -0.4em;
+  margin-top: 1.3rem;
+  text-transform: uppercase;
+}
+
+.kf-private-text {
+  color: #3d2b22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.96rem, 1.18vw, 1.12rem);
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+.kf-private-text strong {
+  font-weight: 800;
+}
+
+.kf-private-text--small {
+  font-size: clamp(0.96rem, 1.18vw, 1.12rem);
+}
+
 .kf-private-oval,
 .kf-oval {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .kf-private-oval {
@@ -1495,39 +1538,39 @@ body.home .navbar-light .navbar-toggler-icon {
 
 .kf-private-oval img,
 .kf-oval img {
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   width: 100%;
 }
 
 .kf-private-oval--left,
 .kf-oval--left {
-  aspect-ratio: 0.72;
-  border-radius: 999px 999px 0 0;
+  aspect-ratio: auto;
+  border-radius: 0;
 }
 
 .kf-private-oval--right,
 .kf-oval--right {
-  aspect-ratio: 0.78;
-  border-radius: 999px;
+  aspect-ratio: auto;
+  border-radius: 0;
 }
 
 .kf-private-oval--left {
-  bottom: 2rem;
-  left: -3.5rem;
-  width: clamp(170px, 18vw, 260px);
+  bottom: 1.2rem;
+  left: -5rem;
+  width: clamp(260px, 27vw, 420px);
 }
 
 .kf-private-oval--right {
-  right: clamp(0.5rem, 6vw, 7rem);
-  top: 2.6rem;
-  width: clamp(170px, 17vw, 250px);
+  right: clamp(-7rem, -4vw, -2rem);
+  top: -7rem;
+  width: clamp(260px, 27vw, 420px);
 }
 
 .kf-section-dot {
   border: 1px solid #caa883;
   border-radius: 999px;
-  height: 8px;
+  height: 18px;
   width: 8px;
 }
 
