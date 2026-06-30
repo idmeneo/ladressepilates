@@ -13,16 +13,16 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 		</div><!-- .container -->
 
 		<main id="primary" class="site-main krizia-front" role="main">
-			<section class="kf-hero d-flex align-items-center text-white" style="background-image: linear-gradient(90deg, rgba(53, 40, 31, 0.72) 0%, rgba(53, 40, 31, 0.46) 42%, rgba(53, 40, 31, 0.12) 100%), url('<?php echo esc_url( $krizia_asset_uri . 'hero-reformer.jpg' ); ?>');">
-				<div class="container kf-container">
-					<div class="row">
-						<div class="col-11 col-sm-8 col-lg-5 offset-lg-2">
-							<p class="kf-eyebrow mb-2">Pilates studio</p>
-							<h1 class="kf-hero-title mb-3">L&#039;Adresse</h1>
-							<p class="kf-hero-label mb-2">Pilates</p>
-							<h2 class="kf-hero-heading mb-3">Le Pilates sur mesure</h2>
-							<p class="kf-hero-subtitle mb-4">L'adresse Pilates est un lieu dedie aux pratiques de Pilates, imagine comme une experience sur mesure pour renouer avec un mouvement precis et durable.</p>
-							<a class="btn kf-button kf-button--light" href="#reservation">Reserver ma seance</a>
+			<section class="kf-hero d-flex align-items-center justify-content-center text-white text-center" style="background-image: linear-gradient(90deg, rgba(53, 40, 31, 0.64) 0%, rgba(53, 40, 31, 0.5) 50%, rgba(53, 40, 31, 0.28) 100%), url('<?php echo esc_url( $krizia_asset_uri . 'hero-reformer.jpg' ); ?>');">
+				<div class="container-fluid px-3 px-md-5">
+					<div class="row justify-content-center justify-content-lg-start">
+						<div class="col-12 col-lg-6">
+							<h1 class="kf-hero-title mb-4">L&rsquo;Adresse</h1>
+							<p class="kf-hero-label mb-4">Pilates</p>
+							<span class="kf-hero-mark d-inline-block mb-4" aria-hidden="true"></span>
+							<h2 class="kf-hero-heading mb-4">Le Pilates sur-mesure</h2>
+							<p class="kf-hero-subtitle mx-auto mb-5">L&rsquo;Adresse Pilates est un lieu d&eacute;di&eacute; &agrave; une pratique du Pilates,<br class="d-none d-md-block"> o&ugrave; chaque personne b&eacute;n&eacute;ficie d&rsquo;une attention r&eacute;elle<br class="d-none d-md-block"> et d&rsquo;un accompagnement sur-mesure.</p>
+							<a class="btn kf-button kf-button--hero" href="#reservation">R&eacute;server ma s&eacute;ance</a>
 						</div>
 					</div>
 				</div>

@@ -1068,6 +1068,14 @@ body.home #content.site-content {
   padding: 0;
 }
 
+body.home #page,
+body.home .site,
+body.home .site-content,
+body.home .krizia-front {
+  max-width: none;
+  width: 100%;
+}
+
 body.home header#masthead {
   background: transparent !important;
   box-shadow: none;
@@ -1286,6 +1294,25 @@ body.home .navbar-light .navbar-toggler-icon {
   color: #4a3021;
 }
 
+.kf-button--hero {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.84);
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  min-height: 66px;
+  min-width: min(100%, 440px);
+  padding: 0.95rem 2rem;
+}
+
+.kf-button--hero:hover,
+.kf-button--hero:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
 .kf-button--brown {
   background: #8b4d22;
   border: 1px solid #8b4d22;
@@ -1340,11 +1367,9 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 .kf-hero {
-  min-height: 670px;
-}
-
-.kf-hero .kf-eyebrow {
-  color: rgba(255, 255, 255, 0.86);
+  min-height: 760px;
+  padding: 10rem 0 5rem;
+  width: 100%;
 }
 
 .kf-hero-title {
@@ -1352,35 +1377,43 @@ body.home .navbar-light .navbar-toggler-icon {
   clear: none;
   color: #fff;
   font-family: "Jaguar", "Spectral", Georgia, serif;
-  font-size: clamp(3.4rem, 9vw, 7.4rem);
+  font-size: 52px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 0.9;
+  letter-spacing: 0.3em;
+  line-height: 1.1;
   margin: 0;
+  margin-right: -0.3em;
   padding: 0;
   text-transform: uppercase;
 }
 
-.kf-hero-label {
+.kf-hero .kf-hero-label,
+.kf-hero .kf-hero-heading {
+  border: 0;
+  clear: none;
   color: rgba(255, 255, 255, 0.9);
-  font-family: "Spectral", Georgia, serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.34em;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.62em;
+  line-height: 1.2;
+  margin-right: -0.62em;
   text-transform: uppercase;
 }
 
-.kf-hero-heading {
-  color: #fff;
-  font-size: clamp(1.15rem, 2vw, 1.65rem);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+.kf-hero-mark {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  height: 34px;
+  width: 11px;
 }
 
 .kf-hero-subtitle {
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(0.96rem, 1.5vw, 1.12rem);
-  line-height: 1.7;
-  max-width: 420px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 900px;
 }
 
 .kf-section--studio {
@@ -1859,11 +1892,35 @@ body.home .navbar-light .navbar-toggler-icon {
 
   .kf-hero {
     background-position: 58% center;
-    min-height: 650px;
+    min-height: 690px;
+    padding-bottom: 4rem;
+    padding-top: 8rem;
   }
 
   .kf-hero-title {
-    font-size: clamp(3rem, 18vw, 4.8rem);
+    font-size: clamp(2.5rem, 11vw, 3.25rem);
+    letter-spacing: 0.22em;
+    margin-right: -0.22em;
+  }
+
+  .kf-hero .kf-hero-label,
+  .kf-hero .kf-hero-heading {
+    font-size: 1rem;
+    letter-spacing: 0.46em;
+    margin-right: -0.46em;
+  }
+
+  .kf-hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .kf-button--hero {
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    min-height: 56px;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
   }
 
   .kf-statement h2 {
