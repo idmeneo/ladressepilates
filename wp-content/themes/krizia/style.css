@@ -1420,6 +1420,38 @@ body.home .navbar-light .navbar-toggler-icon {
   background: #e7dccf;
 }
 
+.krizia-front .kf-studio-title {
+  border: 0;
+  clear: none;
+  color: #4a3021;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.55rem, 2.1vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  line-height: 1.2;
+  margin-right: -0.32em;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.kf-studio-gallery {
+  max-width: 980px;
+}
+
+.kf-studio-image {
+  border-radius: 6px;
+  height: 520px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.kf-studio-copy {
+  color: #5d4a3f;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 860px;
+}
+
 .kf-ratio {
   display: block;
   height: 100%;
@@ -1880,6 +1912,10 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 @media screen and (max-width: 991px) {
+  .kf-studio-image {
+    height: 430px;
+  }
+
   .kf-practice-image {
     min-height: 360px;
   }
@@ -1921,6 +1957,22 @@ body.home .navbar-light .navbar-toggler-icon {
     min-height: 56px;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
+  }
+
+  .krizia-front .kf-studio-title {
+    font-size: 1.35rem;
+    letter-spacing: 0.26em;
+    margin-right: -0.26em;
+  }
+
+  .kf-studio-image {
+    border-radius: 4px;
+    height: 310px;
+  }
+
+  .kf-studio-copy {
+    font-size: 0.92rem;
+    line-height: 1.75;
   }
 
   .kf-statement h2 {

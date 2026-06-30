@@ -30,16 +30,16 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 
 			<section class="kf-section kf-section--studio py-5" id="studio">
 				<div class="container kf-container text-center">
-					<p class="kf-section-kicker mb-3">Le studio</p>
-					<div class="row no-gutters justify-content-center align-items-stretch mb-4">
-						<div class="col-5 col-md-4 col-lg-3 px-1">
-							<img src="<?php echo esc_url( $krizia_asset_uri . 'studio-main.jpg' ); ?>" alt="Salle de pilates avec reformers" class="img-fluid kf-ratio kf-ratio--studio">
+					<h2 class="kf-studio-title mb-4">Le studio</h2>
+					<div class="row no-gutters justify-content-center align-items-stretch kf-studio-gallery mx-auto mb-4">
+						<div class="col-6 col-md-5 col-lg-4 px-2">
+							<img src="<?php echo esc_url( $krizia_asset_uri . 'studio-main.jpg' ); ?>" alt="Salle de pilates avec reformers" class="img-fluid kf-studio-image">
 						</div>
-						<div class="col-5 col-md-4 col-lg-3 px-1">
-							<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-detail.jpg' ); ?>" alt="Detail d'un reformer en bois" class="img-fluid kf-ratio kf-ratio--studio-tall">
+						<div class="col-6 col-md-5 col-lg-4 px-2">
+							<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-detail.jpg' ); ?>" alt="Detail d'un reformer en bois" class="img-fluid kf-studio-image">
 						</div>
 					</div>
-					<p class="kf-text kf-text--narrow mx-auto mb-0">Lorem ipsum dolor sit amet consectetur. Eget velit non quam commodo quis mauris mattis. Cum sociis praesent pellentesque ultricies eros. Massa in orci ut mi nunc egestas fringilla amet.</p>
+					<p class="kf-text kf-studio-copy mx-auto mb-0">Lorem ipsum dolor sit amet consectetur. Eget velit non ipsum commodo quis mauris metus. Cursus praesent pellentesque ultricies eu nisi. Facilisi in est in at mollis eget. Nec amet viverra consectetur quis. Aliquam quisque urna mi enim lectus faucibus sit.</p>
 				</div>
 			</section>
 
