@@ -2071,9 +2071,54 @@ body.home .navbar-light .navbar-toggler-icon {
   background: #e8ddd1;
 }
 
+.krizia-front .kf-team-title {
+  border: 0;
+  clear: none;
+  color: #3d2b22;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.85rem, 2.6vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  line-height: 1.2;
+  margin: 0;
+  margin-right: -0.34em;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.krizia-front .kf-team-kicker {
+  color: #8b4d22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.72rem, 1vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.48em;
+  line-height: 1.4;
+  margin-right: -0.48em;
+  margin-top: 1.4rem;
+  text-transform: uppercase;
+}
+
+.kf-team-grid {
+  margin-top: clamp(3rem, 5vw, 4.7rem);
+}
+
+.kf-team-card {
+  overflow: hidden;
+}
+
 .kf-team-card img {
   aspect-ratio: 0.78;
+  border-radius: 6px;
   object-fit: cover;
+}
+
+.kf-team-copy {
+  color: #3d2b22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.96rem, 1.2vw, 1.12rem);
+  line-height: 1.75;
+  margin-top: clamp(3rem, 5vw, 4.6rem);
+  max-width: 860px;
 }
 
 .kf-faq-accordion .card {
@@ -2412,6 +2457,28 @@ body.home .navbar-light .navbar-toggler-icon {
   .kf-quote-text {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  .krizia-front .kf-team-title {
+    font-size: 1.55rem;
+    letter-spacing: 0.26em;
+    margin-right: -0.26em;
+  }
+
+  .krizia-front .kf-team-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    margin-right: -0.28em;
+  }
+
+  .kf-team-grid {
+    margin-top: 3rem;
+  }
+
+  .kf-team-copy {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-top: 2.8rem;
   }
 
   .kf-statement {

@@ -225,26 +225,26 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 
 			<section class="kf-section kf-section--team py-5" id="equipe">
 				<div class="container kf-container text-center">
-					<p class="kf-section-kicker mb-2">Formateurs</p>
-					<h2 class="mb-1">Le premier de vos accompagnements</h2>
-					<div class="row justify-content-center mt-4">
-						<div class="col-8 col-sm-4 col-lg-2 mb-4 mb-sm-0">
+					<h2 class="kf-team-title">Formateurs</h2>
+					<p class="kf-team-kicker">La promesse d&rsquo;un accompagnement</p>
+					<div class="row justify-content-center kf-team-grid">
+						<div class="col-10 col-sm-4 col-lg-3 mb-4 mb-sm-0">
 							<article class="kf-team-card">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'coach-amelie.jpg' ); ?>" alt="Portrait d'Amelie, formatrice pilates" class="img-fluid">
 							</article>
 						</div>
-						<div class="col-8 col-sm-4 col-lg-2 mb-4 mb-sm-0">
+						<div class="col-10 col-sm-4 col-lg-3 mb-4 mb-sm-0">
 							<article class="kf-team-card">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'coach-elise.jpg' ); ?>" alt="Portrait d'Elise, formatrice pilates" class="img-fluid">
 							</article>
 						</div>
-						<div class="col-8 col-sm-4 col-lg-2">
+						<div class="col-10 col-sm-4 col-lg-3">
 							<article class="kf-team-card">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'coach-marc.jpg' ); ?>" alt="Portrait de Marc, formateur pilates" class="img-fluid">
 							</article>
 						</div>
 					</div>
-					<p class="kf-text kf-text--narrow mx-auto mt-4 mb-0">Lorem ipsum dolor sit amet consectetur. Eget velit non quam commodo quis mauris mattis. Cum sociis praesent pellentesque ultricies eros.</p>
+					<p class="kf-team-copy mx-auto mb-0 mt-4">Lorem ipsum dolor sit amet consectetur. Eget velit non ipsum commodo quis mauris metus. Cursus praesent pellentesque ultricies eu nisi. Facilisi in est in at mollis eget. Nec amet viverra consectetur quis. Aliquam quisque urna mi enim lectus faucibus sit.</p>
 				</div>
 			</section>
 
