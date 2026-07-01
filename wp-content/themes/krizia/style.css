@@ -1484,7 +1484,8 @@ body.home .navbar-light .navbar-toggler-icon {
   z-index: 2;
 }
 
-.krizia-front .kf-private-title {
+.krizia-front .kf-private-title,
+.krizia-front .kf-practice-title {
   border: 0;
   clear: none;
   color: #3d2b22;
@@ -1790,15 +1791,57 @@ body.home .navbar-light .navbar-toggler-icon {
   color: rgba(255, 255, 255, 0.84);
 }
 
+.kf-section--practice {
+  background: #e7dccf;
+  overflow: hidden;
+  padding: 0;
+}
+
+.kf-practice-row {
+  min-height: clamp(620px, 52vw, 760px);
+}
+
 .kf-practice-copy {
-  max-width: 440px;
-  padding: clamp(3.6rem, 6vw, 6rem) 2rem;
+  margin-left: clamp(2rem, 7vw, 9rem);
+  max-width: 610px;
+  padding: clamp(4rem, 7vw, 7.5rem) clamp(1.25rem, 3vw, 3rem);
+}
+
+.krizia-front .kf-practice-kicker {
+  color: #8b4d22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.82rem, 1.2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  line-height: 1.4;
+  margin-right: -0.42em;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
+.krizia-front .kf-practice-text {
+  color: #3d2b22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.75;
+  margin-top: clamp(2.8rem, 4vw, 4.2rem);
+}
+
+.krizia-front .kf-practice-text--objective {
+  margin-top: clamp(2.4rem, 3.4vw, 3.4rem);
+}
+
+.kf-practice-text strong {
+  font-weight: 800;
 }
 
 .kf-practice-image {
   height: 100%;
-  min-height: 520px;
+  min-height: clamp(620px, 52vw, 760px);
   object-fit: cover;
+  object-position: center center;
+  width: 100%;
 }
 
 .kf-section--agenda {
@@ -2115,8 +2158,19 @@ body.home .navbar-light .navbar-toggler-icon {
     padding: 3.8rem 1.8rem 3rem;
   }
 
+  .kf-practice-row {
+    min-height: 0;
+  }
+
+  .kf-practice-copy {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    padding: 5rem 2rem;
+  }
+
   .kf-practice-image {
-    min-height: 360px;
+    min-height: 520px;
   }
 }
 
@@ -2217,6 +2271,31 @@ body.home .navbar-light .navbar-toggler-icon {
     font-size: 0.74rem;
     letter-spacing: 0.24em;
     min-width: 170px;
+  }
+
+  .kf-practice-copy {
+    padding: 4rem 1.5rem;
+  }
+
+  .krizia-front .kf-practice-kicker {
+    font-size: 0.76rem;
+    letter-spacing: 0.28em;
+    margin-right: -0.28em;
+    margin-top: 1.5rem;
+  }
+
+  .krizia-front .kf-practice-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 2.4rem;
+  }
+
+  .krizia-front .kf-practice-text--objective {
+    margin-top: 2rem;
+  }
+
+  .kf-practice-image {
+    min-height: 390px;
   }
 
   .kf-statement {

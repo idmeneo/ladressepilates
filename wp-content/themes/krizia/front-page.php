@@ -139,17 +139,16 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 
 			<section class="kf-section kf-section--practice" id="formation">
 				<div class="container-fluid px-0">
-					<div class="row no-gutters justify-content-center align-items-stretch">
-						<div class="col-12 col-lg-5 d-flex align-items-center">
-							<div class="kf-practice-copy mx-auto">
-								<p class="kf-section-kicker mb-2">Formation continue</p>
-								<h2>Le stage de transmission</h2>
-								<p class="kf-text mt-3 mb-0">Un espace de transmission pour les professeurs et les personnes qui souhaitent approfondir leur regard, leur ecoute et leur precision dans la pratique du Pilates.</p>
-								<p class="kf-text mt-3 mb-0">L'objectif : transmettre des outils immediatement applicables en pratique clinique, sportive ou pedagogique.</p>
-								<a class="kf-link mt-3" href="#reservation">Decouvrir les formations</a>
+					<div class="row no-gutters align-items-stretch kf-practice-row">
+						<div class="col-12 col-lg-6 d-flex align-items-center">
+							<div class="kf-practice-copy">
+								<h2 class="kf-practice-title">Formation continue</h2>
+								<p class="kf-practice-kicker">Un espace de transmission</p>
+								<p class="kf-practice-text">Un espace de transmission pour les professionnels du mouvement. Les Rencontres de L&rsquo;Adresse Pilates sont des workshops destin&eacute;s aux professionnels du mouvement : enseignants, th&eacute;rapeutes, pr&eacute;parateurs physiques et praticiens. Chaque session explore une th&eacute;matique cibl&eacute;e li&eacute;e &agrave; la biom&eacute;canique, au contr&ocirc;le moteur ou &agrave; la p&eacute;dagogie du mouvement.</p>
+								<p class="kf-practice-text kf-practice-text--objective"><strong>L&rsquo;objectif :</strong> transmettre des outils imm&eacute;diatement applicables en pratique clinique, sportive ou p&eacute;dagogique.</p>
 							</div>
 						</div>
-						<div class="col-12 col-lg-5">
+						<div class="col-12 col-lg-6">
 							<img src="<?php echo esc_url( $krizia_asset_uri . 'collective-class.jpg' ); ?>" alt="Cours collectif de pilates reformer" class="img-fluid kf-practice-image">
 						</div>
 					</div>
