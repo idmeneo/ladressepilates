@@ -2218,12 +2218,77 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 .kf-section--values {
-  background: #fff;
+  background: #e8ddd1;
+}
+
+.krizia-front .kf-values-title {
+  border: 0;
+  clear: none;
+  color: #3d2b22;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.85rem, 2.6vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  line-height: 1.2;
+  margin: 0;
+  margin-right: -0.34em;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.krizia-front .kf-values-kicker {
+  color: #8b4d22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.72rem, 1vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.48em;
+  line-height: 1.4;
+  margin-right: -0.48em;
+  margin-top: 1.45rem;
+  text-transform: uppercase;
+}
+
+.kf-values-grid {
+  margin-top: clamp(3.2rem, 5vw, 5rem);
 }
 
 .kf-value-card img {
-  aspect-ratio: 1.42;
+  aspect-ratio: 1.62;
+  border-radius: 6px;
   object-fit: cover;
+}
+
+.kf-value-card h3 {
+  color: #3d2b22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.38em;
+  line-height: 1.7;
+  margin: 2.2rem auto 0;
+  margin-right: -0.38em;
+  text-transform: uppercase;
+}
+
+.kf-value-card p {
+  color: #5f5147;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 1.8rem auto 0;
+  max-width: 300px;
+}
+
+.kf-value-card .kf-read-link {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.38em;
+  margin-right: -0.38em;
+  margin-top: 2.7rem;
+}
+
+.kf-value-card .kf-read-link::after {
+  display: none;
 }
 
 .kf-newsletter {
@@ -2570,6 +2635,32 @@ body.home .navbar-light .navbar-toggler-icon {
   .kf-faq-accordion .card-body {
     font-size: 0.95rem;
     line-height: 1.7;
+  }
+
+  .krizia-front .kf-values-title {
+    font-size: 1.55rem;
+    letter-spacing: 0.24em;
+    margin-right: -0.24em;
+  }
+
+  .krizia-front .kf-values-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    margin-right: -0.28em;
+  }
+
+  .kf-values-grid {
+    margin-top: 3rem;
+  }
+
+  .kf-value-card h3 {
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    margin-right: -0.28em;
+  }
+
+  .kf-value-card p {
+    font-size: 0.92rem;
   }
 
   .kf-statement {

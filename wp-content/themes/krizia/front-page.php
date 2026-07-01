@@ -302,30 +302,30 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 
 			<section class="kf-section kf-section--values py-5">
 				<div class="container kf-container text-center">
-					<p class="kf-section-kicker mb-2">Guide &amp; conseils</p>
-					<h2 class="mb-4">Le premier de vos accompagnements</h2>
-					<div class="row justify-content-center">
-						<div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0">
+					<h2 class="kf-values-title">Guide &amp; conseils</h2>
+					<p class="kf-values-kicker">La promesse d&rsquo;un accompagnement</p>
+					<div class="row justify-content-center kf-values-grid">
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
 							<article class="kf-value-card">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'hands-detail.jpg' ); ?>" alt="Detail de mains en mouvement" class="img-fluid">
-								<h3 class="mt-3">Le reformer selon le pilates</h3>
-								<p class="kf-text mb-0">Comprendre les ressorts, les appuis et les reperes essentiels.</p>
+								<h3>Se soigner<br>gr&acirc;ce au Pilate</h3>
+								<p>Lorem ipsum dolor sit amet consectetur. Commodo purus nibh amet facilisi lobortis vitae eu lkoresmeak ...</p>
 								<a href="#reservation" class="kf-read-link">Lire la suite</a>
 							</article>
 						</div>
-						<div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0">
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
 							<article class="kf-value-card">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'chair-class.jpg' ); ?>" alt="Pratique pilates sur appareil" class="img-fluid">
-								<h3 class="mt-3">Continuer le pilates a la maison</h3>
-								<p class="kf-text mb-0">Des routines simples pour garder une pratique reguliere.</p>
+								<h3>Continuer le Pilate<br>&agrave; la maison</h3>
+								<p>Lorem ipsum dolor sit amet consectetur. Commodo purus nibh amet facilisi lobortis vitae eu lkoresmeak ...</p>
 								<a href="#reservation" class="kf-read-link">Lire la suite</a>
 							</article>
 						</div>
-						<div class="col-12 col-md-4 col-lg-3">
+						<div class="col-12 col-md-4 col-lg-4">
 							<article class="kf-value-card">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'outdoor-portrait.jpg' ); ?>" alt="Portrait souriant apres une seance" class="img-fluid">
-								<h3 class="mt-3">Le controle par la respiration</h3>
-								<p class="kf-text mb-0">Un levier discret pour construire force et fluidite.</p>
+								<h3>10 conseils pour<br>commencer</h3>
+								<p>Lorem ipsum dolor sit amet consectetur. Commodo purus nibh amet facilisi lobortis vitae eu lkoresmeak ...</p>
 								<a href="#reservation" class="kf-read-link">Lire la suite</a>
 							</article>
 						</div>
