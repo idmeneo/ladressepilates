@@ -128,9 +128,12 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 			</section>
 
 			<section class="kf-statement d-flex align-items-center text-center text-white" style="background-image: linear-gradient(90deg, rgba(44, 31, 24, 0.34), rgba(44, 31, 24, 0.58)), url('<?php echo esc_url( $krizia_asset_uri . 'pilates-extension.jpg' ); ?>');">
-				<div class="container kf-container">
-					<p class="kf-section-kicker mb-2">L'Adresse</p>
-					<h2 class="mx-auto mb-0">Un lieu dedie a une pratique du pilates</h2>
+				<div class="container kf-container position-relative">
+					<img class="kf-statement-logo" src="<?php echo esc_url( $krizia_asset_uri . 'logo-transparent.png' ); ?>" alt="" aria-hidden="true">
+					<div class="kf-statement-content position-relative mx-auto">
+						<p class="kf-statement-kicker mb-4">Le Pilate</p>
+						<h2 class="kf-statement-title mx-auto mb-0">Un lieu d&eacute;di&eacute;<br>&agrave; une pratique<br>du Pilates</h2>
+					</div>
 				</div>
 			</section>
 
