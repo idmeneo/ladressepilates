@@ -252,8 +252,8 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				<div class="container kf-container">
 					<div class="row justify-content-center text-center">
 						<div class="col-12 col-lg-7">
-							<p class="kf-section-kicker mb-2">Vos questions</p>
-							<h2 class="mb-4">Le premier de vos accompagnements</h2>
+							<h2 class="kf-faq-title">Vos questions</h2>
+							<p class="kf-faq-kicker">La promesse d&rsquo;un accompagnement</p>
 						</div>
 					</div>
 					<div class="row justify-content-center">
@@ -261,15 +261,18 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 							<div class="accordion kf-faq-accordion" id="kfFaq">
 								<div class="card border-left-0 border-right-0 rounded-0">
 									<div class="card-header bg-transparent p-0" id="kfFaqHeadingOne">
-										<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#kfFaqOne" aria-expanded="true" aria-controls="kfFaqOne">Pour qui faire du pilates en classe encadree ?</button>
+										<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#kfFaqOne" aria-expanded="true" aria-controls="kfFaqOne">Puis-je faire du pilates en &eacute;tant enceinte ?</button>
 									</div>
 									<div id="kfFaqOne" class="collapse show" aria-labelledby="kfFaqHeadingOne" data-parent="#kfFaq">
-										<div class="card-body">Lorem ipsum dolor sit amet consectetur. Eget velit non quam commodo quis mauris mattis. Curabitur imperdiet, mauris in rhoncus aliquam, accompagne chaque profil vers une progression claire. Nullam volutpat permet d'adapter les ressorts, les amplitudes et la respiration a chaque besoin.</div>
+										<div class="card-body">
+											<p>Lorem ipsum dolor sit amet consectetur. Feugiat consequat in sed iaculis vestibulum. Eget mauris nullam et sagittis lorem eu cursus. Feugiat dignissim vitae elit ut quam ut ornare at iaculis. Tincidunt tincidunt lacinia in in.</p>
+											<p>Nulla aliquet gravida vitae at malesuada rutrum. Fermentum placerat sit nec faucibus vulputate placerat posuere. Arcu dui vel id tristique dolor. Morbi tellus eu semper amet elit curabitur eget. Lectus semper tellus velit quisque sollicitudin. Imperdiet mattis eget ut vulputate vulputate ut leo nam magna. In at semper mauris egestas. Nulla maecenas scelerisque parturient dolor sollicitudin morbi. Massa neque elit condimentum interdum fermentum commodo orci praesent nam. Aliquam magna sed nec quisque. Fringilla ultrices amet ut egestas euismod quis. Imperdiet ac risus mauris id sed iaculis orci. Enim egestas volutpat at adipiscing senectus iaculis. Scelerisque quis malesuada faucibus sollicitudin in feugiat ut.</p>
+										</div>
 									</div>
 								</div>
 								<div class="card border-left-0 border-right-0 rounded-0">
 									<div class="card-header bg-transparent p-0" id="kfFaqHeadingTwo">
-										<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#kfFaqTwo" aria-expanded="false" aria-controls="kfFaqTwo">Pour se faire du pilates en etant enceinte ?</button>
+										<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#kfFaqTwo" aria-expanded="false" aria-controls="kfFaqTwo">Puis-je faire du pilates en &eacute;tant enceinte ?</button>
 									</div>
 									<div id="kfFaqTwo" class="collapse" aria-labelledby="kfFaqHeadingTwo" data-parent="#kfFaq">
 										<div class="card-body">Les cours sont adaptes selon le stade de grossesse, les recommandations medicales et les sensations du jour.</div>
@@ -277,7 +280,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 								</div>
 								<div class="card border-left-0 border-right-0 rounded-0">
 									<div class="card-header bg-transparent p-0" id="kfFaqHeadingThree">
-										<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#kfFaqThree" aria-expanded="false" aria-controls="kfFaqThree">Pour se faire du pilates en etant enceinte ?</button>
+										<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#kfFaqThree" aria-expanded="false" aria-controls="kfFaqThree">Puis-je faire du pilates en &eacute;tant enceinte ?</button>
 									</div>
 									<div id="kfFaqThree" class="collapse" aria-labelledby="kfFaqHeadingThree" data-parent="#kfFaq">
 										<div class="card-body">Un premier rendez-vous permet de choisir entre pratique privee, formule reguliere ou atelier specialise.</div>
@@ -285,7 +288,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 								</div>
 								<div class="card border-left-0 border-right-0 rounded-0">
 									<div class="card-header bg-transparent p-0" id="kfFaqHeadingFour">
-										<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#kfFaqFour" aria-expanded="false" aria-controls="kfFaqFour">Pour se faire du pilates en etant enceinte ?</button>
+										<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#kfFaqFour" aria-expanded="false" aria-controls="kfFaqFour">Puis-je faire du pilates en &eacute;tant enceinte ?</button>
 									</div>
 									<div id="kfFaqFour" class="collapse" aria-labelledby="kfFaqHeadingFour" data-parent="#kfFaq">
 										<div class="card-body">La reservation se confirme avec le studio apres votre demande via le formulaire.</div>

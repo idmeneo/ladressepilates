@@ -2121,20 +2121,69 @@ body.home .navbar-light .navbar-toggler-icon {
   max-width: 860px;
 }
 
-.kf-faq-accordion .card {
+.kf-section--faq {
+  background: #f6f3ee;
+}
+
+.krizia-front .kf-faq-title {
+  border: 0;
+  clear: none;
+  color: #3d2b22;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.85rem, 2.6vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  line-height: 1.2;
+  margin: 0;
+  margin-right: -0.34em;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.krizia-front .kf-faq-kicker {
+  color: #8b4d22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.72rem, 1vw, 0.9rem);
+  font-weight: 800;
+  letter-spacing: 0.48em;
+  line-height: 1.4;
+  margin-right: -0.48em;
+  margin-top: 1.45rem;
+  text-transform: uppercase;
+}
+
+.kf-faq-accordion .card,
+.kf-faq-accordion .card-header {
   background: transparent;
-  border-color: #dacbbd;
+  border: 0 !important;
+  border-radius: 0;
+}
+
+.kf-faq-accordion {
+  margin-top: clamp(3rem, 5vw, 4.6rem);
 }
 
 .kf-faq-accordion .card + .card {
-  border-top: 0;
+  border-top: 1px solid #b78d70 !important;
+}
+
+.kf-faq-accordion .card:last-child {
+  border-bottom: 1px solid #b78d70 !important;
+}
+
+.kf-faq-accordion .collapse,
+.kf-faq-accordion .collapsing,
+.kf-faq-accordion .card-body {
+  border: 0;
 }
 
 .kf-faq-accordion .btn-link {
-  color: #4a3021;
-  font-family: "Spectral", Georgia, serif;
-  font-size: 1.08rem;
-  padding: 1rem 2rem 1rem 0;
+  color: #8b4d22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+  padding: 1.65rem 2.2rem 1.1rem 0;
   position: relative;
   text-decoration: none;
 }
@@ -2142,8 +2191,10 @@ body.home .navbar-light .navbar-toggler-icon {
 .kf-faq-accordion .btn-link::after {
   color: #8b4d22;
   content: "-";
+  font-weight: 400;
   position: absolute;
   right: 0;
+  top: 1.65rem;
 }
 
 .kf-faq-accordion .btn-link.collapsed::after {
@@ -2152,8 +2203,18 @@ body.home .navbar-light .navbar-toggler-icon {
 
 .kf-faq-accordion .card-body {
   color: #5f5147;
-  font-size: 0.92rem;
-  padding: 0 0 1rem;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  padding: 0 0 2rem;
+}
+
+.kf-faq-accordion .card-body p {
+  margin: 0;
+}
+
+.kf-faq-accordion .card-body p + p {
+  margin-top: 2.15rem;
 }
 
 .kf-section--values {
@@ -2479,6 +2540,36 @@ body.home .navbar-light .navbar-toggler-icon {
     font-size: 0.95rem;
     line-height: 1.7;
     margin-top: 2.8rem;
+  }
+
+  .krizia-front .kf-faq-title {
+    font-size: 1.55rem;
+    letter-spacing: 0.26em;
+    margin-right: -0.26em;
+  }
+
+  .krizia-front .kf-faq-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    margin-right: -0.28em;
+  }
+
+  .kf-faq-accordion {
+    margin-top: 2.8rem;
+  }
+
+  .kf-faq-accordion .btn-link {
+    font-size: 0.95rem;
+    padding: 1.35rem 1.8rem 1rem 0;
+  }
+
+  .kf-faq-accordion .btn-link::after {
+    top: 1.35rem;
+  }
+
+  .kf-faq-accordion .card-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
   .kf-statement {
