@@ -1084,7 +1084,7 @@ body.home header#masthead {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 1000;
 }
 
 body.admin-bar.home header#masthead {
@@ -1187,8 +1187,10 @@ body.home .navbar-light .navbar-toggler-icon {
   color: #35281f;
   font-family: "Manrope", Arial, sans-serif;
   font-size: 16px;
+  isolation: isolate;
   line-height: 1.7;
   overflow: hidden;
+  position: relative;
   width: 100%;
 }
 
@@ -1533,9 +1535,24 @@ body.home .navbar-light .navbar-toggler-icon {
   overflow: visible;
 }
 
+.kf-private-oval-layer {
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+  position: relative;
+}
+
+.kf-private-oval-layer--left {
+  z-index: 51;
+}
+
+.kf-private-oval-layer--right {
+  z-index: 53;
+}
+
 .kf-private-oval {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
 }
 
 .kf-private-oval img,
@@ -1561,6 +1578,11 @@ body.home .navbar-light .navbar-toggler-icon {
   bottom: -3.8rem;
   left: -4.5rem;
   width: clamp(260px, 27vw, 420px);
+}
+
+.kf-private-oval-layer .kf-private-oval--left {
+  bottom: auto;
+  top: clamp(7rem, 12vw, 12rem);
 }
 
 .kf-private-oval--right {
@@ -1837,6 +1859,7 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 .kf-practice-image {
+  border-bottom-left-radius: 0;
   height: 100%;
   min-height: clamp(620px, 52vw, 760px);
   object-fit: cover;
@@ -1845,14 +1868,14 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 .kf-section--agenda {
-  background: linear-gradient(180deg, #f6f3ee 0%, #e8ddd1 100%);
+  background: #fff;
   padding-top: 0;
 }
 
 .kf-agenda-card {
   background: #fff;
   border-radius: 12px;
-  margin-top: -3.2rem;
+  margin-top: -6.2rem;
   max-width: 900px;
   padding: 0;
   position: relative;
@@ -2527,6 +2550,92 @@ body.home .navbar-light .navbar-toggler-icon {
   padding: 0.85rem 1.7rem;
 }
 
+.krizia-front {
+  --kf-section-overlap: 34px;
+  --kf-section-radius: clamp(18px, 2vw, 30px);
+}
+
+.krizia-front > section {
+  border-bottom-left-radius: var(--kf-section-radius);
+  border-bottom-right-radius: var(--kf-section-radius);
+  margin-bottom: calc(var(--kf-section-overlap) * -1);
+  overflow: hidden;
+  position: relative;
+}
+
+.krizia-front > section:last-of-type {
+  margin-bottom: 0;
+}
+
+.krizia-front > .kf-section--private,
+.krizia-front > .kf-section--agenda {
+  overflow: visible;
+}
+
+.krizia-front > section:nth-of-type(1) {
+  z-index: 40;
+}
+
+.krizia-front > section:nth-of-type(2) {
+  z-index: 39;
+}
+
+.krizia-front > section:nth-of-type(3) {
+  z-index: 38;
+}
+
+.krizia-front > section:nth-of-type(4) {
+  z-index: 37;
+}
+
+.krizia-front > section:nth-of-type(5) {
+  z-index: 36;
+}
+
+.krizia-front > section:nth-of-type(6) {
+  z-index: 35;
+}
+
+.krizia-front > section:nth-of-type(7) {
+  z-index: 34;
+}
+
+.krizia-front > section:nth-of-type(8) {
+  z-index: 33;
+}
+
+.krizia-front > section:nth-of-type(9) {
+  z-index: 32;
+}
+
+.krizia-front > section:nth-of-type(10) {
+  z-index: 31;
+}
+
+.krizia-front > section:nth-of-type(11) {
+  z-index: 30;
+}
+
+.krizia-front > section:nth-of-type(12) {
+  z-index: 29;
+}
+
+.krizia-front > section:nth-of-type(13) {
+  z-index: 28;
+}
+
+.krizia-front > .kf-section--studio {
+  z-index: 52;
+}
+
+.krizia-front > .kf-section--private {
+  z-index: 50;
+}
+
+.krizia-front > .kf-section--agenda {
+  z-index: 45;
+}
+
 @media screen and (min-width: 992px) {
   .kf-section.py-5 {
     padding-bottom: 5.2rem !important;
@@ -2611,6 +2720,11 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 @media screen and (max-width: 767px) {
+  .krizia-front {
+    --kf-section-overlap: 22px;
+    --kf-section-radius: 20px;
+  }
+
   body.admin-bar.home header#masthead {
     top: 46px;
   }

@@ -43,13 +43,18 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--private py-5 position-relative">
+			<div class="kf-private-oval-layer kf-private-oval-layer--left" aria-hidden="true">
 				<div class="kf-private-oval kf-private-oval--left d-none d-lg-block">
-					<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-portrait.png' ); ?>" alt="Mouvement de pilates au sol">
+					<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-portrait.png' ); ?>" alt="">
 				</div>
+			</div>
+			<div class="kf-private-oval-layer kf-private-oval-layer--right" aria-hidden="true">
 				<div class="kf-private-oval kf-private-oval--right d-none d-lg-block">
-					<img src="<?php echo esc_url( $krizia_asset_uri . 'movement-detail.png' ); ?>" alt="Eleve allongee sur reformer">
+					<img src="<?php echo esc_url( $krizia_asset_uri . 'movement-detail.png' ); ?>" alt="">
 				</div>
+			</div>
+
+			<section class="kf-section kf-section--private py-5 position-relative">
 				<div class="container kf-container">
 					<div class="row justify-content-center text-center">
 						<div class="col-12 col-lg-6">
