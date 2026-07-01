@@ -336,13 +336,13 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 			<section class="kf-newsletter d-flex align-items-center text-white" style="background-image: linear-gradient(90deg, rgba(38, 27, 20, 0.48), rgba(38, 27, 20, 0.14)), url('<?php echo esc_url( $krizia_asset_uri . 'studio-reception.jpg' ); ?>');">
 				<div class="container kf-container">
 					<div class="row justify-content-center text-center">
-						<div class="col-12 col-lg-7">
-							<p class="kf-section-kicker mb-2">Newsletter</p>
-							<h2>Recevoir nos prochaines actualites</h2>
-							<form class="form-inline justify-content-center mt-4" action="#" method="post">
+						<div class="col-12 col-lg-8">
+							<p class="kf-newsletter-title">Newsletter</p>
+							<p class="kf-newsletter-copy mx-auto mt-4">Inscrivez-vous pour &ecirc;tre inform&eacute;(e) en avant-premi&egrave;re des lancements exclusifs, des actualit&eacute;s et des offres.</p>
+							<form class="kf-newsletter-form form-inline justify-content-center" action="#" method="post">
 								<label class="screen-reader-text" for="kf-newsletter-email">Email</label>
 								<input id="kf-newsletter-email" class="form-control kf-newsletter-input" type="email" name="newsletter_email" placeholder="Votre email">
-								<button class="btn kf-button kf-button--brown" type="submit">S'inscrire</button>
+								<button class="btn kf-button kf-button--brown" type="submit">M&rsquo;inscrire</button>
 							</form>
 						</div>
 					</div>
@@ -351,40 +351,47 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 
 			<section class="kf-contact py-5" id="reservation">
 				<div class="container kf-container">
-					<div class="row justify-content-center">
-						<div class="col-12 col-lg-4 mb-5 mb-lg-0">
-							<div class="kf-contact-info">
-								<p class="kf-section-kicker mb-4">Nous contacter</p>
-								<div class="kf-monogram kf-monogram--light" aria-hidden="true">LA</div>
-								<h2>L'Adresse Pilates</h2>
-								<p>14 rue du Studio<br>75000 Paris</p>
-								<p><a href="mailto:bonjour@ladresse-pilates.fr">bonjour@ladresse-pilates.fr</a><br><a href="tel:+33100000000">+33 1 00 00 00 00</a></p>
-								<a class="btn kf-button kf-button--outline" href="#studio">Reserver une seance</a>
+					<div class="row justify-content-between align-items-start">
+						<div class="col-12 col-lg-5 mb-5 mb-lg-0">
+							<div class="kf-contact-info h-100 d-flex flex-column">
+								<h2 class="kf-contact-title">Nous contacter</h2>
+								<div class="kf-contact-brand d-flex align-items-start">
+									<img class="kf-contact-logo" src="<?php echo esc_url( $krizia_asset_uri . 'logo-white.png' ); ?>" alt="L'Adresse Pilates">
+									<div class="kf-contact-details">
+										<h3>L&rsquo;Adresse Pilates</h3>
+										<p>44 rue Poussin,<br>75016 Paris</p>
+										<p><a href="tel:+33146721894">01 46 72 18 94</a><br><a href="mailto:contact@ladressepilates.fr">contact@ladressepilates.fr</a></p>
+									</div>
+								</div>
+								<a class="btn kf-button kf-button--outline kf-contact-booking" href="#studio">R&eacute;server une s&eacute;ance</a>
+								<div class="kf-contact-social">
+									<p>Retrouvez-nous sur :</p>
+									<a href="https://www.instagram.com/ladressepilates" target="_blank" rel="noopener">
+										<span class="kf-instagram-icon" aria-hidden="true"></span>
+										@ladressepilates
+									</a>
+								</div>
+								<p class="kf-contact-copyright">&copy; 2026 L&rsquo;Adresse Pilates. Tous droits r&eacute;serv&eacute;s.</p>
 							</div>
 						</div>
 						<div class="col-12 col-lg-6">
 							<form class="kf-form" action="#" method="post">
-								<div class="row">
-									<div class="col-12 col-md-6">
-										<div class="form-group">
-											<label class="screen-reader-text" for="kf-name">Nom</label>
-											<input id="kf-name" class="form-control" type="text" name="name" placeholder="Nom">
-										</div>
-									</div>
-									<div class="col-12 col-md-6">
-										<div class="form-group">
-											<label class="screen-reader-text" for="kf-firstname">Prenom</label>
-											<input id="kf-firstname" class="form-control" type="text" name="firstname" placeholder="Prenom">
-										</div>
-									</div>
+								<p class="kf-form-required">*Champs obligatoires</p>
+								<div class="form-group">
+									<label class="screen-reader-text" for="kf-name">Nom</label>
+									<input id="kf-name" class="form-control" type="text" name="name" placeholder="Nom*">
+								</div>
+								<div class="form-group">
+									<label class="screen-reader-text" for="kf-firstname">Pr&eacute;nom</label>
+									<input id="kf-firstname" class="form-control" type="text" name="firstname" placeholder="Pr&eacute;nom*">
 								</div>
 								<div class="form-group">
 									<label class="screen-reader-text" for="kf-email">Email</label>
 									<input id="kf-email" class="form-control" type="email" name="email" placeholder="Email">
 								</div>
 								<div class="form-group">
-									<label class="screen-reader-text" for="kf-phone">Telephone</label>
-									<input id="kf-phone" class="form-control" type="tel" name="phone" placeholder="Telephone">
+									<label class="screen-reader-text" for="kf-phone">T&eacute;l&eacute;phone</label>
+									<input id="kf-phone" class="form-control" type="tel" name="phone" placeholder="T&eacute;l&eacute;phone">
 								</div>
 								<div class="form-group">
 									<label class="screen-reader-text" for="kf-message">Commentaire</label>

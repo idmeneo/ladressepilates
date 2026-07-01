@@ -2292,55 +2292,192 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 .kf-newsletter {
-  min-height: 310px;
+  background-position: center center;
+  min-height: clamp(480px, 44.9vw, 647px);
 }
 
-.kf-newsletter h2,
 .kf-contact h2 {
   color: #fff;
+}
+
+.kf-newsletter-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.78rem, 1vw, 0.95rem);
+  font-weight: 800;
+  letter-spacing: 0.46em;
+  line-height: 1.35;
+  margin-right: -0.46em;
+  text-transform: uppercase;
+}
+
+.kf-newsletter-copy {
+  color: rgba(255, 255, 255, 0.94);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(1rem, 1.35vw, 1.28rem);
+  line-height: 1.75;
+  margin-top: 1.9rem;
+  max-width: 620px;
+}
+
+.kf-newsletter-form {
+  margin-top: 3.5rem;
 }
 
 .kf-newsletter-input {
   border: 0;
   border-radius: 0;
-  font-size: 0.82rem;
-  height: 42px;
-  min-width: min(320px, 100%);
-  padding: 0.75rem 1rem;
+  color: #35281f;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.95rem;
+  height: 58px;
+  min-width: min(430px, 100%);
+  padding: 1rem 1.35rem;
 }
 
 .kf-newsletter .kf-button {
   border-radius: 0;
-  height: 42px;
+  font-size: 0.72rem;
+  height: 58px;
+  letter-spacing: 0.34em;
+  min-width: 210px;
 }
 
 .kf-contact {
-  background: #7b421d;
+  background: #884a1f;
   color: #fff;
-  padding: clamp(3.5rem, 7vw, 5.8rem) 0;
+  padding: clamp(4.2rem, 7vw, 6.6rem) 0 clamp(1.2rem, 2.5vw, 2rem);
 }
 
-.kf-contact .kf-section-kicker {
-  color: rgba(255, 255, 255, 0.78);
+.krizia-front .kf-contact-title {
+  border: 0;
+  clear: none;
+  color: #fff;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.25rem, 1.65vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  line-height: 1.2;
+  margin: 0;
+  margin-right: -0.28em;
+  padding: 0;
+  text-transform: uppercase;
 }
 
-.kf-contact .kf-monogram {
-  height: 74px;
-  margin-bottom: 1.25rem;
-  width: 74px;
+.kf-contact-brand {
+  margin-top: clamp(2.4rem, 5vw, 4.2rem);
 }
 
-.kf-contact-info h2 {
-  font-size: clamp(1.6rem, 2vw, 2.1rem);
+.krizia-front img.kf-contact-logo {
+  height: auto;
+  max-height: 170px;
+  max-width: 92px;
+  object-fit: contain;
+  width: 92px;
 }
 
-.kf-contact-info p {
-  color: rgba(255, 255, 255, 0.82);
-  margin-top: 1rem;
+.kf-contact-details {
+  margin-left: 2rem;
+  padding-top: 1rem;
+}
+
+.kf-contact-details h3 {
+  color: #fff;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.38em;
+  line-height: 1.4;
+  margin: 0 0 1.05rem;
+  text-transform: uppercase;
+}
+
+.kf-contact-info p,
+.kf-contact-details p {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.kf-contact-details p + p {
+  margin-top: 0.35rem;
 }
 
 .kf-contact-info a {
   color: inherit;
+}
+
+.kf-contact-details a[href^="mailto"] {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.kf-contact-booking {
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  margin-top: 3rem;
+  min-height: 44px;
+  min-width: min(100%, 385px);
+  padding: 0.85rem 1.7rem;
+}
+
+.kf-contact-social {
+  margin-top: clamp(4rem, 9vw, 7rem);
+}
+
+.kf-contact-social p {
+  margin-bottom: 1rem;
+}
+
+.kf-contact-social a {
+  align-items: center;
+  display: inline-flex;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.95rem;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.kf-instagram-icon {
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  width: 18px;
+}
+
+.kf-instagram-icon::before {
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  content: "";
+  height: 7px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+}
+
+.kf-instagram-icon::after {
+  background: currentColor;
+  border-radius: 999px;
+  content: "";
+  height: 2.5px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 2.5px;
+}
+
+.kf-contact-copyright {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.72rem !important;
+  line-height: 1.5 !important;
+  margin-top: auto !important;
+  padding-top: 3.8rem;
 }
 
 .kf-monogram--light {
@@ -2348,8 +2485,21 @@ body.home .navbar-light .navbar-toggler-icon {
   color: #fff;
 }
 
+.kf-form {
+  padding-top: 0.3rem;
+}
+
+.krizia-front .kf-form-required {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.72rem;
+  line-height: 1;
+  margin-bottom: 0.85rem;
+  text-align: right;
+}
+
 .kf-form .form-group {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.15rem;
 }
 
 .kf-form .form-control {
@@ -2358,9 +2508,23 @@ body.home .navbar-light .navbar-toggler-icon {
   border-radius: 2px;
   color: #35281f;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.9rem;
-  min-height: 42px;
-  padding: 0.85rem 1rem;
+  font-size: 0.92rem;
+  min-height: 47px;
+  padding: 0.9rem 1.25rem;
+}
+
+.kf-form textarea.form-control {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.kf-form .kf-button {
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  margin-top: 1.1rem;
+  min-height: 46px;
+  min-width: 285px;
+  padding: 0.85rem 1.7rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -2374,10 +2538,14 @@ body.home .navbar-light .navbar-toggler-icon {
     padding-top: 6rem !important;
   }
 
-  .kf-section--faq.py-5,
-  .kf-contact.py-5 {
+  .kf-section--faq.py-5 {
     padding-bottom: 5.6rem !important;
     padding-top: 5.6rem !important;
+  }
+
+  .kf-contact.py-5 {
+    padding-bottom: clamp(1.2rem, 2.5vw, 2rem) !important;
+    padding-top: clamp(4.2rem, 7vw, 6.6rem) !important;
   }
 }
 
@@ -2690,6 +2858,26 @@ body.home .navbar-light .navbar-toggler-icon {
     border-radius: 0;
   }
 
+  .kf-newsletter {
+    min-height: 460px;
+  }
+
+  .kf-newsletter-title {
+    font-size: 0.68rem;
+    letter-spacing: 0.34em;
+    margin-right: -0.34em;
+  }
+
+  .kf-newsletter-copy {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-top: 1.4rem;
+  }
+
+  .kf-newsletter-form {
+    margin-top: 2.4rem;
+  }
+
   .kf-newsletter .form-inline {
     display: block;
   }
@@ -2701,5 +2889,49 @@ body.home .navbar-light .navbar-toggler-icon {
 
   .kf-newsletter .kf-button {
     margin-top: 0.75rem;
+  }
+
+  .kf-contact {
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+  }
+
+  .krizia-front .kf-contact-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.18em;
+    margin-right: -0.18em;
+  }
+
+  .kf-contact-brand {
+    margin-top: 2.6rem;
+  }
+
+  .krizia-front img.kf-contact-logo {
+    max-height: 140px;
+    max-width: 76px;
+    width: 76px;
+  }
+
+  .kf-contact-details {
+    margin-left: 1.35rem;
+    padding-top: 0.55rem;
+  }
+
+  .kf-contact-details h3 {
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+  }
+
+  .kf-contact-booking,
+  .kf-form .kf-button {
+    min-width: 100%;
+  }
+
+  .kf-contact-social {
+    margin-top: 3.5rem;
+  }
+
+  .krizia-front .kf-form-required {
+    text-align: left;
   }
 }
