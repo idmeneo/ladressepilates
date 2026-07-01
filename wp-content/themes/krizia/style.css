@@ -2041,14 +2041,30 @@ body.home .navbar-light .navbar-toggler-icon {
 
 .kf-quote-band {
   color: #fff;
-  min-height: clamp(360px, 42vw, 520px);
+  min-height: clamp(620px, 59.2vw, 853px);
 }
 
-.kf-quote-band p {
-  font-family: "Spectral", Georgia, serif;
-  font-size: clamp(1.25rem, 2.4vw, 2rem);
-  line-height: 1.35;
-  max-width: 780px;
+.kf-quote-equipment {
+  gap: clamp(2.4rem, 7vw, 7rem);
+}
+
+.kf-quote-equipment li {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(0.78rem, 1.1vw, 1rem);
+  font-weight: 800;
+  letter-spacing: 0.42em;
+  line-height: 1.3;
+  margin-right: -0.42em;
+  text-transform: uppercase;
+}
+
+.kf-quote-text {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(1.1rem, 1.65vw, 1.45rem);
+  line-height: 1.65;
+  max-width: 760px;
 }
 
 .kf-section--team {
@@ -2377,6 +2393,25 @@ body.home .navbar-light .navbar-toggler-icon {
 
   .kf-practice-image {
     min-height: 390px;
+  }
+
+  .kf-quote-band {
+    min-height: 480px;
+  }
+
+  .kf-quote-equipment {
+    gap: 1.4rem 2.2rem;
+  }
+
+  .kf-quote-equipment li {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    margin-right: -0.28em;
+  }
+
+  .kf-quote-text {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .kf-statement {

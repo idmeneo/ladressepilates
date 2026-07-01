@@ -213,7 +213,13 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 
 			<section class="kf-quote-band d-flex align-items-center text-center text-white" style="background-image: linear-gradient(rgba(50, 35, 27, 0.44), rgba(50, 35, 27, 0.44)), url('<?php echo esc_url( $krizia_asset_uri . 'studio-wide.jpg' ); ?>');">
 				<div class="container kf-container">
-					<p class="mx-auto mb-0">Notre studio offre une experience raffinee, centree sur une pratique attentive, precise et accompagnee.</p>
+					<ul class="kf-quote-equipment list-unstyled d-flex flex-wrap justify-content-center mb-5">
+						<li>Reformer</li>
+						<li>Cadillac</li>
+						<li>Chair</li>
+						<li>Barrel</li>
+					</ul>
+					<p class="kf-quote-text mx-auto mb-0">Lorem ipsum dolor sit amet consectetur. Risus pharetra neque urna nulla odio.Lorem ipsum dolor sit amet consectetur. Risus pharetra neque urna nulla odio.Lorem ipsum dolor sit amet consectetur. Risus pharetra neque urna nulla odio.</p>
 				</div>
 			</section>
 
