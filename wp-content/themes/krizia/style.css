@@ -1851,16 +1851,40 @@ body.home .navbar-light .navbar-toggler-icon {
 
 .kf-agenda-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-top: -3.2rem;
-  max-width: 890px;
+  max-width: 900px;
   padding: 0;
   position: relative;
   z-index: 2;
 }
 
 .kf-agenda-card .card-body {
-  padding: clamp(2.2rem, 5vw, 4.2rem);
+  padding: clamp(2.9rem, 5vw, 4.9rem) clamp(2rem, 5vw, 4.8rem) clamp(2.4rem, 4vw, 3.5rem);
+}
+
+.krizia-front img.kf-agenda-logo {
+  display: block;
+  height: 112px;
+  margin-bottom: 2rem;
+  max-height: 112px;
+  max-width: 120px;
+  object-fit: contain;
+  width: auto;
+}
+
+.krizia-front .kf-agenda-title {
+  border: 0;
+  clear: none;
+  color: #3d2b22;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.36em;
+  line-height: 1.35;
+  margin-right: -0.36em;
+  padding: 0;
+  text-transform: uppercase;
 }
 
 .kf-monogram {
@@ -1879,7 +1903,8 @@ body.home .navbar-light .navbar-toggler-icon {
 }
 
 .kf-event-list {
-  margin-top: 1.5rem;
+  border-top: 1px solid #e6dcd3;
+  margin-top: 1.55rem;
 }
 
 .kf-event-list .row {
@@ -1887,8 +1912,12 @@ body.home .navbar-light .navbar-toggler-icon {
   margin-right: 0;
 }
 
+.kf-event-list article {
+  border-color: #e6dcd3 !important;
+}
+
 .kf-event-date {
-  color: #a06034;
+  color: #af8262;
   font-family: "Spectral", Georgia, serif;
   line-height: 1;
   text-transform: uppercase;
@@ -1896,37 +1925,89 @@ body.home .navbar-light .navbar-toggler-icon {
 
 .kf-event-date strong {
   display: block;
-  font-size: 2.1rem;
+  font-size: 2.55rem;
   font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .kf-event-date span {
   display: block;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
+  margin-top: 0.05rem;
+}
+
+.kf-event-date small {
+  display: block;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  margin-right: -0.34em;
   margin-top: 0.2rem;
 }
 
 .kf-event-date em {
-  background: #a06034;
+  background: #af8262;
   border-radius: 999px;
   color: #fff;
   display: inline-block;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.58rem;
   font-style: normal;
   letter-spacing: 0.1em;
   line-height: 1;
-  margin-top: 0.55rem;
-  padding: 0.35rem 0.55rem;
+  margin-top: 0.65rem;
+  padding: 0.42rem 0.72rem;
+}
+
+.kf-event-list h3 {
+  color: #3d2b22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  line-height: 1.35;
+  margin: 0 0 0.45rem;
+  text-transform: uppercase;
+}
+
+.kf-event-copy {
+  color: #4f4138;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  max-width: 360px;
+}
+
+.kf-event-duration {
+  color: #af8262;
+  display: inline-block;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+}
+
+.kf-event-action {
+  margin-left: auto;
 }
 
 .kf-event-price {
   color: #8b4d22;
-  font-family: "Spectral", Georgia, serif;
-  font-size: 1rem;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.kf-event-list .kf-button {
+  font-size: 0.58rem;
+  letter-spacing: 0.32em;
+  min-height: 38px;
+  min-width: 118px;
+  padding: 0.65rem 1rem;
 }
 
 .kf-mini-link,

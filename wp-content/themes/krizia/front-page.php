@@ -159,50 +159,53 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				<div class="container kf-container">
 					<div class="card kf-agenda-card border-0 mx-auto">
 						<div class="card-body text-center">
-							<div class="kf-monogram mx-auto" aria-hidden="true">LA</div>
-							<p class="kf-section-kicker mb-4">Les prochaines rencontres</p>
+							<img class="kf-agenda-logo mx-auto" src="<?php echo esc_url( $krizia_asset_uri . 'logo.png' ); ?>" alt="" aria-hidden="true">
+							<h2 class="kf-agenda-title mb-4">Les prochaines rencontres</h2>
 							<div class="kf-event-list text-left">
 								<article class="row align-items-center py-4 border-bottom">
 									<div class="col-3 col-md-2 text-center">
-										<div class="kf-event-date"><strong>13</strong><span>Sept</span><em>Atelier</em></div>
+										<div class="kf-event-date"><strong>13</strong><span>sept</span><small>2026</small><em>14:00 - 16:00</em></div>
 									</div>
 									<div class="col-9 col-md-6">
 										<h3>Pilates pour femmes enceintes</h3>
-										<p class="kf-text mb-0">Un atelier pour allier respiration, force juste et mobilite autour de la grossesse.</p>
+										<p class="kf-event-copy mb-2">Lorem ipsum dolor sit amet consectetur. Nunc justo neque dignissim lacus molestie et arcu. Tincidunt dignissim venenatis vitae ut sed amet vulputate.</p>
+										<span class="kf-event-duration">Dur&eacute;e : 2h</span>
 									</div>
-									<div class="col-3 col-md-1 offset-3 offset-md-0 mt-3 mt-md-0 kf-event-price">320&euro;</div>
-									<div class="col-6 col-md-3 mt-3 mt-md-0 text-md-right">
-										<a class="btn kf-button kf-button--brown" href="#reservation">S'inscrire</a>
+									<div class="col-9 offset-3 col-md-3 offset-md-0 mt-3 mt-md-0 ml-md-auto text-center kf-event-action">
+										<div class="kf-event-price">220 &euro;</div>
+										<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 									</div>
 								</article>
 								<article class="row align-items-center py-4 border-bottom">
 									<div class="col-3 col-md-2 text-center">
-										<div class="kf-event-date"><strong>30</strong><span>Oct</span><em>Atelier</em></div>
+										<div class="kf-event-date"><strong>30</strong><span>oct</span><small>2026</small><em>14:00 - 16:00</em></div>
 									</div>
 									<div class="col-9 col-md-6">
 										<h3>Pilates pour femmes enceintes</h3>
-										<p class="kf-text mb-0">Une session pour construire des reperes simples et adapter chaque mouvement.</p>
+										<p class="kf-event-copy mb-2">Lorem ipsum dolor sit amet consectetur. Nunc justo neque dignissim lacus molestie et arcu. Tincidunt dignissim venenatis vitae ut sed amet vulputate.</p>
+										<span class="kf-event-duration">Dur&eacute;e : 2h</span>
 									</div>
-									<div class="col-3 col-md-1 offset-3 offset-md-0 mt-3 mt-md-0 kf-event-price">320&euro;</div>
-									<div class="col-6 col-md-3 mt-3 mt-md-0 text-md-right">
-										<a class="btn kf-button kf-button--brown" href="#reservation">S'inscrire</a>
+									<div class="col-9 offset-3 col-md-3 offset-md-0 mt-3 mt-md-0 ml-md-auto text-center kf-event-action">
+										<div class="kf-event-price">220 &euro;</div>
+										<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 									</div>
 								</article>
-								<article class="row align-items-center py-4">
+								<article class="row align-items-center py-4 border-bottom">
 									<div class="col-3 col-md-2 text-center">
-										<div class="kf-event-date"><strong>05</strong><span>Juil</span><em>Atelier</em></div>
+										<div class="kf-event-date"><strong>05</strong><span>juil</span><small>2027</small><em>14:00 - 16:00</em></div>
 									</div>
 									<div class="col-9 col-md-6">
 										<h3>Pilates pour femmes enceintes</h3>
-										<p class="kf-text mb-0">Un format pour apprendre, ajuster sa pratique et gagner en confiance.</p>
+										<p class="kf-event-copy mb-2">Lorem ipsum dolor sit amet consectetur. Nunc justo neque dignissim lacus molestie et arcu. Tincidunt dignissim venenatis vitae ut sed amet vulputate.</p>
+										<span class="kf-event-duration">Dur&eacute;e : 2h</span>
 									</div>
-									<div class="col-3 col-md-1 offset-3 offset-md-0 mt-3 mt-md-0 kf-event-price">320&euro;</div>
-									<div class="col-6 col-md-3 mt-3 mt-md-0 text-md-right">
-										<a class="btn kf-button kf-button--brown" href="#reservation">S'inscrire</a>
+									<div class="col-9 offset-3 col-md-3 offset-md-0 mt-3 mt-md-0 ml-md-auto text-center kf-event-action">
+										<div class="kf-event-price">220 &euro;</div>
+										<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 									</div>
 								</article>
 							</div>
-							<a class="kf-mini-link mt-4" href="#agenda">Voir plus</a>
+							<a class="kf-mini-link mt-4" href="#agenda">Afficher +</a>
 						</div>
 					</div>
 				</div>
