@@ -1129,6 +1129,11 @@ body.home .navbar-brand .krizia-home-logo {
   max-height: 112px;
 }
 
+body.home .navbar-brand .krizia-home-logo--brown,
+body.home .krizia-mobile-booking {
+  display: none;
+}
+
 body.home #main-nav {
   flex-grow: 1;
 }
@@ -2796,9 +2801,9 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 
 @media screen and (max-width: 1199px) {
   body.home #masthead .navbar-collapse {
-    background: rgba(76, 45, 24, 0.96);
+    background: #e7dccf;
     border-radius: 8px;
-    margin-top: 1rem;
+    margin-top: 6rem;
     padding: 0.9rem;
   }
 
@@ -2916,6 +2921,229 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   .krizia-front {
     --kf-section-overlap: 22px;
     --kf-section-radius: 20px;
+  }
+
+  body.home .krizia-scroll-header {
+    display: none;
+  }
+
+  body.home header#masthead {
+    background: #e7dccf !important;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: none;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: border-radius 160ms ease;
+    width: 100%;
+    z-index: 1200;
+  }
+
+  body.home header#masthead:has(#main-nav.show),
+  body.home header#masthead:has(#main-nav.collapsing) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  body.home header#masthead:has(#main-nav.show) .krizia-mobile-booking,
+  body.home header#masthead:has(#main-nav.collapsing) .krizia-mobile-booking {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  body.home header#masthead .container {
+    max-width: none;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  body.home header#masthead .navbar {
+    align-items: center;
+    min-height: 62px;
+    position: relative;
+  }
+
+  body.home #masthead .navbar-toggler {
+    align-items: center;
+    border: 0;
+    display: inline-flex;
+    height: 62px;
+    justify-content: flex-start;
+    margin: 0;
+    order: 1;
+    padding: 0;
+    position: relative;
+    width: 44px;
+    z-index: 3;
+  }
+
+  body.home #masthead .navbar-toggler:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+
+  body.home #masthead .navbar-toggler-icon {
+    background-image: none;
+    background: #8b4d22;
+    height: 2px;
+    left: 0;
+    position: relative;
+    top: auto;
+    width: 17px;
+  }
+
+  body.home #masthead .navbar-toggler-icon::before,
+  body.home #masthead .navbar-toggler-icon::after {
+    background: #8b4d22;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 17px;
+  }
+
+  body.home #masthead .navbar-toggler-icon::before {
+    top: -7px;
+  }
+
+  body.home #masthead .navbar-toggler-icon::after {
+    top: 7px;
+  }
+
+  body.home .navbar-brand {
+    left: 50%;
+    margin: 0;
+    order: 2;
+    position: absolute;
+    top: 6px;
+    transform: translateX(-50%);
+    z-index: 4;
+  }
+
+  body.home .navbar-brand > a {
+    display: block;
+    position: relative;
+  }
+
+  body.home .navbar-brand > a::before {
+    background: #e7dccf;
+    border-bottom-left-radius: 38px;
+    border-bottom-right-radius: 38px;
+    content: "";
+    height: 131px;
+    left: 48%;
+    position: absolute;
+    top: -1px;
+    transform: translateX(-50%);
+    width: 81px;
+    z-index: 0;
+  }
+
+  body.home .navbar-brand .krizia-home-logo--white {
+    display: none;
+  }
+
+  body.home .navbar-brand .krizia-home-logo--brown {
+    display: block;
+    max-height: none;
+    position: relative;
+    width: 68px;
+    z-index: 1;
+  }
+
+  body.home .krizia-mobile-booking,
+  body.home .krizia-mobile-booking:hover,
+  body.home .krizia-mobile-booking:focus {
+    color: #8b4d22;
+    display: inline-flex;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.54em;
+    line-height: 1;
+    margin-left: auto;
+    order: 3;
+    padding: 0.45rem 0 0.45rem 0.45rem;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+
+  body.home #main-nav {
+    background: #e7dccf;
+    border-radius: 0;
+    flex-basis: calc(100% + 44px);
+    margin-left: -22px;
+    margin-right: -22px;
+    margin-top: 0;
+    max-height: calc(100vh - 62px);
+    order: 4;
+    overflow-y: auto;
+    padding: 7.25rem 20px 2.7rem;
+    width: calc(100% + 44px);
+  }
+
+  body.home #main-nav.collapsing {
+    transition: height 220ms ease;
+  }
+
+  body.home #masthead .navbar-nav {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  body.home #masthead .navbar-nav > li {
+    width: 100%;
+  }
+
+  body.home #masthead .navbar-nav > li > a,
+  body.home:not(.theme-preset-active) #masthead .navbar-nav > li > a {
+    color: #8b4d22;
+    display: block;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.54em;
+    line-height: 1.2;
+    padding: 1.28rem 0;
+    text-transform: uppercase;
+  }
+
+  body.home #masthead .navbar-nav > li > a:hover,
+  body.home #masthead .navbar-nav > li > a:focus,
+  body.home:not(.theme-preset-active) #masthead .navbar-nav > li > a:hover {
+    color: #653617;
+  }
+
+  body.home #masthead .krizia-header-booking,
+  body.home #masthead .krizia-header-booking:hover,
+  body.home #masthead .krizia-header-booking:focus {
+    align-items: center;
+    background: transparent;
+    border: 1px solid #8b4d22;
+    border-radius: 999px;
+    color: #8b4d22;
+    display: inline-flex;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 800;
+    justify-content: center;
+    letter-spacing: 0.54em;
+    margin: 1.9rem 20px 0;
+    min-height: 48px;
+    min-width: calc(100% - 40px);
+    padding: 1rem 1.25rem 1rem 1.65rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   body.admin-bar.home header#masthead {

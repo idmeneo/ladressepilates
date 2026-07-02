@@ -41,10 +41,12 @@
                 <div class="navbar-brand">
                     <?php
                     $krizia_home_logo_uri = get_template_directory_uri() . '/assets/images/logo-white.png';
+                    $krizia_home_logo_dark_uri = get_template_directory_uri() . '/assets/images/logo-brown.png';
                     ?>
                     <?php if ( is_front_page() ) : ?>
                         <a href="<?php echo esc_url( home_url( '/' )); ?>" class="krizia-home-logo-link">
-                            <img class="krizia-home-logo" src="<?php echo esc_url( $krizia_home_logo_uri ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                            <img class="krizia-home-logo krizia-home-logo--white" src="<?php echo esc_url( $krizia_home_logo_uri ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                            <img class="krizia-home-logo krizia-home-logo--brown" src="<?php echo esc_url( $krizia_home_logo_dark_uri ); ?>" alt="" aria-hidden="true">
                         </a>
                     <?php elseif ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
                         <a href="<?php echo esc_url( home_url( '/' )); ?>">
@@ -55,9 +57,12 @@
                     <?php endif; ?>
 
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <?php if ( is_front_page() ) : ?>
+                    <a class="krizia-mobile-booking" href="#reservation"><?php esc_html_e( 'Réserver', 'krizia' ); ?></a>
+                <?php endif; ?>
 
                 <?php if ( is_front_page() ) : ?>
                     <div id="main-nav" class="collapse navbar-collapse">
