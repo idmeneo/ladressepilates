@@ -228,6 +228,13 @@ function wp_bootstrap_starter_scripts() {
     wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
 	wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 
+	if ( is_front_page() ) {
+		wp_add_inline_script(
+			'wp-bootstrap-starter-themejs',
+			"(function(){\n  var hero = document.querySelector('.kf-hero');\n  var scrollHeader = document.querySelector('.krizia-scroll-header');\n  var body = document.body;\n  if (!hero || !scrollHeader || !body) {\n    return;\n  }\n\n  function updateScrollHeader() {\n    var triggerPoint = hero.offsetTop + hero.offsetHeight - 24;\n    var shouldShow = window.scrollY >= triggerPoint;\n    body.classList.toggle('krizia-scroll-header-visible', shouldShow);\n    scrollHeader.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');\n  }\n\n  updateScrollHeader();\n  window.addEventListener('scroll', updateScrollHeader, { passive: true });\n  window.addEventListener('resize', updateScrollHeader);\n})();"
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

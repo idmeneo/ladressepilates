@@ -88,6 +88,30 @@
             </nav>
         </div>
 	</header><!-- #masthead -->
+    <?php if ( is_front_page() ) : ?>
+        <header class="krizia-scroll-header" aria-hidden="true" aria-label="<?php esc_attr_e( 'Navigation principale', 'krizia' ); ?>">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-xl p-0">
+                    <a class="krizia-scroll-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                        <span>L&rsquo;Adresse</span>
+                        <small>Pilates</small>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#krizia-scroll-nav" aria-controls="krizia-scroll-nav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'wp-bootstrap-starter' ); ?>">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="krizia-scroll-nav" class="collapse navbar-collapse">
+                        <ul class="navbar-nav krizia-scroll-menu">
+                            <li class="nav-item"><a class="nav-link" href="#studio"><?php esc_html_e( 'Le studio', 'krizia' ); ?></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#cours"><?php esc_html_e( 'Cours privés', 'krizia' ); ?></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#formation"><?php esc_html_e( 'Formation continue', 'krizia' ); ?></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#reservation"><?php esc_html_e( 'Contact', 'krizia' ); ?></a></li>
+                        </ul>
+                        <a class="krizia-scroll-booking" href="#reservation"><?php esc_html_e( 'Réserver', 'krizia' ); ?></a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    <?php endif; ?>
     <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
         <div id="page-sub-header" <?php if(has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
             <div class="container">
