@@ -1529,15 +1529,18 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   text-transform: uppercase;
 }
 
-.kf-hero .kf-hero-label {
+.kf-hero-title .kf-hero-label {
   border: 0;
   clear: none;
+  display: block;
   color: rgba(255, 255, 255, 0.9);
   font-family: "Manrope", Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.8em;
   line-height: 1;
+  margin-bottom: 1.5rem;
+  margin-top: 0.55rem;
   margin-right: -0.8em;
   text-align: center;
   text-transform: uppercase;
@@ -3498,7 +3501,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
     margin-right: -0.22em;
   }
 
-  .kf-hero .kf-hero-label,
+  .kf-hero-title .kf-hero-label,
   .kf-hero .kf-hero-heading {
     font-size: 1rem;
     letter-spacing: 0.46em;
@@ -4079,7 +4082,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
     margin-right: -0.24em;
   }
 
-  .kf-hero .kf-hero-label {
+  .kf-hero-title .kf-hero-label {
     font-size: 0.78rem;
     letter-spacing: 0.62em;
     line-height: 1;
@@ -4646,7 +4649,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
     line-height: 1.18;
   }
 
-  .kf-hero .kf-hero-label {
+  .kf-hero-title .kf-hero-label {
     font-size: 18px;
     line-height: 1.2;
   }

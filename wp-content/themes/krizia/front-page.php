@@ -17,8 +17,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				<div class="container-fluid px-3 px-md-5">
 					<div class="row justify-content-center justify-content-lg-start">
 						<div class="col-12 col-lg-6">
-							<h1 class="kf-hero-title mb-4">L&rsquo;Adresse</h1>
-							<p class="kf-hero-label mb-4">Pilates</p>
+							<h1 class="kf-hero-title mb-4">L&rsquo;Adresse <span class="kf-hero-label">Pilates</span></h1>
 							<span class="kf-hero-mark d-inline-block mb-4" aria-hidden="true"></span>
 							<h2 class="kf-hero-heading mb-4">Le Pilates sur-mesure</h2>
 							<p class="kf-hero-subtitle mx-auto mb-5">L&rsquo;Adresse Pilates est un lieu d&eacute;di&eacute; &agrave; une pratique du Pilates,<br class="d-none d-md-block"> o&ugrave; chaque personne b&eacute;n&eacute;ficie d&rsquo;une attention r&eacute;elle<br class="d-none d-md-block"> et d&rsquo;un accompagnement sur-mesure.</p>
