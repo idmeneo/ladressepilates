@@ -146,6 +146,7 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  appearance: button;
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -1376,7 +1377,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .kf-section {
-  padding: clamp(4rem, 8vw, 7.2rem) 0;
+  padding: clamp(6rem, 12vw, 10.8rem) 0;
 }
 
 .kf-section-kicker,
@@ -1435,7 +1436,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .kf-button--hero {
-  background: transparent;
+  background: #ffffff1a;
   border: 2px solid rgba(255, 255, 255, 0.84);
   color: #fff;
   font-size: 0.86rem;
@@ -1520,24 +1521,39 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   font-size: 52px;
   font-weight: 400;
   letter-spacing: 0.3em;
-  line-height: 1.1;
+  line-height: 76px;
   margin: 0;
   margin-right: -0.3em;
   padding: 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
-.kf-hero .kf-hero-label,
+.kf-hero .kf-hero-label {
+  border: 0;
+  clear: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.8em;
+  line-height: 1;
+  margin-right: -0.8em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .kf-hero .kf-hero-heading {
   border: 0;
   clear: none;
   color: rgba(255, 255, 255, 0.9);
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.62em;
-  line-height: 1.2;
-  margin-right: -0.62em;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -1550,10 +1566,13 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 
 .kf-hero-subtitle {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.25rem;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.55;
+  letter-spacing: 0.04em;
+  line-height: 34px;
   max-width: 900px;
+  text-align: center;
 }
 
 .kf-section--studio {
@@ -1565,17 +1584,22 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   clear: none;
   color: #4a3021;
   font-family: "Spectral", Georgia, serif;
-  font-size: clamp(1.55rem, 2.1vw, 2.15rem);
-  font-weight: 400;
-  letter-spacing: 0.32em;
-  line-height: 1.2;
-  margin-right: -0.32em;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
+  margin-right: -0.2em;
   padding: 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .kf-studio-gallery {
   max-width: 980px;
+}
+
+.kf-studio-gallery-spacing {
+  margin-bottom: 2rem;
 }
 
 .kf-studio-image {
@@ -1587,9 +1611,13 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 
 .kf-studio-copy {
   color: #5d4a3f;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
   max-width: 860px;
+  text-align: center;
 }
 
 .kf-ratio {
@@ -1624,48 +1652,77 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   z-index: 2;
 }
 
-.krizia-front .kf-private-title,
-.krizia-front .kf-practice-title {
+.krizia-front .kf-private-title {
   border: 0;
   clear: none;
   color: #3d2b22;
   font-family: "Spectral", Georgia, serif;
-  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
-  font-weight: 400;
-  letter-spacing: 0.32em;
-  line-height: 1.15;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
   margin: 0;
-  margin-right: -0.32em;
+  margin-right: -0.2em;
   padding: 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .krizia-front .kf-private-kicker {
   color: #8b4d22;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.4em;
-  line-height: 1.35;
+  line-height: 28px;
   margin-right: -0.4em;
   margin-top: 1.3rem;
+  text-align: center;
   text-transform: uppercase;
 }
 
-.kf-private-text {
+.krizia-front .kf-private-text {
   color: #3d2b22;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.96rem, 1.18vw, 1.12rem);
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.85;
+  letter-spacing: 0.04em;
+  line-height: 34px;
+  text-align: center;
 }
 
-.kf-private-text strong {
-  font-weight: 800;
+.krizia-front .kf-private-text strong {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 34px;
 }
 
-.kf-private-text--small {
-  font-size: clamp(0.96rem, 1.18vw, 1.12rem);
+.krizia-front .kf-private-text--small {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
+  margin-right: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.krizia-front .kf-practice-title {
+  border: 0;
+  clear: none;
+  color: #361e0c;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
+  margin: 0;
+  margin-right: -0.2em;
+  padding: 0;
+  text-transform: uppercase;
 }
 
 .kf-private-oval,
@@ -1748,6 +1805,90 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   z-index: 2;
 }
 
+.kf-courses-swiper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.kf-courses-row.swiper-wrapper {
+  flex-wrap: nowrap;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px 0;
+}
+
+.kf-courses-row > .swiper-slide {
+  height: auto;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+}
+
+.kf-courses-pagination {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .kf-courses-swiper,
+  .kf-courses-swiper.swiper {
+    overflow: visible;
+  }
+
+  .kf-courses-row.swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+    transform: none !important;
+    width: auto;
+  }
+
+  .kf-courses-row.swiper-wrapper > .swiper-slide {
+    flex: 0 0 33.333333% !important;
+    margin-right: 0 !important;
+    max-width: 33.333333% !important;
+    width: 33.333333% !important;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  .kf-courses-row > .swiper-slide {
+    flex: 0 0 min(84vw, 300px) !important;
+    max-width: min(84vw, 300px) !important;
+    width: min(84vw, 300px) !important;
+  }
+
+  .kf-courses-row.swiper-wrapper {
+    justify-content: flex-start !important;
+  }
+
+  .kf-course-card .card-body {
+    min-height: 430px;
+    padding: 4.35rem 2.25rem 3.35rem;
+  }
+
+  .kf-courses-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    position: static;
+  }
+
+  .kf-courses-pagination .swiper-pagination-bullet {
+    background: rgba(125, 69, 27, 0.28);
+    border-radius: 999px;
+    height: 0.55rem;
+    margin: 0 !important;
+    opacity: 1;
+    width: 0.55rem;
+  }
+
+  .kf-courses-pagination .swiper-pagination-bullet-active {
+    background: #7d451b;
+    width: 1.2rem;
+  }
+}
+
 .krizia-front .kf-courses-title {
   border: 0;
   clear: none;
@@ -1760,11 +1901,6 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   margin-right: -0.34em;
   padding: 0;
   text-transform: uppercase;
-}
-
-.kf-courses-row > [class*="col-"] {
-  padding-left: 1.15rem;
-  padding-right: 1.15rem;
 }
 
 .kf-course-card {
@@ -1807,15 +1943,16 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   box-shadow: none;
 }
 
-.kf-course-card h3 {
-  color: #3d2b22;
+.krizia-front .kf-course-card h3 {
+  color: #361e0c;
   font-family: "Spectral", Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 21px;
   font-weight: 600;
-  letter-spacing: 0.36em;
-  line-height: 1.2;
+  letter-spacing: 0.2em;
+  line-height: 36px;
   margin: 0;
-  margin-right: -0.36em;
+  margin-right: -0.2em;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -1835,14 +1972,16 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   transform: scaleX(1);
 }
 
-.kf-course-card .kf-course-tagline {
-  color: #8b4d22;
+.krizia-front .kf-course-card .kf-course-tagline {
+  color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.45;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 34px;
   margin-top: 0.7rem;
   max-width: 280px;
+  text-align: center;
 }
 
 .kf-course-separator {
@@ -1854,29 +1993,43 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   width: 10px;
 }
 
-.kf-course-line {
-  color: #3d2b22;
-  display: block;
-  font-size: 1.12rem;
-  line-height: 1.4;
-}
-
-.kf-course-card .kf-price {
-  color: #8b4d22;
+.krizia-front .kf-course-line {
+  color: #361e0c;
   display: block;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  margin: 2rem 0 2.8rem;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
+  text-align: center;
 }
 
-.kf-course-card .kf-button {
-  font-size: 0.82rem;
-  letter-spacing: 0.34em;
+.krizia-front .kf-course-card .kf-price {
+  color: #7d451b;
+  display: block;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  margin: 2rem 0 2.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krizia-front .kf-course-card .kf-button {
+  color: #e5d9ce;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 24px;
   min-height: 54px;
   min-width: 190px;
   padding: 0.95rem 1.55rem;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .kf-course-badge {
@@ -1924,26 +2077,28 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   z-index: 2;
 }
 
-.kf-statement-kicker {
+.krizia-front .kf-statement-kicker {
   color: rgba(255, 255, 255, 0.86);
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.72rem, 1vw, 0.9rem);
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.42em;
-  line-height: 1.3;
-  margin-right: -0.42em;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .krizia-front .kf-statement-title {
   color: #fff;
   font-family: "Spectral", Georgia, serif;
-  font-size: clamp(2.05rem, 3.05vw, 3.05rem);
-  font-weight: 400;
-  letter-spacing: 0.42em;
-  line-height: 1.42;
-  margin-right: -0.42em;
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: 0.4em;
+  line-height: 74px;
+  margin-right: -0.4em;
   max-width: 720px;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -1963,28 +2118,29 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 
 .kf-practice-copy {
   margin-left: clamp(2rem, 7vw, 9rem);
-  max-width: 610px;
+  /* max-width: 610px; */
   padding: clamp(4rem, 7vw, 7.5rem) clamp(1.25rem, 3vw, 3rem);
 }
 
 .krizia-front .kf-practice-kicker {
-  color: #8b4d22;
+  color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.82rem, 1.2vw, 1.05rem);
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.42em;
-  line-height: 1.4;
-  margin-right: -0.42em;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
   margin-top: 2rem;
   text-transform: uppercase;
 }
 
 .krizia-front .kf-practice-text {
-  color: #3d2b22;
+  color: #361e0c;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(1rem, 1.25vw, 1.35rem);
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.75;
+  letter-spacing: 0.04em;
+  line-height: 34px;
   margin-top: clamp(2.8rem, 4vw, 4.2rem);
 }
 
@@ -1992,8 +2148,13 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   margin-top: clamp(2.4rem, 3.4vw, 3.4rem);
 }
 
-.kf-practice-text strong {
-  font-weight: 800;
+.krizia-front .kf-practice-text strong {
+  color: #361e0c;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 34px;
 }
 
 .kf-practice-image {
@@ -2016,23 +2177,26 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   border-radius: 12px;
   margin-bottom: var(--kf-agenda-card-overlap);
   margin-top: 0;
-  max-width: 900px;
+  /* max-width: 1040px; */
   padding: 0;
   position: relative;
   transform: translateY(var(--kf-agenda-card-overlap));
-  z-index: 60;
+  width: 100%;
+  z-index: 54;
 }
 
 .kf-agenda-card .card-body {
-  padding: clamp(2.9rem, 5vw, 4.9rem) clamp(2rem, 5vw, 4.8rem) clamp(2.4rem, 4vw, 3.5rem);
+  position: relative;
+  z-index: 55;
+  padding: clamp(3.4rem, 5.4vw, 5.2rem) clamp(2.8rem, 5.4vw, 4.9rem) clamp(2.1rem, 3.2vw, 3rem);
 }
 
 .krizia-front img.kf-agenda-logo {
   display: block;
-  height: 112px;
-  margin-bottom: 2rem;
-  max-height: 112px;
-  max-width: 120px;
+  height: 126px;
+  margin-bottom: 2.25rem;
+  max-height: 126px;
+  max-width: 116px;
   object-fit: contain;
   width: auto;
 }
@@ -2040,14 +2204,15 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 .krizia-front .kf-agenda-title {
   border: 0;
   clear: none;
-  color: #3d2b22;
+  color: #2a2725;
   font-family: "Spectral", Georgia, serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.36em;
-  line-height: 1.35;
-  margin-right: -0.36em;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 36px;
+  margin-right: -0.2em;
   padding: 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -2068,7 +2233,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 
 .kf-event-list {
   border-top: 1px solid #e6dcd3;
-  margin-top: 1.55rem;
+  margin-top: 2rem;
 }
 
 .kf-event-list .row {
@@ -2078,100 +2243,200 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 
 .kf-event-list article {
   border-color: #e6dcd3 !important;
+  min-height: 175px;
+  padding-bottom: 2rem !important;
+  padding-top: 2rem !important;
 }
 
-.kf-event-date {
-  color: #af8262;
+@media screen and (min-width: 768px) {
+  .kf-event-list article {
+    align-items: stretch !important;
+  }
+
+  .kf-event-list article > .col-md-2 {
+    display: flex;
+    flex: 0 0 16%;
+    justify-content: center;
+    max-width: 16%;
+  }
+
+  .kf-event-list article > .col-md-6 {
+    flex: 0 0 56%;
+    max-width: 56%;
+    padding-left: 1.25rem;
+    padding-right: 1.5rem;
+  }
+
+  .kf-event-list article > .col-md-3 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.krizia-front .kf-event-date {
+  color: #9f795c;
   font-family: "Spectral", Georgia, serif;
   line-height: 1;
-  text-transform: uppercase;
+  min-width: 110px;
+  text-align: center;
 }
 
-.kf-event-date strong {
+.krizia-front .kf-event-date strong {
+  color: #9f795c;
   display: block;
-  font-size: 2.55rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.kf-event-date span {
-  display: block;
-  font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.92rem;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 70px;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-top: 0.05rem;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 1rem;
 }
 
-.kf-event-date small {
+.krizia-front .kf-event-date span {
+  color: #9f795c;
   display: block;
-  font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.7rem;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 40px;
   font-weight: 500;
-  letter-spacing: 0.34em;
-  margin-right: -0.34em;
-  margin-top: 0.2rem;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-top: 1rem;
+  text-align: center;
 }
 
-.kf-event-date em {
-  background: #af8262;
+.krizia-front .kf-event-date small {
+  color: #9f795c;
+  display: block;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  line-height: 30px;
+  margin-right: -0.4em;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.krizia-front .kf-event-date em {
+  background: #9f795c;
   border-radius: 999px;
-  color: #fff;
+  color: #e5d9ce;
   display: inline-block;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.58rem;
+  font-size: 14px;
   font-style: normal;
-  letter-spacing: 0.1em;
-  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 16px;
   margin-top: 0.65rem;
-  padding: 0.42rem 0.72rem;
+  min-width: 106px;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.kf-event-list h3 {
-  color: #3d2b22;
+.krizia-front .kf-event-list h3 {
+  color: #361e0c;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.32em;
-  line-height: 1.35;
-  margin: 0 0 0.45rem;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin: 0 0 0.35rem;
   text-transform: uppercase;
 }
 
-.kf-event-copy {
-  color: #4f4138;
+.krizia-front .kf-event-copy {
+  color: #361e0c;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.72rem;
-  line-height: 1.55;
-  max-width: 360px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 26px;
+  max-width: 520px;
 }
 
-.kf-event-duration {
-  color: #af8262;
-  display: inline-block;
+.krizia-front .kf-event-duration {
+  color: #9f795c;
+  align-items: center;
+  display: inline-flex;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.66rem;
-  letter-spacing: 0.02em;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 0.5rem;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+}
+
+.krizia-front .kf-event-duration::before {
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
 }
 
 .kf-event-action {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: auto;
+  padding-bottom: 0.1rem;
+  padding-top: 0.1rem;
 }
 
-.kf-event-price {
-  color: #8b4d22;
+.krizia-front .kf-event-price {
+  color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.kf-event-list .kf-button {
-  font-size: 0.58rem;
-  letter-spacing: 0.32em;
-  min-height: 38px;
-  min-width: 118px;
-  padding: 0.65rem 1rem;
+.krizia-front .kf-event-list .kf-button {
+  color: #e5d9ce;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 24px;
+  min-height: 42px;
+  min-width: 164px;
+  padding: 0.65rem 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 767px) {
+  .kf-agenda-card {
+    max-width: none;
+  }
+
+  .krizia-front .kf-event-date {
+    min-width: 0;
+  }
+
+  .krizia-front .kf-event-date em {
+    min-width: 0;
+  }
+
+  .kf-event-action {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .krizia-front .kf-event-list .kf-button {
+    min-width: 0;
+  }
 }
 
 .kf-mini-link,
@@ -2208,27 +2473,67 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   min-height: clamp(620px, 59.2vw, 853px);
 }
 
+.kf-quote-swiper {
+  overflow: hidden;
+}
+
 .kf-quote-equipment {
   gap: clamp(2.4rem, 7vw, 7rem);
+  position: relative;
+  z-index: 2;
 }
 
 .kf-quote-equipment li {
-  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+}
+
+.kf-quote-nav {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.78rem, 1.1vw, 1rem);
-  font-weight: 800;
-  letter-spacing: 0.42em;
-  line-height: 1.3;
-  margin-right: -0.42em;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
+  opacity: 0.72;
+  padding: 0;
+  text-align: center;
   text-transform: uppercase;
+  transition: color 160ms ease, opacity 160ms ease;
+}
+
+.kf-quote-nav:hover,
+.kf-quote-nav:focus,
+.kf-quote-nav.is-active {
+  color: #fff;
+  opacity: 1;
+}
+
+.kf-quote-nav:focus {
+  outline: 0;
+}
+
+.kf-quote-content {
+  align-items: center;
+}
+
+.kf-quote-content .swiper-slide {
+  height: auto;
 }
 
 .kf-quote-text {
-  color: rgba(255, 255, 255, 0.92);
+  color: #fff;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(1.1rem, 1.65vw, 1.45rem);
-  line-height: 1.65;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 40px;
   max-width: 760px;
+  text-align: center;
 }
 
 .kf-section--team {
@@ -2238,27 +2543,28 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 .krizia-front .kf-team-title {
   border: 0;
   clear: none;
-  color: #3d2b22;
+  color: #361e0c;
   font-family: "Spectral", Georgia, serif;
-  font-size: clamp(1.85rem, 2.6vw, 2.65rem);
-  font-weight: 400;
-  letter-spacing: 0.34em;
-  line-height: 1.2;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
   margin: 0;
-  margin-right: -0.34em;
+  margin-right: -0.2em;
   padding: 0;
   text-transform: uppercase;
 }
 
 .krizia-front .kf-team-kicker {
-  color: #8b4d22;
+  color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.72rem, 1vw, 0.9rem);
-  font-weight: 800;
-  letter-spacing: 0.48em;
-  line-height: 1.4;
-  margin-right: -0.48em;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
   margin-top: 1.4rem;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -2277,12 +2583,15 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .kf-team-copy {
-  color: #3d2b22;
+  color: #361e0c;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.96rem, 1.2vw, 1.12rem);
-  line-height: 1.75;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
   margin-top: clamp(3rem, 5vw, 4.6rem);
   max-width: 860px;
+  text-align: center;
 }
 
 .kf-section--faq {
@@ -2292,27 +2601,29 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 .krizia-front .kf-faq-title {
   border: 0;
   clear: none;
-  color: #3d2b22;
+  color: #361e0c;
   font-family: "Spectral", Georgia, serif;
-  font-size: clamp(1.85rem, 2.6vw, 2.65rem);
-  font-weight: 400;
-  letter-spacing: 0.34em;
-  line-height: 1.2;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
   margin: 0;
-  margin-right: -0.34em;
+  margin-right: -0.2em;
   padding: 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .krizia-front .kf-faq-kicker {
-  color: #8b4d22;
+  color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.72rem, 1vw, 0.9rem);
-  font-weight: 800;
-  letter-spacing: 0.48em;
-  line-height: 1.4;
-  margin-right: -0.48em;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
   margin-top: 1.45rem;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -2321,6 +2632,15 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   background: transparent;
   border: 0 !important;
   border-radius: 0;
+}
+
+.kf-faq-accordion .card-header {
+  color: #7d451b;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 34px;
 }
 
 .kf-faq-accordion {
@@ -2342,18 +2662,19 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .kf-faq-accordion .btn-link {
-  color: #8b4d22;
+  color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.45;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 34px;
   padding: 1.65rem 2.2rem 1.1rem 0;
   position: relative;
   text-decoration: none;
 }
 
 .kf-faq-accordion .btn-link::after {
-  color: #8b4d22;
+  color: #7d451b;
   content: "-";
   font-weight: 400;
   position: absolute;
@@ -2366,10 +2687,12 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .kf-faq-accordion .card-body {
-  color: #5f5147;
+  color: #403c38;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
   padding: 0 0 2rem;
 }
 
@@ -2388,27 +2711,29 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 .krizia-front .kf-values-title {
   border: 0;
   clear: none;
-  color: #3d2b22;
+  color: #361e0c;
   font-family: "Spectral", Georgia, serif;
-  font-size: clamp(1.85rem, 2.6vw, 2.65rem);
-  font-weight: 400;
-  letter-spacing: 0.34em;
-  line-height: 1.2;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
   margin: 0;
-  margin-right: -0.34em;
+  margin-right: -0.2em;
   padding: 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .krizia-front .kf-values-kicker {
-  color: #8b4d22;
+  color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.72rem, 1vw, 0.9rem);
-  font-weight: 800;
-  letter-spacing: 0.48em;
-  line-height: 1.4;
-  margin-right: -0.48em;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
   margin-top: 1.45rem;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -2423,32 +2748,40 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .kf-value-card h3 {
-  color: #3d2b22;
+  color: #361e0c;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.38em;
-  line-height: 1.7;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
   margin: 2.2rem auto 0;
-  margin-right: -0.38em;
+  margin-right: -0.4em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .kf-value-card p {
-  color: #5f5147;
+  color: #403c38;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 26px;
   margin: 1.8rem auto 0;
   max-width: 300px;
+  text-align: center;
 }
 
 .kf-value-card .kf-read-link {
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.38em;
-  margin-right: -0.38em;
+  color: #7d451b;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 24px;
+  margin-right: -0.4em;
   margin-top: 2.7rem;
+  text-transform: uppercase;
 }
 
 .kf-value-card .kf-read-link::after {
@@ -2465,23 +2798,27 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .kf-newsletter-title {
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(0.78rem, 1vw, 0.95rem);
-  font-weight: 800;
-  letter-spacing: 0.46em;
-  line-height: 1.35;
-  margin-right: -0.46em;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin-right: -0.4em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .kf-newsletter-copy {
-  color: rgba(255, 255, 255, 0.94);
+  color: #fff;
   font-family: "Manrope", Arial, sans-serif;
-  font-size: clamp(1rem, 1.35vw, 1.28rem);
-  line-height: 1.75;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
   margin-top: 1.9rem;
   max-width: 620px;
+  text-align: center;
 }
 
 .kf-newsletter-form {
@@ -2499,16 +2836,33 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   padding: 1rem 1.35rem;
 }
 
-.kf-newsletter .kf-button {
-  border-radius: 0;
-  font-size: 0.72rem;
+.kf-newsletter .kf-button,
+.kf-newsletter .kf-button--brown {
+  background: #7d451b;
+  border-color: #7d451b;
+  border-radius: 9999px;
+  color: #e5d9ce;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
   height: 58px;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.4em;
+  line-height: 20px;
   min-width: 210px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.kf-newsletter .kf-button:hover,
+.kf-newsletter .kf-button:focus {
+  background: #653617;
+  border-color: #653617;
+  color: #e5d9ce;
 }
 
 .kf-contact {
-  background: #884a1f;
+  background: #7D451B;
   color: #fff;
   padding: clamp(4.2rem, 7vw, 6.6rem) 0 clamp(1.2rem, 2.5vw, 2rem);
 }
@@ -2696,7 +3050,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   --kf-section-radius: clamp(18px, 2vw, 30px);
 }
 
-.krizia-front > section {
+.krizia-front > section:not(.kf-contact) {
   border-bottom-left-radius: var(--kf-section-radius);
   border-bottom-right-radius: var(--kf-section-radius);
   margin-bottom: calc(var(--kf-section-overlap) * -1);
@@ -2774,29 +3128,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 .krizia-front > section.kf-section--agenda {
-  z-index: 46;
-}
-
-@media screen and (min-width: 992px) {
-  .kf-section.py-5 {
-    padding-bottom: 5.2rem !important;
-    padding-top: 5.2rem !important;
-  }
-
-  .kf-section--private.py-5 {
-    padding-bottom: 6rem !important;
-    padding-top: 6rem !important;
-  }
-
-  .kf-section--faq.py-5 {
-    padding-bottom: 5.6rem !important;
-    padding-top: 5.6rem !important;
-  }
-
-  .kf-contact.py-5 {
-    padding-bottom: clamp(1.2rem, 2.5vw, 2rem) !important;
-    padding-top: clamp(4.2rem, 7vw, 6.6rem) !important;
-  }
+  z-index: 53;
 }
 
 @media screen and (max-width: 1199px) {
@@ -2908,7 +3240,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   .kf-practice-copy {
     margin-left: auto;
     margin-right: auto;
-    max-width: 700px;
+    /* max-width: 700px; */
     padding: 5rem 2rem;
   }
 
@@ -3156,7 +3488,6 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 
   .kf-hero {
     background-position: 58% center;
-    min-height: 740px;
     padding-bottom: 4rem;
     padding-top: 8rem;
   }
@@ -3281,7 +3612,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
     gap: 1.4rem 2.2rem;
   }
 
-  .kf-quote-equipment li {
+  .kf-quote-nav {
     font-size: 0.68rem;
     letter-spacing: 0.28em;
     margin-right: -0.28em;
@@ -3425,13 +3756,14 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
     display: block;
   }
 
-  .kf-newsletter-input,
-  .kf-newsletter .kf-button {
+  .kf-newsletter-input {
     width: 100%;
   }
 
   .kf-newsletter .kf-button {
+    display: inline-flex;
     margin-top: 0.75rem;
+    width: auto;
   }
 
   .kf-contact {
@@ -3477,4 +3809,1254 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   .krizia-front .kf-form-required {
     text-align: left;
   }
+}
+
+@media screen and (max-width: 1199px) {
+  body.home .krizia-scroll-header {
+    display: none;
+  }
+
+  body.home header#masthead {
+    background: #e7dccf !important;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: none;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: border-radius 160ms ease;
+    width: 100%;
+    z-index: 1200;
+  }
+
+  body.admin-bar.home header#masthead {
+    top: 32px;
+  }
+
+  body.home header#masthead:has(#main-nav.show),
+  body.home header#masthead:has(#main-nav.collapsing) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  body.home header#masthead:has(#main-nav.show) .krizia-mobile-booking,
+  body.home header#masthead:has(#main-nav.collapsing) .krizia-mobile-booking {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  body.home header#masthead .container {
+    max-width: none;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  body.home header#masthead .navbar {
+    align-items: center;
+    min-height: 62px;
+    position: relative;
+  }
+
+  body.home #masthead .navbar-toggler {
+    align-items: center;
+    border: 0;
+    display: inline-flex;
+    height: 62px;
+    justify-content: flex-start;
+    margin: 0;
+    order: 1;
+    padding: 0;
+    position: relative;
+    width: 44px;
+    z-index: 3;
+  }
+
+  body.home #masthead .navbar-toggler:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+
+  body.home #masthead .navbar-toggler-icon {
+    background: #8b4d22;
+    background-image: none;
+    height: 2px;
+    left: 0;
+    position: relative;
+    top: auto;
+    width: 17px;
+  }
+
+  body.home #masthead .navbar-toggler-icon::before,
+  body.home #masthead .navbar-toggler-icon::after {
+    background: #8b4d22;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 17px;
+  }
+
+  body.home #masthead .navbar-toggler-icon::before {
+    top: -7px;
+  }
+
+  body.home #masthead .navbar-toggler-icon::after {
+    top: 7px;
+  }
+
+  body.home .navbar-brand {
+    left: 50%;
+    margin: 0;
+    order: 2;
+    position: absolute;
+    top: 6px;
+    transform: translateX(-50%);
+    z-index: 4;
+  }
+
+  body.home .navbar-brand > a {
+    display: block;
+    position: relative;
+  }
+
+  body.home .navbar-brand > a::before {
+    background: #e7dccf;
+    border-bottom-left-radius: 38px;
+    border-bottom-right-radius: 38px;
+    content: "";
+    height: 131px;
+    left: 48%;
+    position: absolute;
+    top: -1px;
+    transform: translateX(-50%);
+    width: 81px;
+    z-index: 0;
+  }
+
+  body.home .navbar-brand .krizia-home-logo--white {
+    display: none;
+  }
+
+  body.home .navbar-brand .krizia-home-logo--brown {
+    display: block;
+    max-height: none;
+    position: relative;
+    width: 68px;
+    z-index: 1;
+  }
+
+  body.home .krizia-mobile-booking,
+  body.home .krizia-mobile-booking:hover,
+  body.home .krizia-mobile-booking:focus {
+    color: #8b4d22;
+    display: inline-flex;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.54em;
+    line-height: 1;
+    margin-left: auto;
+    order: 3;
+    padding: 0.45rem 0 0.45rem 0.45rem;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    z-index: 3;
+  }
+
+  body.home #masthead #main-nav.navbar-collapse {
+    background: #e7dccf;
+    border-radius: 0;
+    flex-basis: calc(100% + 44px);
+    margin-left: -22px;
+    margin-right: -22px;
+    margin-top: 0;
+    max-height: calc(100vh - 62px);
+    order: 4;
+    overflow-y: auto;
+    padding: 7.25rem 20px 2.7rem;
+    width: calc(100% + 44px);
+  }
+
+  body.home #main-nav.collapsing {
+    transition: height 220ms ease;
+  }
+
+  body.home #masthead .navbar-nav {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  body.home #masthead .navbar-nav > li {
+    width: 100%;
+  }
+
+  body.home #masthead .navbar-nav > li > a,
+  body.home:not(.theme-preset-active) #masthead .navbar-nav > li > a {
+    color: #8b4d22;
+    display: block;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.54em;
+    line-height: 1.2;
+    padding: 1.28rem 0;
+    text-transform: uppercase;
+  }
+
+  body.home #masthead .navbar-nav > li > a:hover,
+  body.home #masthead .navbar-nav > li > a:focus,
+  body.home:not(.theme-preset-active) #masthead .navbar-nav > li > a:hover {
+    color: #653617;
+  }
+
+  body.home #masthead .krizia-header-booking,
+  body.home #masthead .krizia-header-booking:hover,
+  body.home #masthead .krizia-header-booking:focus {
+    align-items: center;
+    background: transparent;
+    border: 1px solid #8b4d22;
+    border-radius: 999px;
+    color: #8b4d22;
+    display: inline-flex;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 800;
+    justify-content: center;
+    letter-spacing: 0.54em;
+    margin: 1.9rem 20px 0;
+    min-height: 48px;
+    min-width: calc(100% - 40px);
+    padding: 1rem 1.25rem 1rem 1.65rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar.home header#masthead {
+    top: 46px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .krizia-front {
+    --kf-section-overlap: 18px;
+    --kf-section-radius: 18px;
+  }
+
+  .kf-container {
+    max-width: calc(100% - 38px);
+  }
+
+  .kf-section {
+    padding-bottom: 4.2rem;
+    padding-top: 4.2rem;
+  }
+
+  .kf-hero {
+    background-position: 56% center;
+    padding-bottom: 3.6rem;
+    padding-top: 7rem;
+  }
+
+  .kf-hero .container-fluid {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .kf-hero-title {
+    font-size: clamp(2.05rem, 10vw, 2.75rem);
+    letter-spacing: 0.24em;
+    line-height: 1.18;
+    margin-right: -0.24em;
+  }
+
+  .kf-hero .kf-hero-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.62em;
+    line-height: 1;
+    margin-right: -0.62em;
+  }
+
+  .kf-hero .kf-hero-heading {
+    font-size: 0.7rem;
+    letter-spacing: 0.36em;
+    line-height: 1.8;
+    margin-right: -0.36em;
+  }
+
+  .kf-hero-mark {
+    height: 34px;
+  }
+
+  .kf-hero-subtitle {
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    line-height: 1.9;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+  }
+
+  .kf-button--hero {
+    font-size: 0.66rem;
+    letter-spacing: 0.32em;
+    min-height: 46px;
+    min-width: min(100%, 270px);
+    padding-left: 1.35rem;
+    padding-right: 1.15rem;
+  }
+
+  .kf-section--studio {
+    padding-bottom: 8rem;
+    padding-top: 7.6rem;
+  }
+
+  .krizia-front .kf-studio-title,
+  .krizia-front .kf-private-title,
+  .krizia-front .kf-courses-title,
+  .krizia-front .kf-practice-title,
+  .krizia-front .kf-team-title,
+  .krizia-front .kf-faq-title,
+  .krizia-front .kf-values-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.24em;
+    line-height: 1.45;
+    margin-right: -0.24em;
+  }
+
+  .kf-studio-gallery {
+    max-width: 265px;
+  }
+
+  .kf-studio-gallery .col-6 {
+    padding-left: 0.32rem !important;
+    padding-right: 0.32rem !important;
+  }
+
+  .kf-studio-image {
+    height: 185px;
+  }
+
+  .kf-studio-copy {
+    font-size: 0.58rem;
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+    max-width: none;
+  }
+
+  .kf-section--private {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+
+  .krizia-front .kf-private-kicker,
+  .krizia-front .kf-practice-kicker,
+  .krizia-front .kf-team-kicker,
+  .krizia-front .kf-faq-kicker,
+  .krizia-front .kf-values-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    line-height: 1.8;
+    margin-right: -0.32em;
+    margin-top: 1rem;
+  }
+
+  .krizia-front .kf-private-text,
+  .krizia-front .kf-private-text strong,
+  .krizia-front .kf-private-text--small {
+    font-size: 0.74rem;
+    letter-spacing: 0.02em;
+    line-height: 1.95;
+  }
+
+  .krizia-front .kf-private-text.mt-5,
+  .krizia-front .kf-private-text--small.mt-5 {
+    margin-top: 1.8rem !important;
+  }
+
+  .kf-section-dot {
+    margin-top: 1.45rem !important;
+  }
+
+  .kf-oval {
+    max-width: 118px;
+  }
+
+  .kf-section--private .row.d-lg-none {
+    align-items: center;
+    margin-top: 2.2rem !important;
+  }
+
+  .kf-section--courses {
+    padding-bottom: 4.4rem;
+    padding-top: 3.8rem;
+  }
+
+  .kf-courses-container {
+    overflow: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .krizia-front .kf-courses-title {
+    margin-bottom: 2rem !important;
+  }
+
+  .kf-courses-swiper {
+    overflow: visible;
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+
+  .kf-courses-row > [class*="col-"] {
+    margin-bottom: 0 !important;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .kf-course-card .card-body {
+    border-radius: 14px;
+    min-height: 330px;
+    padding: 2.75rem 1.15rem 2.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .kf-course-card--featured .card-body {
+    background: #fff;
+  }
+
+  .krizia-front .kf-course-card h3 {
+    font-size: 1.05rem;
+    letter-spacing: 0.22em;
+    line-height: 1.45;
+    margin-right: -0.22em;
+  }
+
+  .krizia-front .kf-course-card .kf-course-tagline {
+    font-size: 0.76rem;
+    letter-spacing: 0.02em;
+    line-height: 1.75;
+    max-width: 190px;
+  }
+
+  .kf-course-title-line {
+    margin-top: 0.55rem;
+    width: 22px;
+  }
+
+  .kf-course-separator {
+    height: 21px;
+    margin: 1rem 0 1.15rem;
+    width: 8px;
+  }
+
+  .krizia-front .kf-course-line {
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+  }
+
+  .krizia-front .kf-course-card .kf-price {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 1.35rem 0 1.7rem;
+  }
+
+  .krizia-front .kf-course-card .kf-button {
+    font-size: 0.66rem;
+    letter-spacing: 0.3em;
+    line-height: 1;
+    min-height: 40px;
+    min-width: 148px;
+    padding: 0.75rem 1rem 0.75rem 1.28rem;
+  }
+
+  .kf-course-badge {
+    font-size: 0.64rem;
+    min-width: 116px;
+    padding: 0.44rem 0.9rem;
+    top: -1rem;
+  }
+
+  .kf-statement {
+    background-position: center center;
+    min-height: 430px;
+  }
+
+  .kf-statement-logo {
+    max-width: 175px;
+    width: 175px;
+  }
+
+  .krizia-front .kf-statement-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    line-height: 1.8;
+    margin-right: -0.32em;
+  }
+
+  .krizia-front .kf-statement-title {
+    font-size: clamp(1.35rem, 7vw, 1.95rem);
+    letter-spacing: 0.24em;
+    line-height: 1.75;
+    margin-right: -0.24em;
+  }
+
+  .kf-practice-copy {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 2.15rem 3rem;
+    text-align: center;
+  }
+
+  .krizia-front .kf-practice-text,
+  .krizia-front .kf-practice-text strong {
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    line-height: 1.95;
+  }
+
+  .krizia-front .kf-practice-text {
+    margin-top: 1.65rem;
+  }
+
+  .krizia-front .kf-practice-text--objective {
+    margin-top: 1.4rem;
+  }
+
+  .kf-practice-image {
+    min-height: 360px;
+  }
+
+  .kf-section--agenda {
+    --kf-agenda-card-overlap: -3.2rem;
+  }
+
+  .kf-agenda-card {
+    border-radius: 12px;
+    max-width: none;
+  }
+
+  .kf-agenda-card .card-body {
+    padding: 2.6rem 0 2.1rem;
+  }
+
+  .krizia-front img.kf-agenda-logo {
+    margin-bottom: 1.25rem;
+  }
+
+  .krizia-front .kf-agenda-title {
+    font-size: 0.86rem;
+    letter-spacing: 0.22em;
+    line-height: 1.8;
+    margin-right: -0.22em;
+  }
+
+  .kf-event-list {
+    margin-top: 1.25rem;
+  }
+
+  .kf-event-list article {
+    align-items: flex-start !important;
+    min-height: 0;
+    padding-bottom: 1.25rem !important;
+    padding-top: 1.25rem !important;
+  }
+
+  .kf-event-list article > .col-4 {
+    padding-left: 0;
+    padding-right: 0.45rem;
+  }
+
+  .kf-event-list article > .col-8 {
+    padding-left: 0.45rem;
+    padding-right: 0;
+  }
+
+  .krizia-front .kf-event-date {
+    min-width: 0;
+  }
+
+  .krizia-front .kf-event-date strong {
+    font-size: 2.05rem;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .krizia-front .kf-event-date span {
+    font-size: 1.15rem;
+    line-height: 1;
+    margin-top: 0.1rem;
+  }
+
+  .krizia-front .kf-event-date small {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    line-height: 1.6;
+    margin-right: -0.22em;
+  }
+
+  .krizia-front .kf-event-date em {
+    font-size: 0.48rem;
+    line-height: 1;
+    min-width: 0;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .krizia-front .kf-event-list h3 {
+    font-size: 0.52rem;
+    letter-spacing: 0.28em;
+    line-height: 1.8;
+    margin-bottom: 0.35rem;
+  }
+
+  .krizia-front .kf-event-copy {
+    font-size: 0.54rem;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+    max-width: none;
+  }
+
+  .krizia-front .kf-event-duration {
+    font-size: 0.52rem;
+    gap: 0.35rem;
+    line-height: 1.4;
+  }
+
+  .krizia-front .kf-event-duration::before {
+    height: 8px;
+    width: 8px;
+  }
+
+  .kf-event-action {
+    align-items: flex-start;
+    display: block;
+    padding-top: 0.7rem;
+  }
+
+  .kf-event-list article > .kf-event-action {
+    flex: 0 0 100%;
+    margin-left: 0;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .krizia-front .kf-event-price {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin-bottom: 0.55rem;
+    text-align: left;
+  }
+
+  .krizia-front .kf-event-list .kf-button {
+    font-size: 0.52rem;
+    letter-spacing: 0.28em;
+    line-height: 1;
+    min-height: 32px;
+    min-width: 112px;
+    padding: 0.62rem 0.75rem 0.62rem 0.98rem;
+    width: 100%;
+  }
+
+  .kf-quote-band {
+    min-height: 430px;
+    padding-bottom: 3.8rem;
+    padding-top: 3.8rem;
+  }
+
+  .kf-quote-swiper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 38px);
+  }
+
+  .kf-quote-equipment {
+    gap: 1.4rem 1.85rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 270px;
+  }
+
+  .kf-quote-nav {
+    font-size: 0.6rem;
+    letter-spacing: 0.34em;
+    line-height: 1.5;
+    margin-right: -0.34em;
+  }
+
+  .kf-quote-text {
+    font-size: 0.82rem;
+    line-height: 1.85;
+    max-width: 285px;
+  }
+
+  .kf-team-grid {
+    margin-top: 2.4rem;
+  }
+
+  .kf-team-grid > [class*="col-"] {
+    flex: 0 0 215px;
+    max-width: 215px;
+  }
+
+  .kf-team-card img {
+    aspect-ratio: 0.82;
+  }
+
+  .kf-team-copy {
+    font-size: 0.66rem;
+    line-height: 1.8;
+    max-width: 285px;
+  }
+
+  .kf-faq-accordion {
+    margin-top: 2.1rem;
+  }
+
+  .kf-faq-accordion .btn-link {
+    font-size: 0.72rem;
+    line-height: 1.6;
+    padding: 1rem 1.55rem 0.85rem 0;
+  }
+
+  .kf-faq-accordion .btn-link::after {
+    top: 1rem;
+  }
+
+  .kf-faq-accordion .card-body {
+    font-size: 0.68rem;
+    line-height: 1.85;
+    padding-bottom: 1.7rem;
+  }
+
+  .kf-values-grid {
+    margin-top: 2.4rem;
+  }
+
+  .kf-value-card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 290px;
+  }
+
+  .kf-value-card + .kf-value-card,
+  .kf-values-grid > [class*="col-"] + [class*="col-"] .kf-value-card {
+    margin-top: 2.6rem;
+  }
+
+  .kf-value-card h3 {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    line-height: 1.8;
+    margin-right: -0.28em;
+    margin-top: 1.55rem;
+  }
+
+  .kf-value-card p {
+    font-size: 0.66rem;
+    line-height: 1.75;
+    margin-top: 1.15rem;
+  }
+
+  .kf-value-card .kf-read-link {
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    margin-right: -0.3em;
+    margin-top: 1.45rem;
+  }
+
+  .kf-newsletter {
+    min-height: 430px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .kf-newsletter-title {
+    font-size: 0.62rem;
+    letter-spacing: 0.34em;
+    margin-right: -0.34em;
+  }
+
+  .kf-newsletter-copy {
+    font-size: 0.84rem;
+    line-height: 1.8;
+    max-width: 310px;
+  }
+
+  .kf-newsletter-input {
+    height: 46px;
+    font-size: 0.72rem;
+  }
+
+  .kf-newsletter .kf-button {
+    font-size: 0.58rem;
+    height: 46px;
+    letter-spacing: 0.28em;
+  }
+
+  .kf-contact {
+    padding-top: 3.6rem;
+  }
+
+  .krizia-front .kf-contact-title {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    line-height: 1.5;
+    margin-right: -0.2em;
+    text-align: center;
+  }
+
+  .kf-contact-brand {
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .kf-contact-details {
+    margin-left: 0;
+    padding-top: 1.4rem;
+  }
+
+  .kf-contact-booking {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 280px;
+  }
+
+  .kf-contact-social {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .kf-hero-title {
+    font-size: clamp(2.6rem, 11vw, 3.25rem);
+    line-height: 1.18;
+  }
+
+  .kf-hero .kf-hero-label {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .kf-hero .kf-hero-heading {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .kf-hero-subtitle {
+    font-size: 18px;
+    line-height: 34px;
+    max-width: 340px;
+  }
+
+  .kf-button--hero {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .krizia-front .kf-studio-title,
+  .krizia-front .kf-private-title,
+  .krizia-front .kf-courses-title,
+  .krizia-front .kf-practice-title,
+  .krizia-front .kf-team-title,
+  .krizia-front .kf-faq-title,
+  .krizia-front .kf-values-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .krizia-front .kf-studio-title {
+    font-family: "Spectral", Georgia, serif;
+    font-size: 30px;
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    line-height: 48px;
+    margin-right: -0.2em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .krizia-front .kf-private-kicker,
+  .krizia-front .kf-practice-kicker,
+  .krizia-front .kf-team-kicker,
+  .krizia-front .kf-faq-kicker,
+  .krizia-front .kf-values-kicker,
+  .krizia-front .kf-statement-kicker,
+  .kf-newsletter-title {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .kf-studio-copy,
+  .krizia-front .kf-private-text,
+  .krizia-front .kf-private-text strong,
+  .krizia-front .kf-private-text--small,
+  .krizia-front .kf-practice-text,
+  .krizia-front .kf-practice-text strong,
+  .kf-team-copy,
+  .kf-faq-accordion .card-body,
+  .kf-newsletter-copy {
+    font-size: 18px;
+    line-height: 34px;
+  }
+
+  .kf-studio-copy {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 34px;
+    text-align: center;
+  }
+
+  .krizia-front .kf-course-card h3 {
+    font-size: 21px;
+    line-height: 36px;
+  }
+
+  .krizia-front .kf-course-card .kf-course-tagline,
+  .krizia-front .kf-course-line {
+    font-size: 18px;
+    line-height: 34px;
+  }
+
+  .krizia-front .kf-course-card .kf-price {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .krizia-front .kf-course-card .kf-button,
+  .krizia-front .kf-event-list .kf-button,
+  .kf-value-card .kf-read-link,
+  .kf-newsletter .kf-button,
+  .kf-contact-booking,
+  .kf-form .kf-button {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .kf-course-badge {
+    font-size: 14px;
+  }
+
+  .krizia-front .kf-statement-title {
+    font-size: 34px;
+    line-height: 52px;
+  }
+
+  .krizia-front .kf-agenda-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .krizia-front .kf-event-list h3,
+  .krizia-front .kf-event-copy,
+  .krizia-front .kf-event-duration {
+    font-size: 16px;
+  }
+
+  .krizia-front .kf-event-list h3 {
+    line-height: 28px;
+  }
+
+  .krizia-front .kf-event-copy {
+    line-height: 26px;
+  }
+
+  .krizia-front .kf-event-duration {
+    line-height: 30px;
+  }
+
+  .krizia-front .kf-event-price {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .krizia-front .kf-event-date strong {
+    font-size: 46px;
+  }
+
+  .krizia-front .kf-event-date span {
+    font-size: 24px;
+  }
+
+  .krizia-front .kf-event-date small {
+    font-size: 14px;
+  }
+
+  .krizia-front .kf-event-date em {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .kf-quote-nav {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .kf-quote-text {
+    font-size: 22px;
+    line-height: 40px;
+    max-width: 340px;
+  }
+
+  .kf-faq-accordion .btn-link {
+    font-size: 20px;
+    line-height: 34px;
+  }
+
+  .kf-value-card h3 {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .kf-value-card p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .kf-newsletter-input,
+  .kf-form-control {
+    font-size: 16px;
+  }
+
+  .krizia-front .kf-contact-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .kf-contact-details h3,
+  .kf-contact-info p,
+  .kf-contact-details p,
+  .kf-contact-social p,
+  .kf-contact-social a,
+  .kf-form-required {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .kf-mini-link,
+  .kf-read-link,
+  .kf-contact-copyright {
+    font-size: 14px !important;
+    line-height: 24px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .kf-courses-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .kf-courses-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .kf-courses-row > [class*="col-"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .krizia-front .kf-private-title,
+  .krizia-front .kf-practice-title,
+  .krizia-front .kf-team-title,
+  .krizia-front .kf-faq-title,
+  .krizia-front .kf-values-title {
+    font-size: 30px;
+    line-height: 48px;
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+  }
+
+  .krizia-front .kf-private-kicker,
+  .krizia-front .kf-practice-kicker,
+  .krizia-front .kf-team-kicker,
+  .krizia-front .kf-faq-kicker,
+  .krizia-front .kf-values-kicker,
+  .krizia-front .kf-statement-kicker,
+  .kf-newsletter-title {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.4em;
+    margin-right: -0.4em;
+  }
+
+  .krizia-front .kf-private-text,
+  .krizia-front .kf-private-text strong,
+  .krizia-front .kf-private-text--small,
+  .krizia-front .kf-practice-text,
+  .krizia-front .kf-practice-text strong,
+  .kf-team-copy,
+  .kf-faq-accordion .card-body {
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: 0.04em;
+  }
+
+  .krizia-front .kf-courses-title,
+  .krizia-front .kf-agenda-title {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+  }
+
+  .kf-course-badge {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+  }
+
+  .krizia-front .kf-course-card h3 {
+    font-size: 21px;
+    line-height: 36px;
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+  }
+
+  .krizia-front .kf-course-card .kf-course-tagline {
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+  }
+
+  .krizia-front .kf-course-line {
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: 0.04em;
+  }
+
+  .krizia-front .kf-course-card .kf-button,
+  .krizia-front .kf-event-list .kf-button,
+  .kf-value-card .kf-read-link,
+  .kf-newsletter .kf-button,
+  .kf-contact-booking,
+  .kf-form .kf-button {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.4em;
+  }
+
+  .krizia-front .kf-statement-title {
+    font-size: 30px;
+    line-height: 46px;
+    letter-spacing: 0.4em;
+    margin-right: -0.4em;
+  }
+
+  .krizia-front .kf-event-list h3 {
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.4em;
+  }
+
+  .krizia-front .kf-event-copy {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.06em;
+  }
+
+  .krizia-front .kf-event-date strong {
+    font-size: 60px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+  }
+
+  .krizia-front .kf-event-date span {
+    font-size: 34px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+    margin-top: 1rem;
+  }
+
+  .krizia-front .kf-event-date small {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0.4em;
+    margin-right: -0.4em;
+  }
+
+  .krizia-front .kf-event-date em {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .krizia-front .kf-event-duration {
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.04em;
+  }
+
+  .krizia-front .kf-event-price {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+  }
+
+  .kf-quote-nav {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.4em;
+    margin-right: -0.4em;
+  }
+
+  .kf-quote-text {
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0.04em;
+  }
+
+  .kf-faq-accordion .btn-link {
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: 0.04em;
+  }
+
+  .kf-value-card h3 {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.4em;
+    margin-right: -0.4em;
+  }
+
+  .kf-value-card p,
+  .kf-newsletter-copy {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.06em;
+  }
+
+  .kf-value-card .kf-read-link {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.4em;
+    margin-right: -0.4em;
+  }
+
+  /* .kf-section--practice {
+    padding-bottom: 0!important;
+  } */
+
+  /* .kf-image-left, .kf-image-right {
+    min-height: 450px;
+  } */
 }

@@ -16,55 +16,55 @@ if ( ! function_exists( 'wp_bootstrap_starter_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function wp_bootstrap_starter_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on WP Bootstrap Starter, use a find and replace
-	 * to change 'wp-bootstrap-starter' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'wp-bootstrap-starter', get_template_directory() . '/languages' );
+        /*
+         * Make theme available for translation.
+         * Translations can be filed in the /languages/ directory.
+         * If you're building a theme based on WP Bootstrap Starter, use a find and replace
+         * to change 'wp-bootstrap-starter' to the name of your theme in all the template files.
+         */
+        load_theme_textdomain( 'wp-bootstrap-starter', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
+        /*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+         */
+        add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
+        /*
+         * Enable support for Post Thumbnails on posts and pages.
+         *
+         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+        add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'wp-bootstrap-starter' ),
-	) );
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus( array(
+                'primary' => esc_html__( 'Primary', 'wp-bootstrap-starter' ),
+        ) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'comment-form',
-		'comment-list',
-		'caption',
-	) );
+        /*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+        add_theme_support( 'html5', array(
+                'comment-form',
+                'comment-list',
+                'caption',
+        ) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'wp_bootstrap_starter_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+        // Set up the WordPress core custom background feature.
+        add_theme_support( 'custom-background', apply_filters( 'wp_bootstrap_starter_custom_background_args', array(
+                'default-color' => 'ffffff',
+                'default-image' => '',
+        ) ) );
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+        // Add theme support for selective refresh for widgets.
+        add_theme_support( 'customize-selective-refresh-widgets' );
 
     function wp_boostrap_starter_add_editor_styles() {
         add_editor_style( 'custom-editor-style.css' );
@@ -107,7 +107,7 @@ add_action( 'admin_notices', 'wp_bootstrap_starter_reminder' );
  * @global int $content_width
  */
 function wp_bootstrap_starter_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'wp_bootstrap_starter_content_width', 1170 );
+        $GLOBALS['content_width'] = apply_filters( 'wp_bootstrap_starter_content_width', 1170 );
 }
 add_action( 'after_setup_theme', 'wp_bootstrap_starter_content_width', 0 );
 
@@ -161,7 +161,7 @@ add_action( 'widgets_init', 'wp_bootstrap_starter_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wp_bootstrap_starter_scripts() {
-	// load bootstrap css
+        // load bootstrap css
     if ( get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
         wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' );
         wp_enqueue_style( 'wp-bootstrap-starter-fontawesome-cdn', 'https://use.fontawesome.com/releases/v5.15.1/css/all.css' );
@@ -169,11 +169,11 @@ function wp_bootstrap_starter_scripts() {
         wp_enqueue_style( 'wp-bootstrap-starter-bootstrap-css', get_template_directory_uri() . '/inc/assets/css/bootstrap.min.css' );
         wp_enqueue_style( 'wp-bootstrap-starter-fontawesome-cdn', get_template_directory_uri() . '/inc/assets/css/fontawesome.min.css' );
     }
-	// load bootstrap css
-	// load AItheme styles
-	// load WP Bootstrap Starter styles
-	wp_enqueue_style( 'krizia-google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap', array(), null );
-	wp_enqueue_style( 'wp-bootstrap-starter-style', get_stylesheet_uri() );
+        // load bootstrap css
+        // load AItheme styles
+        // load WP Bootstrap Starter styles
+        wp_enqueue_style( 'krizia-google-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Spectral:wght@200;400;500;600;700&display=swap', array(), null );
+        wp_enqueue_style( 'wp-bootstrap-starter-style', get_stylesheet_uri() );
     if(get_theme_mod( 'theme_option_setting' ) && get_theme_mod( 'theme_option_setting' ) !== 'default') {
         wp_enqueue_style( 'wp-bootstrap-starter-'.get_theme_mod( 'theme_option_setting' ), get_template_directory_uri() . '/inc/assets/css/presets/theme-option/'.get_theme_mod( 'theme_option_setting' ).'.css', false, '' );
     }
@@ -211,33 +211,41 @@ function wp_bootstrap_starter_scripts() {
         wp_enqueue_style( 'wp-bootstrap-starter-default', get_template_directory_uri() . '/inc/assets/css/presets/color-scheme/blue.css', false, '' );
     }*/
 
-	wp_enqueue_script('jquery');
+        wp_enqueue_script('jquery');
 
     // Internet Explorer HTML5 support
     wp_enqueue_script( 'html5hiv',get_template_directory_uri().'/inc/assets/js/html5.js', array(), '3.7.0', false );
     wp_script_add_data( 'html5hiv', 'conditional', 'lt IE 9' );
 
-	// load bootstrap js
+        // load bootstrap js
     if ( get_theme_mod( 'cdn_assets_setting' ) === 'yes' ) {
         wp_enqueue_script('wp-bootstrap-starter-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1/dist/umd/popper.min.js', array(), '', true );
-    	wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js', array(), '', true );
+        wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js', array(), '', true );
     } else {
         wp_enqueue_script('wp-bootstrap-starter-popper', get_template_directory_uri() . '/inc/assets/js/popper.min.js', array(), '', true );
         wp_enqueue_script('wp-bootstrap-starter-bootstrapjs', get_template_directory_uri() . '/inc/assets/js/bootstrap.min.js', array(), '', true );
     }
     wp_enqueue_script('wp-bootstrap-starter-themejs', get_template_directory_uri() . '/inc/assets/js/theme-script.min.js', array(), '', true );
-	wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
+        wp_enqueue_script( 'wp-bootstrap-starter-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 
-	if ( is_front_page() ) {
-		wp_add_inline_script(
-			'wp-bootstrap-starter-themejs',
-			"(function(){\n  var hero = document.querySelector('.kf-hero');\n  var scrollHeader = document.querySelector('.krizia-scroll-header');\n  var body = document.body;\n  if (!hero || !scrollHeader || !body) {\n    return;\n  }\n\n  function updateScrollHeader() {\n    var triggerPoint = hero.offsetTop + hero.offsetHeight - 24;\n    var shouldShow = window.scrollY >= triggerPoint;\n    body.classList.toggle('krizia-scroll-header-visible', shouldShow);\n    scrollHeader.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');\n  }\n\n  updateScrollHeader();\n  window.addEventListener('scroll', updateScrollHeader, { passive: true });\n  window.addEventListener('resize', updateScrollHeader);\n})();"
-		);
-	}
+        if ( is_front_page() ) {
+            wp_enqueue_style( 'krizia-swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.1.14' );
+            wp_enqueue_script( 'krizia-swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.1.14', true );
+            wp_add_inline_script(
+                'krizia-swiper',
+                "(function(){\n  var coursesSwiper = null;\n  var coursesQuery = window.matchMedia('(max-width: 991.98px)');\n\n  function updateCoursesSwiper() {\n    var container = document.querySelector('.kf-courses-swiper');\n\n    if (!container || typeof window.Swiper !== 'function') {\n      return;\n    }\n\n    if (coursesQuery.matches) {\n      if (!coursesSwiper) {\n        coursesSwiper = new Swiper(container, {\n          slidesPerView: 'auto',\n          slidesPerGroup: 1,\n          centeredSlides: true,\n          centeredSlidesBounds: true,\n          spaceBetween: 16,\n          grabCursor: true,\n          pagination: {\n            el: '.kf-courses-pagination',\n            clickable: true\n          },\n          watchOverflow: true\n        });\n      }\n      return;\n    }\n\n    if (coursesSwiper) {\n      coursesSwiper.destroy(true, true);\n      coursesSwiper = null;\n    }\n  }\n\n  function initCoursesSwiper() {\n    if (document.readyState === 'loading') {\n      document.addEventListener('DOMContentLoaded', updateCoursesSwiper, { once: true });\n    } else {\n      updateCoursesSwiper();\n    }\n  }\n\n  if (coursesQuery.addEventListener) {\n    coursesQuery.addEventListener('change', updateCoursesSwiper);\n  } else if (coursesQuery.addListener) {\n    coursesQuery.addListener(updateCoursesSwiper);\n  }\n\n  initCoursesSwiper();\n  window.addEventListener('resize', updateCoursesSwiper);\n})();",
+                "(function(){\n  var coursesSwiper = null;\n  var coursesQuery = window.matchMedia('(max-width: 991.98px)');\n\n  function updateCoursesSwiper() {\n    var container = document.querySelector('.kf-courses-swiper');\n\n    if (!container || typeof window.Swiper !== 'function') {\n      return;\n    }\n\n    if (coursesQuery.matches) {\n      if (!coursesSwiper) {\n        coursesSwiper = new Swiper(container, {\n          slidesPerView: 'auto',\n          slidesPerGroup: 1,\n          centeredSlides: true,\n          centeredSlidesBounds: false,\n          centerInsufficientSlides: true,\n          spaceBetween: 16,\n          grabCursor: true,\n          pagination: {\n            el: '.kf-courses-pagination',\n            clickable: true\n          },\n          watchOverflow: true\n        });\n      }\n      return;\n    }\n\n    if (coursesSwiper) {\n      coursesSwiper.destroy(true, true);\n      coursesSwiper = null;\n    }\n  }\n\n  function initCoursesSwiper() {\n    if (document.readyState === 'loading') {\n      document.addEventListener('DOMContentLoaded', updateCoursesSwiper, { once: true });\n    } else {\n      updateCoursesSwiper();\n    }\n  }\n\n  if (coursesQuery.addEventListener) {\n    coursesQuery.addEventListener('change', updateCoursesSwiper);\n  } else if (coursesQuery.addListener) {\n    coursesQuery.addListener(updateCoursesSwiper);\n  }\n\n  initCoursesSwiper();\n  window.addEventListener('resize', updateCoursesSwiper);\n})();",
+                'after'
+            );
+                wp_add_inline_script(
+                        'wp-bootstrap-starter-themejs',
+                        "(function(){\n  var hero = document.querySelector('.kf-hero');\n  var scrollHeader = document.querySelector('.krizia-scroll-header');\n  var body = document.body;\n  if (!hero || !scrollHeader || !body) {\n    return;\n  }\n\n  function updateScrollHeader() {\n    var triggerPoint = hero.offsetTop + hero.offsetHeight - 24;\n    var shouldShow = window.scrollY >= triggerPoint;\n    body.classList.toggle('krizia-scroll-header-visible', shouldShow);\n    scrollHeader.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');\n  }\n\n  updateScrollHeader();\n  window.addEventListener('scroll', updateScrollHeader, { passive: true });\n  window.addEventListener('resize', updateScrollHeader);\n})();"
+                );
+        }
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+                wp_enqueue_script( 'comment-reply' );
+        }
 }
 add_action( 'wp_enqueue_scripts', 'wp_bootstrap_starter_scripts' );
 

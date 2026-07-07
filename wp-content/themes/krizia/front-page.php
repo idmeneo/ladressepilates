@@ -28,10 +28,10 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--studio py-5" id="studio">
+			<section class="kf-section kf-section--studio" id="studio">
 				<div class="container kf-container text-center">
 					<h2 class="kf-studio-title mb-4">Le studio</h2>
-					<div class="row no-gutters justify-content-center align-items-stretch kf-studio-gallery mx-auto mb-4">
+					<div class="row no-gutters justify-content-center align-items-stretch kf-studio-gallery mx-auto kf-studio-gallery-spacing">
 						<div class="col-6 col-md-5 col-lg-4 px-2">
 							<img src="<?php echo esc_url( $krizia_asset_uri . 'studio-main.jpg' ); ?>" alt="Salle de pilates avec reformers" class="img-fluid kf-studio-image">
 						</div>
@@ -54,7 +54,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</div>
 
-			<section class="kf-section kf-section--private py-5 position-relative">
+			<section class="kf-section kf-section--private position-relative">
 				<div class="container kf-container">
 					<div class="row justify-content-center text-center">
 						<div class="col-12 col-lg-6">
@@ -65,14 +65,14 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 							<div class="kf-section-dot mx-auto mt-4" aria-hidden="true"></div>
 						</div>
 					</div>
-					<div class="row d-lg-none justify-content-center mt-4">
+					<div class="kf-images row d-lg-none justify-content-center mt-4">
 						<div class="col-5">
-							<div class="kf-oval kf-oval--left mx-auto">
+							<div class="kf-oval kf-oval--left mx-auto kf-image-left">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'movement-detail.png' ); ?>" alt="Mouvement de pilates au sol">
 							</div>
 						</div>
 						<div class="col-5">
-							<div class="kf-oval kf-oval--right mx-auto">
+							<div class="kf-oval kf-oval--right mx-auto kf-image-right">
 								<img src="<?php echo esc_url( $krizia_asset_uri . 'reformer-portrait.png' ); ?>" alt="Eleve allongee sur reformer">
 							</div>
 						</div>
@@ -87,8 +87,9 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 							<h2 class="kf-courses-title mb-5">Les formules</h2>
 						</div>
 					</div>
-					<div class="row justify-content-center kf-courses-row">
-						<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+					<div class="kf-courses-swiper swiper">
+						<div class="row justify-content-center kf-courses-row swiper-wrapper">
+							<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0 swiper-slide">
 							<article class="card kf-course-card h-100 border-0 text-center">
 								<div class="card-body d-flex flex-column align-items-center justify-content-center">
 									<h3 class="card-title">Visiteur</h3>
@@ -100,8 +101,8 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 									<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 								</div>
 							</article>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0 swiper-slide">
 							<article class="card kf-course-card kf-course-card--featured h-100 text-center">
 								<span class="kf-course-badge">Coup de coeur</span>
 								<div class="card-body d-flex flex-column align-items-center justify-content-center">
@@ -114,8 +115,8 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 									<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 								</div>
 							</article>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 swiper-slide">
 							<article class="card kf-course-card h-100 border-0 text-center">
 								<div class="card-body d-flex flex-column align-items-center justify-content-center">
 									<h3 class="card-title">R&eacute;sident</h3>
@@ -127,7 +128,9 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 									<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 								</div>
 							</article>
+							</div>
 						</div>
+						<div class="kf-courses-pagination swiper-pagination d-lg-none" aria-hidden="true"></div>
 					</div>
 				</div>
 			</section>
@@ -168,44 +171,47 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 							<h2 class="kf-agenda-title mb-4">Les prochaines rencontres</h2>
 							<div class="kf-event-list text-left">
 								<article class="row align-items-center py-4 border-bottom">
-									<div class="col-3 col-md-2 text-center">
+									<div class="col-4 col-md-3 text-center">
 										<div class="kf-event-date"><strong>13</strong><span>sept</span><small>2026</small><em>14:00 - 16:00</em></div>
 									</div>
-									<div class="col-9 col-md-6">
+									<div class="col-8 col-md-6">
 										<h3>Pilates pour femmes enceintes</h3>
 										<p class="kf-event-copy mb-2">Lorem ipsum dolor sit amet consectetur. Nunc justo neque dignissim lacus molestie et arcu. Tincidunt dignissim venenatis vitae ut sed amet vulputate.</p>
 										<span class="kf-event-duration">Dur&eacute;e : 2h</span>
+										<div class="kf-event-price d-md-none mt-2">220 &euro;</div>
 									</div>
 									<div class="col-9 offset-3 col-md-3 offset-md-0 mt-3 mt-md-0 ml-md-auto text-center kf-event-action">
-										<div class="kf-event-price">220 &euro;</div>
+										<div class="kf-event-price d-none d-md-block">220 &euro;</div>
 										<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 									</div>
 								</article>
 								<article class="row align-items-center py-4 border-bottom">
-									<div class="col-3 col-md-2 text-center">
+									<div class="col-4 col-md-3 text-center">
 										<div class="kf-event-date"><strong>30</strong><span>oct</span><small>2026</small><em>14:00 - 16:00</em></div>
 									</div>
-									<div class="col-9 col-md-6">
+									<div class="col-8 col-md-6">
 										<h3>Pilates pour femmes enceintes</h3>
 										<p class="kf-event-copy mb-2">Lorem ipsum dolor sit amet consectetur. Nunc justo neque dignissim lacus molestie et arcu. Tincidunt dignissim venenatis vitae ut sed amet vulputate.</p>
 										<span class="kf-event-duration">Dur&eacute;e : 2h</span>
+										<div class="kf-event-price d-md-none mt-2">220 &euro;</div>
 									</div>
 									<div class="col-9 offset-3 col-md-3 offset-md-0 mt-3 mt-md-0 ml-md-auto text-center kf-event-action">
-										<div class="kf-event-price">220 &euro;</div>
+										<div class="kf-event-price d-none d-md-block">220 &euro;</div>
 										<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 									</div>
 								</article>
 								<article class="row align-items-center py-4 border-bottom">
-									<div class="col-3 col-md-2 text-center">
+									<div class="col-4 col-md-3 text-center">
 										<div class="kf-event-date"><strong>05</strong><span>juil</span><small>2027</small><em>14:00 - 16:00</em></div>
 									</div>
-									<div class="col-9 col-md-6">
+									<div class="col-8 col-md-6">
 										<h3>Pilates pour femmes enceintes</h3>
 										<p class="kf-event-copy mb-2">Lorem ipsum dolor sit amet consectetur. Nunc justo neque dignissim lacus molestie et arcu. Tincidunt dignissim venenatis vitae ut sed amet vulputate.</p>
 										<span class="kf-event-duration">Dur&eacute;e : 2h</span>
+										<div class="kf-event-price d-md-none mt-2">220 &euro;</div>
 									</div>
 									<div class="col-9 offset-3 col-md-3 offset-md-0 mt-3 mt-md-0 ml-md-auto text-center kf-event-action">
-										<div class="kf-event-price">220 &euro;</div>
+										<div class="kf-event-price d-none d-md-block">220 &euro;</div>
 										<a class="btn kf-button kf-button--brown" href="#reservation">M&rsquo;inscrire</a>
 									</div>
 								</article>
@@ -228,7 +234,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--team py-5" id="equipe">
+			<section class="kf-section kf-section--team" id="equipe">
 				<div class="container kf-container text-center">
 					<h2 class="kf-team-title">Formateurs</h2>
 					<p class="kf-team-kicker">La promesse d&rsquo;un accompagnement</p>
@@ -253,7 +259,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--faq py-5" id="questions">
+			<section class="kf-section kf-section--faq" id="questions">
 				<div class="container kf-container">
 					<div class="row justify-content-center text-center">
 						<div class="col-12 col-lg-7">
@@ -305,7 +311,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-section kf-section--values py-5">
+			<section class="kf-section kf-section--values">
 				<div class="container kf-container text-center">
 					<h2 class="kf-values-title">Guide &amp; conseils</h2>
 					<p class="kf-values-kicker">La promesse d&rsquo;un accompagnement</p>
@@ -354,13 +360,13 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 				</div>
 			</section>
 
-			<section class="kf-contact py-5" id="reservation">
+			<section class="kf-contact" id="reservation">
 				<div class="container kf-container">
 					<div class="row justify-content-between align-items-start">
 						<div class="col-12 col-lg-5 mb-5 mb-lg-0">
 							<div class="kf-contact-info h-100 d-flex flex-column">
 								<h2 class="kf-contact-title">Nous contacter</h2>
-								<div class="kf-contact-brand d-flex align-items-start">
+								<div class="kf-contact-brand d-flex align-items-center">
 									<img class="kf-contact-logo" src="<?php echo esc_url( $krizia_asset_uri . 'logo-white.png' ); ?>" alt="L'Adresse Pilates">
 									<div class="kf-contact-details">
 										<h3>L&rsquo;Adresse Pilates</h3>
@@ -376,7 +382,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 										@ladressepilates
 									</a>
 								</div>
-								<p class="kf-contact-copyright">&copy; 2026 L&rsquo;Adresse Pilates. Tous droits r&eacute;serv&eacute;s.</p>
+								<p class="kf-contact-copyright d-none d-lg-block">&copy; 2026 L&rsquo;Adresse Pilates. Tous droits r&eacute;serv&eacute;s.</p>
 							</div>
 						</div>
 						<div class="col-12 col-lg-6">
@@ -403,6 +409,7 @@ $krizia_asset_uri = trailingslashit( get_template_directory_uri() ) . 'assets/im
 									<textarea id="kf-message" class="form-control" name="message" rows="5" placeholder="Commentaire"></textarea>
 								</div>
 								<button class="btn kf-button kf-button--outline" type="submit">Envoyer le message</button>
+								<p class="kf-copyright d-lg-none mt-4">&copy; 2026 L&rsquo;Adresse Pilates. Tous droits r&eacute;serv&eacute;s.</p>
 							</form>
 						</div>
 					</div>
