@@ -2180,7 +2180,7 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   /* max-width: 1040px; */
   padding: 0;
   position: relative;
-  transform: translateY(var(--kf-agenda-card-overlap));
+  transform: translateY(-2rem);
   width: 100%;
   z-index: 54;
 }
