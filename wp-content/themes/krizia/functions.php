@@ -335,6 +335,14 @@ function krizia_register_acf_blocks() {
     $blocks = array(
         'hero',
         'studio',
+        'private-course',
+        'private-formula',
+        "statement",
+        "formation",
+        "agenda",
+        "faq",
+        "articles",
+        "newsletter"
     );
 
     foreach ( $blocks as $block ) {
