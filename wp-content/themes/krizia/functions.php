@@ -334,6 +334,7 @@ function krizia_register_acf_blocks() {
 
     $blocks = array(
         'hero',
+        'studio',
     );
 
     foreach ( $blocks as $block ) {
