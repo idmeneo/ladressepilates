@@ -174,7 +174,9 @@ if (function_exists('wp_body_open')) {
         <?php endif; ?>
 
         <div id="content" class="site-content">
-            <div class="container">
-                <div class="row">
+            <?php if (!is_front_page()) : ?>
+                <div class="container">
+                    <div class="row">
+            <?php endif; ?>
 
     <?php endif; ?>
