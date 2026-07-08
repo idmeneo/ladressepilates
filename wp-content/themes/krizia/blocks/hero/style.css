@@ -12,13 +12,13 @@
 }
 
 .kf-hero__container {
+  padding-left: 3rem;
+  padding-right: 3rem;
   width: 100%;
-  padding-left: clamp(1rem, 4vw, 3rem);
-  padding-right: clamp(1rem, 4vw, 3rem);
 }
 
 .kf-hero__content {
-  max-width: 50%;
+  text-align: center;
 }
 
 .kf-hero__title {
@@ -38,6 +38,8 @@
 }
 
 .kf-hero__title span {
+  border: 0;
+  clear: none;
   color: rgba(255, 255, 255, 0.9);
   display: block;
   font-family: "Manrope", Arial, sans-serif;
@@ -120,10 +122,6 @@
 @media screen and (max-width: 1199px) {
   .kf-hero {
     padding-top: 8rem;
-  }
-
-  .kf-hero__content {
-    max-width: 100%;
   }
 }
 
