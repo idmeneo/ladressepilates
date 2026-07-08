@@ -1,4 +1,4 @@
-.kf-hero {
+.krz-hero {
   align-items: center;
   background-position: center;
   background-size: cover;
@@ -11,17 +11,17 @@
   width: 100%;
 }
 
-.kf-hero__container {
+.krz-hero__container {
   padding-left: 3rem;
   padding-right: 3rem;
   width: 100%;
 }
 
-.kf-hero__content {
+.krz-hero__content {
   text-align: center;
 }
 
-.kf-hero__title {
+.krz-hero__title {
   border: 0;
   clear: none;
   color: #fff;
@@ -37,7 +37,7 @@
   text-transform: uppercase;
 }
 
-.kf-hero__title span {
+.krz-hero__label {
   border: 0;
   clear: none;
   color: rgba(255, 255, 255, 0.9);
@@ -54,7 +54,7 @@
   text-transform: uppercase;
 }
 
-.kf-hero__mark {
+.krz-hero__mark {
   border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 999px;
   display: inline-block;
@@ -63,7 +63,7 @@
   width: 11px;
 }
 
-.kf-hero__heading {
+.krz-hero__heading {
   border: 0;
   clear: none;
   color: rgba(255, 255, 255, 0.9);
@@ -79,7 +79,7 @@
   text-transform: uppercase;
 }
 
-.kf-hero__text {
+.krz-hero__text {
   color: rgba(255, 255, 255, 0.9);
   font-family: "Manrope", Arial, sans-serif;
   font-size: 18px;
@@ -91,7 +91,7 @@
   text-align: center;
 }
 
-.kf-hero__button {
+.krz-hero__button {
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.84);
@@ -111,8 +111,8 @@
   transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
-.kf-hero__button:hover,
-.kf-hero__button:focus {
+.krz-hero__button:hover,
+.krz-hero__button:focus {
   background: rgba(255, 255, 255, 0.12);
   border-color: #fff;
   color: #fff;
@@ -120,51 +120,51 @@
 }
 
 @media screen and (max-width: 1199px) {
-  .kf-hero {
+  .krz-hero {
     padding-top: 8rem;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .kf-hero {
+  .krz-hero {
     background-position: 56% center;
     padding-bottom: 3.6rem;
     padding-top: 7rem;
   }
 
-  .kf-hero__container {
+  .krz-hero__container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
-  .kf-hero__title {
+  .krz-hero__title {
     font-size: clamp(2.6rem, 11vw, 3.25rem);
     letter-spacing: 0.24em;
     line-height: 1.18;
     margin-right: -0.24em;
   }
 
-  .kf-hero__title span {
+  .krz-hero__label {
     font-size: 18px;
     letter-spacing: 0.62em;
     line-height: 1.2;
     margin-right: -0.62em;
   }
 
-  .kf-hero__heading {
+  .krz-hero__heading {
     font-size: 16px;
     letter-spacing: 0.36em;
     line-height: 28px;
     margin-right: -0.36em;
   }
 
-  .kf-hero__text {
+  .krz-hero__text {
     font-size: 18px;
     line-height: 34px;
     max-width: 340px;
   }
 
-  .kf-hero__button {
+  .krz-hero__button {
     font-size: 14px;
     letter-spacing: 0.32em;
     line-height: 24px;

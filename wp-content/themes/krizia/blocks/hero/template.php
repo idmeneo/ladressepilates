@@ -20,43 +20,43 @@ $button_url    = is_array($button) && !empty($button['url']) ? $button['url'] : 
 $button_title  = is_array($button) && !empty($button['title']) ? $button['title'] : 'Réserver ma séance';
 $button_target = is_array($button) && !empty($button['target']) ? $button['target'] : '_self';
 
-$block_id = 'krizia-hero-' . uniqid();
+$block_id = 'krz-hero-' . uniqid();
 
 if (isset($block) && is_array($block)) {
-    $block_id = !empty($block['anchor']) ? $block['anchor'] : 'krizia-hero-' . $block['id'];
+    $block_id = !empty($block['anchor']) ? $block['anchor'] : 'krz-hero-' . $block['id'];
 }
 ?>
 
 <section
     id="<?php echo esc_attr($block_id); ?>"
-    class="kf-hero"
+    class="krz-hero"
     style="background-image: linear-gradient(90deg, rgba(53, 40, 31, 0.64) 0%, rgba(53, 40, 31, 0.5) 50%, rgba(53, 40, 31, 0.28) 100%), url('<?php echo esc_url($background_url); ?>');"
 >
-    <div class="container-fluid kf-hero__container">
+    <div class="container-fluid krz-hero__container">
         <div class="row justify-content-center justify-content-lg-start">
             <div class="col-12 col-lg-6">
-                <div class="kf-hero__content">
-                    <h1 class="kf-hero__title">
+                <div class="krz-hero__content">
+                    <h1 class="krz-hero__title">
                         <?php echo esc_html($title); ?>
 
                         <?php if ($label) : ?>
-                            <span><?php echo esc_html($label); ?></span>
+                            <span class="krz-hero__label"><?php echo esc_html($label); ?></span>
                         <?php endif; ?>
                     </h1>
 
-                    <span class="kf-hero__mark" aria-hidden="true"></span>
+                    <span class="krz-hero__mark" aria-hidden="true"></span>
 
                     <?php if ($heading) : ?>
-                        <h2 class="kf-hero__heading"><?php echo esc_html($heading); ?></h2>
+                        <h2 class="krz-hero__heading"><?php echo esc_html($heading); ?></h2>
                     <?php endif; ?>
 
                     <?php if ($text) : ?>
-                        <p class="kf-hero__text"><?php echo wp_kses_post(nl2br($text)); ?></p>
+                        <p class="krz-hero__text"><?php echo wp_kses_post(nl2br($text)); ?></p>
                     <?php endif; ?>
 
                     <?php if ($button_title) : ?>
                         <a
-                            class="kf-hero__button"
+                            class="krz-hero__button"
                             href="<?php echo esc_url($button_url); ?>"
                             target="<?php echo esc_attr($button_target); ?>"
                         >
