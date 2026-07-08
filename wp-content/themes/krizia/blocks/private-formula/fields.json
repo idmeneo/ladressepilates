@@ -1,0 +1,98 @@
+[
+  {
+    "key": "group_krizia_block_private_formula",
+    "title": "Bloc - Formules privées",
+    "fields": [
+      {
+        "key": "field_private_formula_title",
+        "label": "Titre",
+        "name": "private_formula_title",
+        "type": "text",
+        "default_value": "Les formules"
+      },
+      {
+        "key": "field_private_formula_items",
+        "label": "Formules",
+        "name": "private_formula_items",
+        "type": "repeater",
+        "layout": "block",
+        "button_label": "Ajouter une formule",
+        "min": 1,
+        "sub_fields": [
+          {
+            "key": "field_private_formula_item_title",
+            "label": "Titre",
+            "name": "title",
+            "type": "text"
+          },
+          {
+            "key": "field_private_formula_item_tagline",
+            "label": "Accroche",
+            "name": "tagline",
+            "type": "text"
+          },
+          {
+            "key": "field_private_formula_item_details",
+            "label": "Détail",
+            "name": "details",
+            "type": "text"
+          },
+          {
+            "key": "field_private_formula_item_price",
+            "label": "Prix",
+            "name": "price",
+            "type": "text"
+          },
+          {
+            "key": "field_private_formula_item_button",
+            "label": "Bouton",
+            "name": "button",
+            "type": "link",
+            "return_format": "array"
+          },
+          {
+            "key": "field_private_formula_item_is_featured",
+            "label": "Mettre en avant",
+            "name": "is_featured",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0
+          },
+          {
+            "key": "field_private_formula_item_badge",
+            "label": "Badge",
+            "name": "badge",
+            "type": "text",
+            "conditional_logic": [
+              [
+                {
+                  "field": "field_private_formula_item_is_featured",
+                  "operator": "==",
+                  "value": "1"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-private-formula"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
