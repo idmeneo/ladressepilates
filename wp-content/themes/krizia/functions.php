@@ -346,3 +346,18 @@ function krizia_get_link_url($link, $default = '#') {
 function krizia_get_link_target($link) {
     return is_array($link) && !empty($link['target']) ? $link['target'] : '_self';
 }
+
+function krizia_register_acf_blocks() {
+    $blocks = [
+        'hero',
+    ];
+
+    foreach ($blocks as $block) {
+        $register_file = get_template_directory() . '/blocks/' . $block . '/register.php';
+
+        if (file_exists($register_file)) {
+            require_once $register_file;
+        }
+    }
+}
+add_action('acf/init', 'krizia_register_acf_blocks');
