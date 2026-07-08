@@ -1,0 +1,163 @@
+.krz-private-course {
+  background: #f6f3ee;
+  min-height: 500px;
+  overflow: visible;
+  padding: clamp(6rem, 12vw, 10.8rem) 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  z-index: 50;
+}
+
+.krz-private-course__container {
+  max-width: 1140px;
+  position: relative;
+  z-index: 2;
+}
+
+.krz-private-course__title {
+  border: 0;
+  clear: none;
+  color: #3d2b22;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
+  margin: 0;
+  margin-right: -0.2em;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krz-private-course__kicker {
+  color: #8b4d22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin: 1.3rem 0 0;
+  margin-right: -0.4em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krz-private-course__text {
+  color: #3d2b22;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
+  margin: 3rem 0 0;
+  text-align: center;
+}
+
+.krz-private-course__text strong {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 34px;
+}
+
+.krz-private-course__text--small {
+  margin-top: 3rem;
+}
+
+.krz-private-course__dot {
+  border: 1px solid #caa883;
+  border-radius: 999px;
+  display: block;
+  height: 18px;
+  margin: 1.5rem auto 0;
+  width: 8px;
+}
+
+.krz-private-course__floating {
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  z-index: 5;
+}
+
+.krz-private-course__floating img,
+.krz-private-course__mobile-image img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.krz-private-course__floating--left {
+  left: -4.5rem;
+  top: clamp(7rem, 12vw, 12rem);
+  width: clamp(260px, 27vw, 420px);
+  z-index: 51;
+}
+
+.krz-private-course__floating--right {
+  right: clamp(-7rem, -4vw, -2rem);
+  top: -7rem;
+  width: clamp(260px, 27vw, 420px);
+  z-index: 53;
+}
+
+.krz-private-course__mobile-images {
+  align-items: center;
+  margin-top: 2.2rem;
+}
+
+.krz-private-course__mobile-image {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 118px;
+  overflow: visible;
+}
+
+@media screen and (max-width: 991px) {
+  .krz-private-course__floating {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .krz-private-course {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+
+  .krz-private-course__title {
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    line-height: 48px;
+    margin-right: -0.2em;
+  }
+
+  .krz-private-course__kicker {
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    line-height: 28px;
+    margin-right: -0.4em;
+    margin-top: 1rem;
+  }
+
+  .krz-private-course__text,
+  .krz-private-course__text strong,
+  .krz-private-course__text--small {
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    line-height: 34px;
+  }
+
+  .krz-private-course__text,
+  .krz-private-course__text--small {
+    margin-top: 1.8rem;
+  }
+
+  .krz-private-course__dot {
+    margin-top: 1.45rem;
+  }
+}

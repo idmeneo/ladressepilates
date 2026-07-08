@@ -1,0 +1,76 @@
+[
+  {
+    "key": "group_krizia_block_private_course",
+    "title": "Bloc - Cours privés",
+    "fields": [
+      {
+        "key": "field_private_course_title",
+        "label": "Titre",
+        "name": "private_course_title",
+        "type": "text",
+        "default_value": "Les cours privés"
+      },
+      {
+        "key": "field_private_course_kicker",
+        "label": "Accroche",
+        "name": "private_course_kicker",
+        "type": "text",
+        "default_value": "La promesse d’un accompagnement"
+      },
+      {
+        "key": "field_private_course_text",
+        "label": "Texte principal",
+        "name": "private_course_text",
+        "type": "wysiwyg",
+        "tabs": "visual",
+        "toolbar": "basic",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_private_course_text_small",
+        "label": "Texte secondaire",
+        "name": "private_course_text_small",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_private_course_image_left",
+        "label": "Image gauche",
+        "name": "private_course_image_left",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_private_course_image_right",
+        "label": "Image droite",
+        "name": "private_course_image_right",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "medium",
+        "library": "all"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-private-course"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
