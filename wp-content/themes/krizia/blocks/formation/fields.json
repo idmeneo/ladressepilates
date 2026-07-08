@@ -1,0 +1,82 @@
+[
+  {
+    "key": "group_krizia_block_formation",
+    "title": "Bloc - Formation",
+    "fields": [
+      {
+        "key": "field_formation_title",
+        "label": "Titre",
+        "name": "formation_title",
+        "type": "text",
+        "default_value": "Formation continue"
+      },
+      {
+        "key": "field_formation_kicker",
+        "label": "Accroche",
+        "name": "formation_kicker",
+        "type": "text",
+        "default_value": "Approfondir sa pratique"
+      },
+      {
+        "key": "field_formation_text",
+        "label": "Texte principal",
+        "name": "formation_text",
+        "type": "wysiwyg",
+        "tabs": "visual",
+        "toolbar": "basic",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_formation_text_alt",
+        "label": "Texte secondaire",
+        "name": "formation_text_alt",
+        "type": "wysiwyg",
+        "tabs": "visual",
+        "toolbar": "basic",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_formation_image",
+        "label": "Image",
+        "name": "formation_image",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "large",
+        "library": "all"
+      },
+      {
+        "key": "field_formation_image_side",
+        "label": "Position de l’image",
+        "name": "formation_image_side",
+        "type": "button_group",
+        "choices": {
+          "right": "Droite",
+          "left": "Gauche"
+        },
+        "default_value": "right",
+        "layout": "horizontal",
+        "return_format": "value"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-formation"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
