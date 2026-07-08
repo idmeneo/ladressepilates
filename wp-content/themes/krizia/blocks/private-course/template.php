@@ -43,9 +43,9 @@ if (isset($block) && is_array($block)) {
                 <?php endif; ?>
 
                 <?php if ($text) : ?>
-                    <p class="krz-private-course__text">
+                    <div class="krz-private-course__text">
                         <?php echo wp_kses_post($text); ?>
-                    </p>
+                    </div>
                 <?php endif; ?>
 
                 <?php if ($text_small) : ?>

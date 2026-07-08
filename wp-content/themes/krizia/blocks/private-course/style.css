@@ -161,3 +161,11 @@
     margin-top: 1.45rem;
   }
 }
+
+.krz-private-course__text p {
+  margin: 0;
+}
+
+.krz-private-course__text p + p {
+  margin-top: 1.5rem;
+}
