@@ -70,7 +70,7 @@ if (isset($block) && is_array($block)) {
         <?php endif; ?>
 
         <div class="krz-private-formula__swiper swiper">
-            <div class="row justify-content-center krz-private-formula__row swiper-wrapper">
+            <div class="krz-private-formula__row swiper-wrapper">
                 <?php foreach ($items as $item) : ?>
                     <?php
                     $item_title   = $item['title'] ?? '';

@@ -380,3 +380,36 @@
     top: -1rem;
   }
 }
+
+.krz-private-formula {
+  overflow-x: hidden;
+}
+
+.krz-private-formula__container {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 992px) {
+  .krz-private-formula__swiper {
+    overflow: visible;
+  }
+
+  .krz-private-formula__row.swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1.15rem;
+    margin-right: -1.15rem;
+    transform: none !important;
+    width: auto !important;
+  }
+
+  .krz-private-formula__row.swiper-wrapper > .swiper-slide {
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+    margin-right: 0 !important;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    transform: none !important;
+    width: 33.333333% !important;
+  }
+}
