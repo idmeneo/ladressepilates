@@ -1,0 +1,59 @@
+[
+  {
+    "key": "group_krizia_block_statement",
+    "title": "Bloc - Statement",
+    "fields": [
+      {
+        "key": "field_statement_background",
+        "label": "Image d’arrière-plan",
+        "name": "statement_background",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "large",
+        "library": "all"
+      },
+      {
+        "key": "field_statement_logo",
+        "label": "Logo en filigrane",
+        "name": "statement_logo",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_statement_kicker",
+        "label": "Texte",
+        "name": "statement_kicker",
+        "type": "text",
+        "default_value": "Un lieu pensé pour le corps"
+      },
+      {
+        "key": "field_statement_text",
+        "label": "Zone de texte",
+        "name": "statement_text",
+        "type": "textarea",
+        "rows": 4,
+        "new_lines": "br"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-statement"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
