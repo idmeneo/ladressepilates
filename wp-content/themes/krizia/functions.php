@@ -316,3 +316,33 @@ require get_template_directory() . '/inc/plugin-compatibility/plugin-compatibili
 if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
     require_once(get_template_directory() . '/inc/wp_bootstrap_navwalker.php');
 }
+
+add_action('acf/init', function () {
+    if (function_exists('acf_add_options_page')) {
+        acf_add_options_page([
+            'page_title' => 'Options du thème',
+            'menu_title' => 'Options du thème',
+            'menu_slug'  => 'theme-options',
+            'capability' => 'edit_posts',
+            'redirect'   => false,
+        ]);
+    }
+});
+
+function krizia_get_option($field, $default = '') {
+    if (!function_exists('get_field')) {
+        return $default;
+    }
+
+    $value = get_field($field, 'option');
+
+    return $value !== null && $value !== false && $value !== '' ? $value : $default;
+}
+
+function krizia_get_link_url($link, $default = '#') {
+    return is_array($link) && !empty($link['url']) ? $link['url'] : $default;
+}
+
+function krizia_get_link_target($link) {
+    return is_array($link) && !empty($link['target']) ? $link['target'] : '_self';
+}
