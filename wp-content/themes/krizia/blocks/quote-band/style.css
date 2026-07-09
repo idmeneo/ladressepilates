@@ -1,0 +1,131 @@
+.krz-quote-band {
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  min-height: clamp(620px, 59.2vw, 853px);
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.krz-quote-band__container {
+  max-width: 1140px;
+  position: relative;
+  z-index: 2;
+}
+
+.krz-quote-band__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(2.4rem, 7vw, 7rem);
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.krz-quote-band__nav li {
+  display: flex;
+}
+
+.krz-quote-band__nav-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin: 0;
+  margin-right: -0.4em;
+  opacity: 0.72;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color 160ms ease, opacity 160ms ease;
+}
+
+.krz-quote-band__nav-button:hover,
+.krz-quote-band__nav-button:focus,
+.krz-quote-band__nav-button.is-active {
+  color: #fff;
+  opacity: 1;
+}
+
+.krz-quote-band__nav-button:focus {
+  outline: 0;
+}
+
+.krz-quote-band__swiper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+  overflow: hidden;
+}
+
+.krz-quote-band__swiper .swiper-slide {
+  align-items: center;
+  display: flex;
+  height: auto;
+  justify-content: center;
+}
+
+.krz-quote-band__text {
+  color: #fff;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 40px;
+  max-width: 760px;
+  text-align: center;
+}
+
+.krz-quote-band__text p {
+  margin: 0;
+}
+
+.krz-quote-band__text p + p {
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .krz-quote-band {
+    min-height: 430px;
+    padding-bottom: 3.8rem;
+    padding-top: 3.8rem;
+  }
+
+  .krz-quote-band__swiper {
+    max-width: calc(100% - 38px);
+  }
+
+  .krz-quote-band__nav {
+    gap: 1.4rem 1.85rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 270px;
+  }
+
+  .krz-quote-band__nav-button {
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    line-height: 28px;
+    margin-right: -0.4em;
+  }
+
+  .krz-quote-band__text {
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    line-height: 36px;
+    max-width: 340px;
+  }
+}

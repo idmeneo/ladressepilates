@@ -342,7 +342,9 @@ function krizia_register_acf_blocks() {
         "agenda",
         "faq",
         "articles",
-        "newsletter"
+        "newsletter",
+        "quote-band",
+        "contact",
     );
 
     foreach ( $blocks as $block ) {

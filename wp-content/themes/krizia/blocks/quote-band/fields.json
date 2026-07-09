@@ -1,0 +1,60 @@
+[
+  {
+    "key": "group_krizia_block_quote_band",
+    "title": "Bloc - Quote Band",
+    "fields": [
+      {
+        "key": "field_quote_band_background",
+        "label": "Image d’arrière-plan",
+        "name": "quote_band_background",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "large",
+        "library": "all"
+      },
+      {
+        "key": "field_quote_band_items",
+        "label": "Quotes",
+        "name": "quote_band_items",
+        "type": "repeater",
+        "layout": "block",
+        "button_label": "Ajouter une quote",
+        "min": 1,
+        "sub_fields": [
+          {
+            "key": "field_quote_band_item_title",
+            "label": "Titre",
+            "name": "title",
+            "type": "text"
+          },
+          {
+            "key": "field_quote_band_item_text",
+            "label": "Contenu",
+            "name": "text",
+            "type": "textarea",
+            "rows": 4,
+            "new_lines": "br"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-quote-band"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
