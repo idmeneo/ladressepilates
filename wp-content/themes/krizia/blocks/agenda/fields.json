@@ -1,0 +1,110 @@
+[
+  {
+    "key": "group_krizia_block_agenda",
+    "title": "Bloc - Agenda",
+    "fields": [
+      {
+        "key": "field_agenda_logo",
+        "label": "Logo",
+        "name": "agenda_logo",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_agenda_title",
+        "label": "Titre",
+        "name": "agenda_title",
+        "type": "text",
+        "default_value": "Agenda"
+      },
+      {
+        "key": "field_agenda_events",
+        "label": "Événements",
+        "name": "agenda_events",
+        "type": "repeater",
+        "layout": "block",
+        "button_label": "Ajouter un événement",
+        "min": 1,
+        "sub_fields": [
+          {
+            "key": "field_agenda_event_day",
+            "label": "Jour",
+            "name": "day",
+            "type": "text"
+          },
+          {
+            "key": "field_agenda_event_month",
+            "label": "Mois",
+            "name": "month",
+            "type": "text"
+          },
+          {
+            "key": "field_agenda_event_year",
+            "label": "Année",
+            "name": "year",
+            "type": "text"
+          },
+          {
+            "key": "field_agenda_event_label",
+            "label": "Label",
+            "name": "label",
+            "type": "text"
+          },
+          {
+            "key": "field_agenda_event_title",
+            "label": "Titre",
+            "name": "title",
+            "type": "text"
+          },
+          {
+            "key": "field_agenda_event_text",
+            "label": "Texte",
+            "name": "text",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "br"
+          },
+          {
+            "key": "field_agenda_event_duration",
+            "label": "Durée",
+            "name": "duration",
+            "type": "text"
+          },
+          {
+            "key": "field_agenda_event_price",
+            "label": "Prix",
+            "name": "price",
+            "type": "text"
+          },
+          {
+            "key": "field_agenda_event_button",
+            "label": "Bouton",
+            "name": "button",
+            "type": "link",
+            "return_format": "array"
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-agenda"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
