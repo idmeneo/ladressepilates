@@ -1,0 +1,94 @@
+[
+  {
+    "key": "group_krizia_block_articles",
+    "title": "Bloc - Articles",
+    "fields": [
+      {
+        "key": "field_articles_title",
+        "label": "Titre",
+        "name": "articles_title",
+        "type": "text",
+        "default_value": "Articles"
+      },
+      {
+        "key": "field_articles_kicker",
+        "label": "Accroche",
+        "name": "articles_kicker",
+        "type": "text",
+        "default_value": "À lire"
+      },
+      {
+        "key": "field_articles_mode",
+        "label": "Mode d’affichage",
+        "name": "articles_mode",
+        "type": "button_group",
+        "choices": {
+          "latest": "Derniers articles",
+          "manual": "Sélection manuelle"
+        },
+        "default_value": "latest",
+        "layout": "horizontal",
+        "return_format": "value"
+      },
+      {
+        "key": "field_articles_limit",
+        "label": "Nombre d’articles",
+        "name": "articles_limit",
+        "type": "number",
+        "default_value": 6,
+        "min": 1,
+        "max": 12,
+        "conditional_logic": [
+          [
+            {
+              "field": "field_articles_mode",
+              "operator": "==",
+              "value": "latest"
+            }
+          ]
+        ]
+      },
+      {
+        "key": "field_articles_manual_posts",
+        "label": "Articles à afficher",
+        "name": "articles_manual_posts",
+        "type": "relationship",
+        "post_type": [
+          "post"
+        ],
+        "filters": [
+          "search",
+          "taxonomy"
+        ],
+        "return_format": "object",
+        "conditional_logic": [
+          [
+            {
+              "field": "field_articles_mode",
+              "operator": "==",
+              "value": "manual"
+            }
+          ]
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-articles"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
