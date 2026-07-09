@@ -77,5 +77,8 @@ if (isset($block) && is_array($block)) {
                 <?php endforeach; ?>
             </div>
         </div>
+        <div class="krz-quote-band__pagination" aria-hidden="true">
+            <span></span>
+        </div>
     </div>
 </section>

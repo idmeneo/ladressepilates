@@ -1,7 +1,9 @@
 (function () {
   function initQuoteBand(block) {
     var swiperEl = block.querySelector('.krz-quote-band__swiper');
+    var nav = block.querySelector('.krz-quote-band__nav');
     var buttons = block.querySelectorAll('.krz-quote-band__nav-button');
+    var progress = block.querySelector('.krz-quote-band__pagination span');
 
     if (!swiperEl || typeof window.Swiper !== 'function') {
       return;
@@ -22,10 +24,45 @@
       speed: 350
     });
 
+    function centerActiveButton(index) {
+      var activeButton = buttons[index];
+
+      if (!nav || !activeButton) {
+        return;
+      }
+
+      var navRect = nav.getBoundingClientRect();
+      var buttonRect = activeButton.getBoundingClientRect();
+
+      var offset =
+        buttonRect.left -
+        navRect.left -
+        navRect.width / 2 +
+        buttonRect.width / 2;
+
+      nav.scrollTo({
+        left: nav.scrollLeft + offset,
+        behavior: 'smooth'
+      });
+    }
+
+    function updateProgress(index) {
+      if (!progress || !buttons.length) {
+        return;
+      }
+
+      var width = 100 / buttons.length;
+      progress.style.width = width + '%';
+      progress.style.transform = 'translateX(' + index * 100 + '%)';
+    }
+
     function setActive(index) {
       buttons.forEach(function (button, buttonIndex) {
         button.classList.toggle('is-active', buttonIndex === index);
       });
+
+      centerActiveButton(index);
+      updateProgress(index);
     }
 
     buttons.forEach(function (button, index) {
@@ -38,6 +75,8 @@
     swiper.on('slideChange', function () {
       setActive(swiper.activeIndex);
     });
+
+    setActive(0);
   }
 
   function initAllQuoteBands() {
