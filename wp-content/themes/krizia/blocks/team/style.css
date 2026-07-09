@@ -1,0 +1,121 @@
+.krz-team {
+  background: #e8ddd1;
+  padding: clamp(6rem, 12vw, 10.8rem) 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.krz-team__container {
+  max-width: 1140px;
+  text-align: center;
+}
+
+.krz-team__title {
+  border: 0;
+  clear: none;
+  color: #361e0c;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  line-height: 44px;
+  margin: 0;
+  margin-right: -0.2em;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krz-team__kicker {
+  color: #7d451b;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  line-height: 28px;
+  margin: 1.4rem 0 0;
+  margin-right: -0.4em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krz-team__grid {
+  margin-top: clamp(3rem, 5vw, 4.7rem);
+}
+
+.krz-team__card {
+  overflow: hidden;
+}
+
+.krz-team__card img {
+  aspect-ratio: 0.78;
+  border-radius: 6px;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.krz-team__text {
+  color: #361e0c;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
+  margin: clamp(3rem, 5vw, 4.6rem) auto 0;
+  max-width: 860px;
+  text-align: center;
+}
+
+.krz-team__text p {
+  margin: 0;
+}
+
+.krz-team__text p + p {
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .krz-team {
+    padding-bottom: 4.2rem;
+    padding-top: 4.2rem;
+  }
+
+  .krz-team__title {
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    line-height: 48px;
+    margin-right: -0.2em;
+  }
+
+  .krz-team__kicker {
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    line-height: 28px;
+    margin-right: -0.4em;
+    margin-top: 1rem;
+  }
+
+  .krz-team__grid {
+    margin-top: 2.4rem;
+  }
+
+  .krz-team__grid > [class*="col-"] {
+    flex: 0 0 215px;
+    max-width: 215px;
+  }
+
+  .krz-team__card img {
+    aspect-ratio: 0.82;
+  }
+
+  .krz-team__text {
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    line-height: 34px;
+    margin-top: 2.8rem;
+    max-width: 285px;
+  }
+}

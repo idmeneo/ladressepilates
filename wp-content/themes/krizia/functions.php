@@ -345,6 +345,7 @@ function krizia_register_acf_blocks() {
         "newsletter",
         "quote-band",
         "contact",
+        "team",
     );
 
     foreach ( $blocks as $block ) {

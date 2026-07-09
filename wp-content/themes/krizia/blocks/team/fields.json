@@ -1,0 +1,74 @@
+[
+  {
+    "key": "group_krizia_block_team",
+    "title": "Bloc - Formateurs",
+    "fields": [
+      {
+        "key": "field_team_title",
+        "label": "Titre",
+        "name": "team_title",
+        "type": "text",
+        "default_value": "Formateurs"
+      },
+      {
+        "key": "field_team_kicker",
+        "label": "Accroche",
+        "name": "team_kicker",
+        "type": "text",
+        "default_value": "La promesse d’un accompagnement"
+      },
+      {
+        "key": "field_team_members",
+        "label": "Formateurs",
+        "name": "team_members",
+        "type": "repeater",
+        "layout": "block",
+        "button_label": "Ajouter un formateur",
+        "min": 1,
+        "sub_fields": [
+          {
+            "key": "field_team_member_image",
+            "label": "Image",
+            "name": "image",
+            "type": "image",
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all"
+          },
+          {
+            "key": "field_team_member_alt",
+            "label": "Texte alternatif",
+            "name": "alt",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "key": "field_team_text",
+        "label": "Texte",
+        "name": "team_text",
+        "type": "textarea",
+        "rows": 5,
+        "new_lines": "br"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-team"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
