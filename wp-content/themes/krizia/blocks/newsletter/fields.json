@@ -1,0 +1,87 @@
+[
+  {
+    "key": "group_krizia_block_newsletter",
+    "title": "Bloc - Newsletter",
+    "fields": [
+      {
+        "key": "field_newsletter_background",
+        "label": "Image d’arrière-plan",
+        "name": "newsletter_background",
+        "type": "image",
+        "return_format": "url",
+        "preview_size": "large",
+        "library": "all"
+      },
+      {
+        "key": "field_newsletter_title",
+        "label": "Titre",
+        "name": "newsletter_title",
+        "type": "text",
+        "default_value": "Newsletter"
+      },
+      {
+        "key": "field_newsletter_text",
+        "label": "Texte",
+        "name": "newsletter_text",
+        "type": "textarea",
+        "rows": 3,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_newsletter_placeholder",
+        "label": "Placeholder email",
+        "name": "newsletter_placeholder",
+        "type": "text",
+        "default_value": "Votre email"
+      },
+      {
+        "key": "field_newsletter_button_text",
+        "label": "Texte du bouton",
+        "name": "newsletter_button_text",
+        "type": "text",
+        "default_value": "S’inscrire"
+      },
+      {
+        "key": "field_newsletter_form_action",
+        "label": "URL d’envoi du formulaire",
+        "name": "newsletter_form_action",
+        "type": "url",
+        "instructions": "À remplir si tu utilises une URL Mailchimp, Brevo, HubSpot ou autre outil newsletter.",
+        "default_value": ""
+      },
+      {
+        "key": "field_newsletter_privacy_text",
+        "label": "Texte RGPD / confidentialité",
+        "name": "newsletter_privacy_text",
+        "type": "textarea",
+        "rows": 2,
+        "new_lines": "br"
+      },
+      {
+        "key": "field_newsletter_success_message",
+        "label": "Message de succès",
+        "name": "newsletter_success_message",
+        "type": "text",
+        "default_value": "Merci pour votre inscription."
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/krizia-newsletter"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1
+  }
+]
