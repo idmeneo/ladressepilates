@@ -1,0 +1,360 @@
+.krz-footer {
+  background: #7d451b;
+  color: #fff;
+  padding: clamp(4.2rem, 7vw, 6.6rem) 0 clamp(1.2rem, 2.5vw, 2rem);
+  position: relative;
+  width: 100%;
+}
+
+.krz-footer__container {
+  max-width: 1140px;
+}
+
+.krz-footer__title,
+.krz-footer__form-title {
+  border: 0;
+  clear: none;
+  color: #fff;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.25rem, 1.65vw, 1.65rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  line-height: 1.2;
+  margin: 0;
+  margin-right: -0.28em;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.krz-footer__brand {
+  align-items: flex-start;
+  display: flex;
+  margin-top: clamp(2.4rem, 5vw, 4.2rem);
+}
+
+.krz-footer__logo {
+  display: block;
+  height: auto;
+  max-height: 170px;
+  max-width: 92px;
+  object-fit: contain;
+  width: 92px;
+}
+
+.krz-footer__details {
+  margin-left: 2rem;
+  padding-top: 1rem;
+}
+
+.krz-footer__details h3 {
+  color: #fff;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.38em;
+  line-height: 1.4;
+  margin: 0 0 1.05rem;
+  text-transform: uppercase;
+}
+
+.krz-footer__details p,
+.krz-footer__text,
+.krz-footer__text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.krz-footer__details p + p,
+.krz-footer__text p + p {
+  margin-top: 0.35rem;
+}
+
+.krz-footer a {
+  color: inherit;
+}
+
+.krz-footer__details a[href^="mailto"] {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.krz-footer__booking {
+  align-items: center;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.42em;
+  margin-top: 3rem;
+  min-height: 44px;
+  min-width: min(100%, 385px);
+  padding: 0.85rem 1.7rem 0.85rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+
+.krz-footer__booking:hover,
+.krz-footer__booking:focus {
+  background: #fff;
+  color: #7d451b;
+  text-decoration: none;
+}
+
+.krz-footer__social {
+  margin-top: clamp(4rem, 9vw, 7rem);
+}
+
+.krz-footer__social a {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.92);
+  display: inline-flex;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.95rem;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.krz-footer__social a:hover,
+.krz-footer__social a:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.krz-footer__instagram-icon {
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  display: inline-block;
+  height: 18px;
+  position: relative;
+  width: 18px;
+}
+
+.krz-footer__instagram-icon::before {
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  content: "";
+  height: 7px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+}
+
+.krz-footer__instagram-icon::after {
+  background: currentColor;
+  border-radius: 999px;
+  content: "";
+  height: 2.5px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 2.5px;
+}
+
+.krz-footer__copyright {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin: 0;
+  padding-top: 3.8rem;
+}
+
+.krz-footer__required {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.72rem;
+  line-height: 1;
+  margin: 0.85rem 0;
+  text-align: right;
+}
+
+.krz-footer__form {
+  padding-top: 0.3rem;
+}
+
+.krz-contact-form .row {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.krz-contact-form [class*="col-"] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.krz-contact-form p {
+  margin: 0;
+}
+
+.krz-contact-form .wpcf7-form-control-wrap {
+  display: block;
+  margin-bottom: 1.15rem;
+}
+
+.krz-form-control,
+.krz-contact-form .krz-form-control,
+.krz-contact-form .wpcf7-form-control:not(.wpcf7-submit) {
+  background: #fff;
+  border: 0;
+  border-radius: 2px;
+  color: #35281f;
+  display: block;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.92rem;
+  min-height: 47px;
+  padding: 0.9rem 1.25rem;
+  width: 100%;
+}
+
+.krz-contact-form textarea.krz-form-control,
+.krz-contact-form textarea.wpcf7-form-control {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.krz-form-control:focus,
+.krz-contact-form .wpcf7-form-control:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.42);
+  outline-offset: 2px;
+}
+
+.krz-form-submit,
+.krz-contact-form .wpcf7-submit {
+  align-items: center;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.42em;
+  margin-top: 1.1rem;
+  min-height: 46px;
+  min-width: 285px;
+  padding: 0.85rem 1.7rem 0.85rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+
+.krz-form-submit:hover,
+.krz-form-submit:focus,
+.krz-contact-form .wpcf7-submit:hover,
+.krz-contact-form .wpcf7-submit:focus {
+  background: #fff;
+  border-color: #fff;
+  color: #7d451b;
+}
+
+.krz-contact-form .wpcf7-not-valid-tip {
+  color: #fff;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.78rem;
+  margin-top: 0.35rem;
+}
+
+.krz-contact-form .wpcf7-response-output {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #fff;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.9rem;
+  margin: 1.5rem 0 0 !important;
+  padding: 0.8rem 1rem !important;
+}
+
+@media screen and (max-width: 767px) {
+  .krz-footer {
+    padding-top: 3.6rem;
+  }
+
+  .krz-footer__title,
+  .krz-footer__form-title {
+    font-size: 28px;
+    letter-spacing: 0.2em;
+    line-height: 36px;
+    margin-right: -0.2em;
+    text-align: center;
+  }
+
+  .krz-footer__brand {
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .krz-footer__logo {
+    max-height: 140px;
+    max-width: 76px;
+    width: 76px;
+  }
+
+  .krz-footer__details {
+    margin-left: 0;
+    padding-top: 1.4rem;
+  }
+
+  .krz-footer__details h3,
+  .krz-footer__details p,
+  .krz-footer__text,
+  .krz-footer__text p,
+  .krz-footer__social a {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .krz-footer__details h3 {
+    letter-spacing: 0.28em;
+  }
+
+  .krz-footer__booking,
+  .krz-form-submit,
+  .krz-contact-form .wpcf7-submit {
+    font-size: 14px;
+    line-height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 100%;
+  }
+
+  .krz-footer__social {
+    margin-top: 3.5rem;
+    text-align: center;
+  }
+
+  .krz-footer__copyright {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .krz-footer__form-title {
+    margin-top: 3.5rem;
+  }
+
+  .krz-footer__required {
+    text-align: left;
+  }
+
+  .krz-form-control,
+  .krz-contact-form .krz-form-control,
+  .krz-contact-form .wpcf7-form-control:not(.wpcf7-submit) {
+    font-size: 16px;
+  }
+}

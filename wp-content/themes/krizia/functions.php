@@ -97,7 +97,7 @@ function krizia_enqueue_block_styles() {
         wp_enqueue_style(
             'krizia-block-' . $block_name,
             get_template_directory_uri() . '/blocks/' . $block_name . '/style.css',
-            array( 'wp-bootstrap-starter-style', 'krizia-header' ),
+            array( 'wp-bootstrap-starter-style', 'krizia-header', 'krizia-footer' ),
             filemtime( $style_path )
         );
     }
@@ -132,6 +132,13 @@ function wp_bootstrap_starter_scripts() {
         get_template_directory_uri() . '/assets/css/header.css',
         array( 'wp-bootstrap-starter-style' ),
         filemtime( get_template_directory() . '/assets/css/header.css' )
+    );
+
+    wp_enqueue_style(
+        'krizia-footer',
+        get_template_directory_uri() . '/assets/css/footer.css',
+        array('krizia-header'),
+        filemtime(get_template_directory() . '/assets/css/footer.css')
     );
 
     if ( get_theme_mod( 'theme_option_setting' ) && get_theme_mod( 'theme_option_setting' ) !== 'default' ) {
