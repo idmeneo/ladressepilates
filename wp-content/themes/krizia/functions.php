@@ -141,6 +141,38 @@ function wp_bootstrap_starter_scripts() {
         filemtime(get_template_directory() . '/assets/css/footer.css')
     );
 
+    if (is_single()) {
+        wp_enqueue_style(
+            'krizia-single',
+            get_template_directory_uri() . '/assets/css/single.css',
+            array('krizia-header', 'krizia-footer'),
+            filemtime(get_template_directory() . '/assets/css/single.css')
+        );
+
+        wp_enqueue_style(
+            'krizia-swiper',
+            'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+            array(),
+            '11.1.14'
+        );
+
+        wp_enqueue_script(
+            'krizia-swiper',
+            'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+            array(),
+            '11.1.14',
+            true
+        );
+
+        wp_enqueue_script(
+            'krizia-articles',
+            get_template_directory_uri() . '/blocks/articles/script.js',
+            array('krizia-swiper'),
+            filemtime(get_template_directory() . '/blocks/articles/script.js'),
+            true
+        );
+    }
+
     if ( get_theme_mod( 'theme_option_setting' ) && get_theme_mod( 'theme_option_setting' ) !== 'default' ) {
         wp_enqueue_style(
             'wp-bootstrap-starter-' . get_theme_mod( 'theme_option_setting' ),
