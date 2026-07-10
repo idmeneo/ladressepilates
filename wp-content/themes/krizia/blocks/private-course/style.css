@@ -1,7 +1,8 @@
 .krz-private-course {
   background: #f6f3ee;
   min-height: 500px;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
   padding: clamp(6rem, 12vw, 10.8rem) 0;
   position: relative;
   text-align: center;
@@ -9,9 +10,32 @@
   z-index: 50;
 }
 
+@supports (overflow: clip) {
+  .krz-private-course {
+    overflow-x: clip;
+  }
+}
+
+.krz-private-course__floating-layer {
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+@supports (overflow: clip) {
+  .krz-private-course__floating-layer {
+    overflow-x: clip;
+  }
+}
+
 .krz-private-course__container {
   max-width: 1140px;
+  min-width: 0;
   position: relative;
+  width: 100%;
   z-index: 2;
 }
 
@@ -55,6 +79,14 @@
   text-align: center;
 }
 
+.krz-private-course__text p {
+  margin: 0;
+}
+
+.krz-private-course__text p + p {
+  margin-top: 1.5rem;
+}
+
 .krz-private-course__text strong {
   font-family: "Manrope", Arial, sans-serif;
   font-size: 18px;
@@ -80,13 +112,13 @@
   display: block;
   pointer-events: none;
   position: absolute;
-  z-index: 5;
 }
 
 .krz-private-course__floating img,
 .krz-private-course__mobile-image img {
   display: block;
   height: auto;
+  max-width: 100%;
   object-fit: contain;
   width: 100%;
 }
@@ -107,19 +139,49 @@
 
 .krz-private-course__mobile-images {
   align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
   margin-top: 2.2rem;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
 }
 
 .krz-private-course__mobile-image {
-  margin-left: auto;
-  margin-right: auto;
+  flex: 0 1 118px;
+  margin: 0;
   max-width: 118px;
-  overflow: visible;
+  min-width: 0;
 }
 
 @media screen and (max-width: 991px) {
+  .krz-private-course {
+    overflow-x: hidden;
+  }
+
+  @supports (overflow: clip) {
+    .krz-private-course {
+      overflow-x: clip;
+    }
+  }
+
+  .krz-private-course__floating-layer,
   .krz-private-course__floating {
     display: none;
+  }
+
+  .krz-private-course__container {
+    overflow-x: hidden;
+  }
+
+  @supports (overflow: clip) {
+    .krz-private-course__container {
+      overflow-x: clip;
+    }
   }
 }
 
@@ -160,12 +222,10 @@
   .krz-private-course__dot {
     margin-top: 1.45rem;
   }
-}
 
-.krz-private-course__text p {
-  margin: 0;
-}
-
-.krz-private-course__text p + p {
-  margin-top: 1.5rem;
+  .krz-private-course__mobile-images {
+    gap: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

@@ -18,28 +18,44 @@ $image_right = get_field('private_course_image_right') ?: $default_image_right;
 $block_id = 'krz-private-course-' . uniqid();
 
 if (isset($block) && is_array($block)) {
-    $block_id = !empty($block['anchor']) ? $block['anchor'] : 'krz-private-course-' . $block['id'];
+    $block_id = !empty($block['anchor'])
+        ? $block['anchor']
+        : 'krz-private-course-' . $block['id'];
 }
 ?>
 
 <section id="<?php echo esc_attr($block_id); ?>" class="krz-private-course">
-    <div class="krz-private-course__floating krz-private-course__floating--left" aria-hidden="true">
-        <img src="<?php echo esc_url($image_left); ?>" alt="">
-    </div>
+    <div class="krz-private-course__floating-layer" aria-hidden="true">
+        <div class="krz-private-course__floating krz-private-course__floating--left">
+            <img
+                src="<?php echo esc_url($image_left); ?>"
+                alt=""
+                loading="lazy"
+            >
+        </div>
 
-    <div class="krz-private-course__floating krz-private-course__floating--right" aria-hidden="true">
-        <img src="<?php echo esc_url($image_right); ?>" alt="">
+        <div class="krz-private-course__floating krz-private-course__floating--right">
+            <img
+                src="<?php echo esc_url($image_right); ?>"
+                alt=""
+                loading="lazy"
+            >
+        </div>
     </div>
 
     <div class="container krz-private-course__container">
         <div class="row justify-content-center text-center">
             <div class="col-12 col-lg-6">
                 <?php if ($title) : ?>
-                    <h2 class="krz-private-course__title"><?php echo esc_html($title); ?></h2>
+                    <h2 class="krz-private-course__title">
+                        <?php echo esc_html($title); ?>
+                    </h2>
                 <?php endif; ?>
 
                 <?php if ($kicker) : ?>
-                    <p class="krz-private-course__kicker"><?php echo esc_html($kicker); ?></p>
+                    <p class="krz-private-course__kicker">
+                        <?php echo esc_html($kicker); ?>
+                    </p>
                 <?php endif; ?>
 
                 <?php if ($text) : ?>
@@ -49,26 +65,30 @@ if (isset($block) && is_array($block)) {
                 <?php endif; ?>
 
                 <?php if ($text_small) : ?>
-                    <p class="krz-private-course__text krz-private-course__text--small">
-                        <?php echo wp_kses_post($text_small); ?>
-                    </p>
+                    <div class="krz-private-course__text krz-private-course__text--small">
+                        <?php echo wp_kses_post(wpautop($text_small)); ?>
+                    </div>
                 <?php endif; ?>
 
                 <span class="krz-private-course__dot" aria-hidden="true"></span>
             </div>
         </div>
 
-        <div class="row d-lg-none justify-content-center krz-private-course__mobile-images" aria-hidden="true">
-            <div class="col-5">
-                <div class="krz-private-course__mobile-image">
-                    <img src="<?php echo esc_url($image_right); ?>" alt="">
-                </div>
+        <div class="d-lg-none krz-private-course__mobile-images" aria-hidden="true">
+            <div class="krz-private-course__mobile-image">
+                <img
+                    src="<?php echo esc_url($image_right); ?>"
+                    alt=""
+                    loading="lazy"
+                >
             </div>
 
-            <div class="col-5">
-                <div class="krz-private-course__mobile-image">
-                    <img src="<?php echo esc_url($image_left); ?>" alt="">
-                </div>
+            <div class="krz-private-course__mobile-image">
+                <img
+                    src="<?php echo esc_url($image_left); ?>"
+                    alt=""
+                    loading="lazy"
+                >
             </div>
         </div>
     </div>
