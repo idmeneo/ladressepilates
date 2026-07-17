@@ -104,7 +104,6 @@
   justify-content: center;
   letter-spacing: 0.42em;
   min-height: 66px;
-  min-width: min(100%, 440px);
   padding: 0.95rem 2rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -169,7 +168,6 @@
     letter-spacing: 0.32em;
     line-height: 24px;
     min-height: 46px;
-    min-width: min(100%, 270px);
     padding-left: 1.35rem;
     padding-right: 1.15rem;
   }
