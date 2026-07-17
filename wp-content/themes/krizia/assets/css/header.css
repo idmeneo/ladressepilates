@@ -139,6 +139,77 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
 }
 
 /*--------------------------------------------------------------
+# Header interior pages
+--------------------------------------------------------------*/
+body:not(.home) {
+  background: #f6f3ee;
+  color: #35281f;
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+body:not(.home) #page-sub-header,
+body:not(.home) #footer-widget {
+  display: none;
+}
+
+body:not(.home, .single) #content.site-content {
+  padding: 150px 0;
+}
+
+body:not(.home) header#masthead {
+  background: #e7dccf !important;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: 0 16px 34px rgba(61, 43, 34, 0.12);
+  left: 0;
+  margin-bottom: 0;
+  padding: 0.85rem 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1200;
+}
+
+body.admin-bar:not(.home) header#masthead {
+  top: 32px;
+}
+
+body:not(.home) header#masthead .container {
+  max-width: 100%;
+  padding-left: clamp(2rem, 7vw, 6.75rem);
+  padding-right: clamp(2rem, 7vw, 6.75rem);
+}
+
+body:not(.home) header#masthead .navbar {
+  min-height: 50px;
+}
+
+body:not(.home) .navbar-brand img {
+  max-height: 72px;
+  width: auto;
+}
+
+body:not(.home) #masthead .navbar-nav > li > a,
+body:not(.home):not(.theme-preset-active) #masthead .navbar-nav > li > a {
+  color: #24170f;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.48em;
+  padding: 0.5rem clamp(1rem, 2.5vw, 2.25rem);
+  text-transform: uppercase;
+}
+
+body:not(.home) #masthead .navbar-nav > li > a:hover,
+body:not(.home) #masthead .navbar-nav > li > a:focus,
+body:not(.home):not(.theme-preset-active) #masthead .navbar-nav > li.current-menu-item > a,
+body:not(.home):not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a {
+  color: #8b4d22;
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
 # Header home
 --------------------------------------------------------------*/
 body.home header#masthead {
@@ -405,6 +476,56 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 @media screen and (max-width: 1199px) {
+
+  body:not(.home) header#masthead {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 0;
+  }
+
+  body:not(.home) header#masthead .container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  body:not(.home) header#masthead .navbar {
+    min-height: 62px;
+  }
+
+  body:not(.home) #masthead .navbar-toggler {
+    border: 0;
+    padding: 0;
+  }
+
+  body:not(.home) #masthead #main-nav.navbar-collapse {
+    background: #e7dccf;
+    margin-left: -22px;
+    margin-right: -22px;
+    padding: 7.25rem 20px 2.7rem;
+    width: calc(100% + 44px);
+  }
+
+  body:not(.home) #masthead .navbar-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body:not(.home) #masthead .navbar-nav > li {
+    width: 100%;
+  }
+
+  body:not(.home) #masthead .navbar-nav > li > a,
+  body:not(.home):not(.theme-preset-active) #masthead .navbar-nav > li > a {
+    color: #8b4d22;
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.54em;
+    line-height: 1.2;
+    padding: 1.28rem 0;
+  }
   .navbar-dark .dropdown-item {
     color: #fff;
   }
@@ -666,7 +787,8 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
 }
 
 @media screen and (max-width: 782px) {
-  body.admin-bar.home header#masthead {
+  body.admin-bar.home header#masthead,
+  body.admin-bar:not(.home) header#masthead {
     top: 46px;
   }
 }
