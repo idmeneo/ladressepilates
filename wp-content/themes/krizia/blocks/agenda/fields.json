@@ -20,72 +20,27 @@
         "default_value": "Agenda"
       },
       {
-        "key": "field_agenda_events",
-        "label": "Événements",
-        "name": "agenda_events",
-        "type": "repeater",
-        "layout": "block",
-        "button_label": "Ajouter un événement",
-        "min": 1,
-        "sub_fields": [
-          {
-            "key": "field_agenda_event_day",
-            "label": "Jour",
-            "name": "day",
-            "type": "text"
-          },
-          {
-            "key": "field_agenda_event_month",
-            "label": "Mois",
-            "name": "month",
-            "type": "text"
-          },
-          {
-            "key": "field_agenda_event_year",
-            "label": "Année",
-            "name": "year",
-            "type": "text"
-          },
-          {
-            "key": "field_agenda_event_label",
-            "label": "Label",
-            "name": "label",
-            "type": "text"
-          },
-          {
-            "key": "field_agenda_event_title",
-            "label": "Titre",
-            "name": "title",
-            "type": "text"
-          },
-          {
-            "key": "field_agenda_event_text",
-            "label": "Texte",
-            "name": "text",
-            "type": "textarea",
-            "rows": 3,
-            "new_lines": "br"
-          },
-          {
-            "key": "field_agenda_event_duration",
-            "label": "Durée",
-            "name": "duration",
-            "type": "text"
-          },
-          {
-            "key": "field_agenda_event_price",
-            "label": "Prix",
-            "name": "price",
-            "type": "text"
-          },
-          {
-            "key": "field_agenda_event_button",
-            "label": "Bouton",
-            "name": "button",
-            "type": "link",
-            "return_format": "array"
-          }
-        ]
+        "key": "field_agenda_button_text",
+        "label": "Texte des boutons",
+        "name": "agenda_button_text",
+        "type": "text",
+        "default_value": "M’inscrire"
+      },
+      {
+        "key": "field_agenda_maximum_events",
+        "label": "Nombre maximum d’événements",
+        "name": "agenda_maximum_events",
+        "type": "number",
+        "instructions": "Laisser vide ou saisir 0 pour afficher tous les événements futurs.",
+        "default_value": 0,
+        "min": 0
+      },
+      {
+        "key": "field_agenda_empty_message",
+        "label": "Message si aucun événement",
+        "name": "agenda_empty_message",
+        "type": "text",
+        "default_value": ""
       }
     ],
     "location": [
@@ -102,9 +57,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
     "active": true,
-    "description": "",
     "show_in_rest": 1
   }
 ]

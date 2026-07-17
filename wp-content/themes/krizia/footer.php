@@ -11,10 +11,10 @@ if (
     !is_page_template('blank-page.php')
     && !is_page_template('blank-page-with-container.php')
 ) :
-    if (!is_front_page()) :
+    if (!is_front_page() && !is_singular('post')) :
         ?>
-            </div><!-- .row -->
-        </div><!-- .container -->
+            </div> <!-- .row -->
+        </div> <!-- .container -->
         <?php
     endif;
     ?>

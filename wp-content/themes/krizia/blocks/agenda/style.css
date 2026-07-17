@@ -379,3 +379,25 @@
     width: 100%;
   }
 }
+
+.krz-agenda__button {
+  appearance: none;
+  cursor: pointer;
+}
+
+.krz-agenda__amelia {
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.krz-agenda__empty {
+  color: #7d451b;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 34px;
+  margin: 3rem 0 0;
+  text-align: center;
+}

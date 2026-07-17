@@ -153,7 +153,7 @@ if (function_exists('wp_body_open')) {
 
 
         <div id="content" class="site-content">
-            <?php if (!is_front_page()) : ?>
+            <?php if (!is_front_page() && !is_singular('post')) : ?>
                 <div class="container">
                     <div class="row">
             <?php endif; ?>

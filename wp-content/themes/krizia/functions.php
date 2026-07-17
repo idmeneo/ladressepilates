@@ -331,6 +331,12 @@ if ( ! class_exists( 'wp_bootstrap_navwalker' ) ) {
     require_once get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 }
 
+$amelia_sync_file = get_template_directory() . '/inc/amelia-sync.php';
+
+if (file_exists($amelia_sync_file)) {
+    require_once $amelia_sync_file;
+}
+
 
 add_action( 'acf/init', function () {
     if ( function_exists( 'acf_add_options_page' ) ) {

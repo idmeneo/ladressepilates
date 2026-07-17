@@ -413,3 +413,30 @@
     width: 33.333333% !important;
   }
 }
+
+.krz-private-formula__tagline p {
+  margin: 0;
+}
+
+.krz-private-formula__tagline p + p {
+  margin-top: 1rem;
+}
+
+.krz-private-formula__button {
+  appearance: none;
+  cursor: pointer;
+}
+
+.krz-private-formula__amelia {
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.krz-private-formula__empty {
+  color: #7d451b;
+  font-family: "Manrope", Arial, sans-serif;
+  text-align: center;
+}
