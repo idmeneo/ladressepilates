@@ -10,8 +10,8 @@ $default_image_right = get_template_directory_uri() . '/assets/images/movement-d
 
 $title       = get_field('private_course_title') ?: 'Les cours privés';
 $kicker      = get_field('private_course_kicker') ?: 'La promesse d’un accompagnement';
-$text        = get_field('private_course_text') ?: 'La promesse d’un accompagnement sérieux, efficace et adapté à chaque corps. Les cours privés offrent une prise en charge totalement individualisée. Chaque séance repose sur une analyse du corps et une programmation évolutive, pensée pour construire une progression durable.';
-$text_small  = get_field('private_course_text_small') ?: 'Les enseignants de L’Adresse Pilates suivent une formation continue afin de maintenir un haut niveau d’exigence et de précision dans leur pratique.';
+$text        = get_field('private_course_text') ?: '';
+$text_small  = get_field('private_course_text_small') ?: '';
 $image_left  = get_field('private_course_image_left') ?: $default_image_left;
 $image_right = get_field('private_course_image_right') ?: $default_image_right;
 
@@ -24,28 +24,30 @@ if (isset($block) && is_array($block)) {
 }
 ?>
 
-<section id="<?php echo esc_attr($block_id); ?>" class="krz-private-course">
-    <div class="krz-private-course__floating-layer" aria-hidden="true">
-        <div class="krz-private-course__floating krz-private-course__floating--left">
-            <img
-                src="<?php echo esc_url($image_left); ?>"
-                alt=""
-                loading="lazy"
-            >
-        </div>
-
-        <div class="krz-private-course__floating krz-private-course__floating--right">
-            <img
-                src="<?php echo esc_url($image_right); ?>"
-                alt=""
-                loading="lazy"
-            >
-        </div>
+<div class="krz-private-course__floating-layer" aria-hidden="true">
+    <div class="krz-private-course__floating krz-private-course__floating--left">
+        <img
+            src="<?php echo esc_url($image_left); ?>"
+            alt=""
+            loading="lazy"
+        >
     </div>
+
+    <div class="krz-private-course__floating krz-private-course__floating--right">
+        <img
+            src="<?php echo esc_url($image_right); ?>"
+            alt=""
+            loading="lazy"
+        >
+    </div>
+</div>
+
+<section id="<?php echo esc_attr($block_id); ?>" class="krz-private-course">
 
     <div class="container krz-private-course__container">
         <div class="row justify-content-center text-center">
             <div class="col-12 col-lg-6">
+
                 <?php if ($title) : ?>
                     <h2 class="krz-private-course__title">
                         <?php echo esc_html($title); ?>
@@ -70,11 +72,13 @@ if (isset($block) && is_array($block)) {
                     </div>
                 <?php endif; ?>
 
-                <span class="krz-private-course__dot" aria-hidden="true"></span>
+                <span class="krz-private-course__dot"></span>
+
             </div>
         </div>
 
         <div class="d-lg-none krz-private-course__mobile-images" aria-hidden="true">
+
             <div class="krz-private-course__mobile-image">
                 <img
                     src="<?php echo esc_url($image_right); ?>"
@@ -90,6 +94,9 @@ if (isset($block) && is_array($block)) {
                     loading="lazy"
                 >
             </div>
+
         </div>
+
     </div>
+
 </section>
