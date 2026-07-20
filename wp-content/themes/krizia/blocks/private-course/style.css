@@ -148,24 +148,51 @@
 }
 
 .krz-private-course__mobile-images {
-  align-items: center;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2.2rem;
-  max-width: 100%;
-  min-width: 0;
+  display: block;
+  height: clamp(480px, 135vw, 550px);
+  margin-left: calc(50% - 50vw);
+  margin-top: 2.5rem;
+  max-width: none;
   overflow: hidden;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100%;
+  padding: 0;
+  position: relative;
+  width: 100vw;
 }
 
 .krz-private-course__mobile-image {
-  flex: 0 1 118px;
   margin: 0;
-  max-width: 118px;
+  max-width: none;
   min-width: 0;
+  position: absolute;
+  width: clamp(195px, 57vw, 255px);
+}
+
+/*
+ * Première image du template :
+ * photo beige avec le mouvement.
+ * Placée à gauche et plus bas.
+ */
+.krz-private-course__mobile-image:nth-child(1) {
+  left: clamp(-65px, -12vw, -30px);
+  top: clamp(95px, 28vw, 135px);
+}
+
+/*
+ * Deuxième image du template :
+ * photo sur le reformer.
+ * Placée à droite et plus haut.
+ */
+.krz-private-course__mobile-image:nth-child(2) {
+  right: clamp(-65px, -12vw, -30px);
+  top: 0;
+}
+
+.krz-private-course__mobile-image img {
+  display: block;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  width: 100%;
 }
 
 @media screen and (max-width: 991px) {
@@ -234,8 +261,53 @@
   }
 
   .krz-private-course__mobile-images {
-    gap: 1rem;
-    padding-left: 0;
-    padding-right: 0;
+    margin-top: 2.5rem;
+  }
+
+  .krz-private-course__mobile-image {
+    width: clamp(195px, 57vw, 255px);
+  }
+
+  .krz-private-course__mobile-image:nth-child(1) {
+    left: clamp(-65px, -12vw, -30px);
+    top: clamp(95px, 28vw, 135px);
+  }
+
+  .krz-private-course__mobile-image:nth-child(2) {
+    right: clamp(-65px, -12vw, -30px);
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 390px) {
+
+  .krz-private-course__mobile-image {
+    width: 220px;
+  }
+
+  .krz-private-course__mobile-image:nth-child(1) {
+    left: -55px;
+    top: 125px;
+  }
+
+  .krz-private-course__mobile-image:nth-child(2) {
+    right: -55px;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 340px) {
+
+  .krz-private-course__mobile-image {
+    width: 205px;
+  }
+
+  .krz-private-course__mobile-image:nth-child(1) {
+    left: -62px;
+    top: 115px;
+  }
+
+  .krz-private-course__mobile-image:nth-child(2) {
+    right: -62px;
   }
 }

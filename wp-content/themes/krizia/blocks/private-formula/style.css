@@ -275,6 +275,26 @@
     background: #7d451b;
     width: 1.2rem;
   }
+
+  .krz-private-formula__row.swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .krz-private-formula__row > .swiper-slide {
+    display: flex;
+    height: auto;
+  }
+
+  .krz-private-formula__card {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+
+  .krz-private-formula__card-inner {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -439,4 +459,26 @@
   color: #7d451b;
   font-family: "Manrope", Arial, sans-serif;
   text-align: center;
+}
+
+/* ==========================================================================
+   Private Course + Private Formula
+   ========================================================================== */
+
+.krz-private-course + .krz-private-formula {
+    padding-top: 50px;
+}
+
+.krz-private-course {
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 767px) {
+    .krz-private-course {
+        padding-bottom: 50px;
+    }
+
+    .krz-private-course + .krz-private-formula {
+        padding-top: 50px;
+    }
 }

@@ -81,15 +81,15 @@ if (isset($block) && is_array($block)) {
 
             <div class="krz-private-course__mobile-image">
                 <img
-                    src="<?php echo esc_url($image_right); ?>"
+                    src="<?php echo esc_url($image_left); ?>"
                     alt=""
                     loading="lazy"
                 >
             </div>
-
+        
             <div class="krz-private-course__mobile-image">
                 <img
-                    src="<?php echo esc_url($image_left); ?>"
+                    src="<?php echo esc_url($image_right); ?>"
                     alt=""
                     loading="lazy"
                 >
