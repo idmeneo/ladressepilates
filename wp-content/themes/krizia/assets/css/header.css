@@ -371,7 +371,6 @@ body.home .krizia-scroll-logo:focus {
   display: inline-flex;
   flex: 0 0 auto;
   flex-direction: column;
-  margin-right: clamp(2rem, 5vw, 5rem);
   min-width: 215px;
   text-decoration: none;
   text-transform: uppercase;
@@ -797,5 +796,15 @@ body.home .krizia-scroll-header .navbar-toggler-icon {
   #masthead .navbar-nav > li > a {
     padding-bottom: 0.938rem;
     padding-top: 0.938rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1550px) {
+  body.home .krizia-scroll-menu > li > a,
+  body.home:not(.theme-preset-active) .krizia-scroll-menu > li > a {
+    font-size: clamp(0.58rem, -0.174rem + 1.005vw, 0.8rem);
+
+    padding-left: clamp(20px, -34.857px + 4.571vw, 36px);
+    padding-right: clamp(20px, -34.857px + 4.571vw, 36px);
   }
 }
