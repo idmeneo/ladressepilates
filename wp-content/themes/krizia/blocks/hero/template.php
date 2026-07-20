@@ -36,27 +36,36 @@ if (isset($block) && is_array($block)) {
         <div class="row justify-content-center justify-content-lg-start">
             <div class="col-12 col-lg-6">
                 <div class="krz-hero__content">
-                    <h1 class="krz-hero__title">
+                    <h1 class="krz-hero__title krz-hero__animate">
                         <?php echo esc_html($title); ?>
 
                         <?php if ($label) : ?>
-                            <span class="krz-hero__label"><?php echo esc_html($label); ?></span>
+                            <span class="krz-hero__label">
+                                <?php echo esc_html($label); ?>
+                            </span>
                         <?php endif; ?>
                     </h1>
 
-                    <span class="krz-hero__mark" aria-hidden="true"></span>
+                    <span
+                        class="krz-hero__mark krz-hero__animate"
+                        aria-hidden="true"
+                    ></span>
 
                     <?php if ($heading) : ?>
-                        <h2 class="krz-hero__heading"><?php echo esc_html($heading); ?></h2>
+                        <h2 class="krz-hero__heading krz-hero__animate">
+                            <?php echo esc_html($heading); ?>
+                        </h2>
                     <?php endif; ?>
 
                     <?php if ($text) : ?>
-                        <p class="krz-hero__text"><?php echo wp_kses_post(nl2br($text)); ?></p>
+                        <p class="krz-hero__text krz-hero__animate">
+                            <?php echo wp_kses_post(nl2br($text)); ?>
+                        </p>
                     <?php endif; ?>
 
                     <?php if ($button_title) : ?>
                         <a
-                            class="krz-hero__button"
+                            class="krz-hero__button krz-hero__animate"
                             href="<?php echo esc_url($button_url); ?>"
                             target="<?php echo esc_attr($button_target); ?>"
                         >
