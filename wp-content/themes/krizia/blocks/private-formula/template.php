@@ -166,10 +166,9 @@ $format_price = static function ($price) {
                     <?php endforeach; ?>
                 </div>
 
-                <div
-                    class="krz-private-formula__pagination swiper-pagination"
-                    aria-hidden="true"
-                ></div>
+                <div class="krz-private-formula__pagination" aria-hidden="true">
+                    <span></span>
+                </div>
             </div>
         <?php elseif (current_user_can('edit_posts')) : ?>
             <p class="krz-private-formula__empty">

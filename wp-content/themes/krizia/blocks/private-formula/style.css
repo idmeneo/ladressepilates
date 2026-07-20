@@ -255,25 +255,27 @@
   }
 
   .krz-private-formula__pagination {
-    display: flex;
-    gap: 0.45rem;
-    justify-content: center;
-    margin-top: 1rem;
-    position: static;
+    background: rgba(125, 69, 27, 0.22);
+    display: block;
+    height: 2px;
+    margin: 2.4rem auto 0;
+    max-width: 230px;
+    overflow: hidden;
+    position: relative;
+    width: calc(100% - 90px);
   }
 
-  .krz-private-formula__pagination .swiper-pagination-bullet {
-    background: rgba(125, 69, 27, 0.28);
-    border-radius: 999px;
-    height: 0.55rem;
-    margin: 0 !important;
-    opacity: 1;
-    width: 0.55rem;
-  }
-
-  .krz-private-formula__pagination .swiper-pagination-bullet-active {
+  .krz-private-formula__pagination span {
     background: #7d451b;
-    width: 1.2rem;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition:
+      transform 280ms ease,
+      width 280ms ease;
+    width: 25%;
   }
 
   .krz-private-formula__row.swiper-wrapper {
