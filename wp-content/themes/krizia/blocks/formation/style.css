@@ -1,10 +1,46 @@
+/**
+ * Formation block.
+ *
+ * @package Krizia
+ */
+
+/* ==========================================================
+   BLOCK
+   ========================================================== */
+
 .krz-formation {
-  background: #e7dccf;
-  overflow: hidden;
-  padding: 0;
+  --krz-formation-background: #e7dccf;
+  --krz-formation-padding-top: 0px;
+  --krz-formation-padding-bottom: 0px;
+
+  min-height: clamp(620px, 52vw, 760px);
+  overflow: visible;
   position: relative;
   width: 100%;
 }
+
+/* ==========================================================
+   SURFACE
+   ========================================================== */
+
+.krz-formation__surface {
+  background: var(--krz-formation-background);
+  min-height: clamp(620px, 52vw, 760px);
+  overflow: hidden;
+  padding:
+    calc(
+      var(--krz-formation-padding-top) +
+      var(--krz-overlap-offset, 0px)
+    )
+    0
+    var(--krz-formation-padding-bottom);
+  position: relative;
+  width: 100%;
+}
+
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
 
 .krz-formation__container {
   max-width: none;
@@ -22,9 +58,13 @@
   flex-direction: column;
   justify-content: center;
   margin-left: clamp(2rem, 7vw, 9rem);
-  padding: clamp(4rem, 7vw, 7.5rem) clamp(1.25rem, 3vw, 3rem);
   min-height: 100%;
+  padding: clamp(4rem, 7vw, 7.5rem) clamp(1.25rem, 3vw, 3rem);
 }
+
+/* ==========================================================
+   TYPOGRAPHY
+   ========================================================== */
 
 .krz-formation__title {
   border: 0;
@@ -84,6 +124,10 @@
   line-height: 34px;
 }
 
+/* ==========================================================
+   IMAGE
+   ========================================================== */
+
 .krz-formation__image {
   display: block;
   height: 100%;
@@ -93,7 +137,13 @@
   width: 100%;
 }
 
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
 @media screen and (max-width: 991px) {
+  .krz-formation,
+  .krz-formation__surface,
   .krz-formation__row {
     min-height: 0;
   }
@@ -108,6 +158,10 @@
     min-height: 520px;
   }
 }
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
 
 @media screen and (max-width: 767px) {
   .krz-formation__content {
@@ -150,4 +204,12 @@
   .krz-formation__image {
     min-height: 360px;
   }
+}
+
+/* ==========================================================
+   GUTENBERG
+   ========================================================== */
+
+.editor-styles-wrapper .krz-formation__surface {
+  min-height: 520px;
 }

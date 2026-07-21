@@ -1,6 +1,12 @@
 .krz-faq {
-  background: #f6f3ee;
-  padding: clamp(6rem, 12vw, 10.8rem) 0;
+  --krz-faq-background:#f6f3ee;
+  --krz-faq-padding-top:clamp(6rem,12vw,10.8rem);
+  --krz-faq-padding-bottom:clamp(6rem,12vw,10.8rem);
+}
+
+.krz-faq__surface{
+  background:var(--krz-faq-background);
+  padding:calc(var(--krz-faq-padding-top) + var(--krz-overlap-offset,0px)) 0 var(--krz-faq-padding-bottom);
   position: relative;
   text-align: center;
   width: 100%;
@@ -114,10 +120,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .krz-faq {
-    padding-bottom: 4.2rem;
-    padding-top: 4.2rem;
-  }
+  .krz-faq{--krz-faq-padding-top:4.2rem;--krz-faq-padding-bottom:4.2rem;}
 
   .krz-faq__title {
     font-size: 30px;

@@ -1,15 +1,52 @@
+/**
+ * Quote Band block.
+ *
+ * @package Krizia
+ */
+
+/* ==========================================================
+   BLOCK
+   ========================================================== */
+
 .krz-quote-band {
+  --krz-quote-band-padding-top: 0px;
+  --krz-quote-band-padding-bottom: 0px;
+
+  min-height: clamp(620px, 59.2vw, 853px);
+  overflow: visible;
+  position: relative;
+  width: 100%;
+}
+
+/* ==========================================================
+   SURFACE
+   ========================================================== */
+
+.krz-quote-band__surface {
   align-items: center;
+  background-image: var(--krz-quote-band-background-image);
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
   display: flex;
   min-height: clamp(620px, 59.2vw, 853px);
   overflow: hidden;
+  padding:
+    calc(
+      var(--krz-quote-band-padding-top) +
+      var(--krz-overlap-offset, 0px)
+    )
+    0
+    var(--krz-quote-band-padding-bottom);
   position: relative;
   text-align: center;
   width: 100%;
 }
+
+/* ==========================================================
+   CONTENT
+   ========================================================== */
 
 .krz-quote-band__container {
   max-width: 1140px;
@@ -114,11 +151,24 @@
   display: none;
 }
 
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
 @media screen and (max-width: 767px) {
-  .krz-quote-band {
+  .krz-quote-band,
+  .krz-quote-band__surface {
     min-height: 430px;
-    padding-bottom: 3.8rem;
-    padding-top: 3.8rem;
+  }
+
+  .krz-quote-band__surface {
+    padding:
+      calc(
+        3.8rem +
+        var(--krz-overlap-offset, 0px)
+      )
+      0
+      3.8rem;
   }
 
   .krz-quote-band__nav {
@@ -182,4 +232,12 @@
     transition: transform 280ms ease, width 280ms ease;
     width: 25%;
   }
+}
+
+/* ==========================================================
+   GUTENBERG
+   ========================================================== */
+
+.editor-styles-wrapper .krz-quote-band__surface {
+  min-height: 520px;
 }

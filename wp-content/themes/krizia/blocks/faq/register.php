@@ -17,6 +17,7 @@ acf_register_block_type([
     'icon'            => 'editor-help',
     'keywords'        => ['faq', 'questions', 'accordeon'],
     'render_template' => get_template_directory() . '/blocks/faq/template.php',
+    'enqueue_style' => get_template_directory_uri() . '/blocks/faq/style.css',
     'mode'            => 'preview',
     'supports'        => [
         'align'  => false,

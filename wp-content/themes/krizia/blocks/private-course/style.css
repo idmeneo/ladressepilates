@@ -1,47 +1,103 @@
+/**
+ * Private Course block.
+ *
+ * Presentation and Amelia packages combined in one section.
+ *
+ * @package Krizia
+ */
+
+/* ==========================================================
+   BLOCK
+   ========================================================== */
+
 .krz-private-course {
-  background: #f6f3ee;
+  --krz-private-course-background: #f6f3ee;
+  --krz-private-course-padding-top: clamp(6rem, 12vw, 10.8rem);
+  --krz-private-course-padding-bottom: clamp(6rem, 8vw, 7.5rem);
+  --krz-private-course-formula-gap: clamp(5rem, 8vw, 8rem);
+
   min-height: 500px;
-  overflow-x: hidden;
-  overflow-y: visible;
-  padding: clamp(6rem, 12vw, 10.8rem) 0;
+  overflow: visible;
+  text-align: center;
+  width: 100%;
+}
+
+.krz-private-course__surface {
+  background: var(--krz-private-course-background);
+  min-height: 500px;
+  padding:
+    calc(
+      var(--krz-private-course-padding-top) +
+      var(--krz-overlap-offset, 0px)
+    )
+    0
+    var(--krz-private-course-padding-bottom);
   position: relative;
   text-align: center;
   width: 100%;
 }
 
-@supports (overflow: clip) {
-  .krz-private-course {
-    overflow-x: clip;
-  }
+/* ==========================================================
+   FLOATING IMAGES
+   ========================================================== */
+
+.krz-private-course__floating-layer,
+.krz-private-course__overflow-layer {
+  height: 0;
+  pointer-events: none;
+  position: relative;
+  width: 100%;
 }
 
-/* .krz-private-course__floating-layer {
-  inset: 0;
-  overflow-x: hidden;
-  overflow-y: visible;
+.krz-private-course__floating-layer {
+  z-index: 2;
+}
+
+/*
+ * Exception for the right desktop image.
+ *
+ * This layer is deliberately rendered outside .krz-private-course so it is
+ * not trapped by the block stacking context. It can therefore overlap the
+ * preceding section while the rest of the block keeps its normal stack.
+ */
+.krz-private-course__overflow-layer {
+  overflow: visible;
+  z-index: 40;
+}
+
+.krz-private-course__floating {
+  display: block;
   pointer-events: none;
   position: absolute;
+}
+
+.krz-private-course__floating img,
+.krz-private-course__mobile-image img {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.krz-private-course__floating--left {
+  left: -4.5rem;
+  top: clamp(7rem, 12vw, 12rem);
+  width: clamp(260px, 27vw, 420px);
+}
+
+.krz-private-course__floating--right {
+  pointer-events: none;
+  right: clamp(-7rem, -4vw, -2rem);
+  top: -7rem;
+  width: clamp(260px, 27vw, 420px);
   z-index: 1;
-} */
-
-.krz-private-course__floating-layer{
-    position:relative;
-    z-index:200;
-    pointer-events:none;
 }
 
-.krz-private-course__floating{
-    position:absolute;
-    display:block;
-}
+/* ==========================================================
+   INTRODUCTION
+   ========================================================== */
 
-@supports (overflow: clip) {
-  .krz-private-course__floating-layer {
-    overflow-x: clip;
-  }
-}
-
-.krz-private-course__container {
+.krz-private-course__intro-container {
   max-width: 1140px;
   min-width: 0;
   position: relative;
@@ -98,11 +154,10 @@
 }
 
 .krz-private-course__text strong {
-  font-family: "Manrope", Arial, sans-serif;
-  font-size: 18px;
+  font-size: inherit;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 34px;
+  letter-spacing: inherit;
+  line-height: inherit;
 }
 
 .krz-private-course__text--small {
@@ -118,37 +173,11 @@
   width: 8px;
 }
 
-.krz-private-course__floating {
-  display: block;
-  pointer-events: none;
-  position: absolute;
-}
-
-.krz-private-course__floating img,
-.krz-private-course__mobile-image img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  width: 100%;
-}
-
-.krz-private-course__floating--left {
-  left: -4.5rem;
-  top: clamp(7rem, 12vw, 12rem);
-  width: clamp(260px, 27vw, 420px);
-  z-index: 51;
-}
-
-.krz-private-course__floating--right {
-  right: clamp(-7rem, -4vw, -2rem);
-  top: -7rem;
-  width: clamp(260px, 27vw, 420px);
-  z-index: 53;
-}
+/* ==========================================================
+   MOBILE IMAGES
+   ========================================================== */
 
 .krz-private-course__mobile-images {
-  display: block;
   height: clamp(480px, 135vw, 550px);
   margin-left: calc(50% - 50vw);
   margin-top: 2.5rem;
@@ -167,79 +196,387 @@
   width: clamp(195px, 57vw, 255px);
 }
 
-/*
- * Première image du template :
- * photo beige avec le mouvement.
- * Placée à gauche et plus bas.
- */
 .krz-private-course__mobile-image:nth-child(1) {
   left: clamp(-65px, -12vw, -30px);
   top: clamp(95px, 28vw, 135px);
 }
 
-/*
- * Deuxième image du template :
- * photo sur le reformer.
- * Placée à droite et plus haut.
- */
 .krz-private-course__mobile-image:nth-child(2) {
   right: clamp(-65px, -12vw, -30px);
   top: 0;
 }
 
-.krz-private-course__mobile-image img {
-  display: block;
-  height: auto;
-  max-width: none;
-  object-fit: contain;
+/* ==========================================================
+   FORMULAS
+   ========================================================== */
+
+.krz-private-course__formula-container {
+  margin-top: var(--krz-private-course-formula-gap);
+  max-width: 1320px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.krz-private-course__formula-title {
+  border: 0;
+  clear: none;
+  color: #3d2b22;
+  font-family: "Spectral", Georgia, serif;
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  line-height: 1.2;
+  margin: 0 0 3rem;
+  margin-right: -0.34em;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krz-private-course__swiper {
+  overflow: hidden;
   width: 100%;
 }
 
-@media screen and (max-width: 991px) {
-  .krz-private-course {
-    overflow-x: hidden;
+.krz-private-course__packages.swiper-wrapper {
+  flex-wrap: nowrap;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px 0;
+}
+
+.krz-private-course__packages > .swiper-slide {
+  height: auto;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+}
+
+.krz-private-course__card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  height: 100%;
+  min-height: 0;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+
+.krz-private-course__card-inner {
+  align-items: center;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  min-height: 430px;
+  outline: 0 solid transparent;
+  padding: 4.35rem 2.25rem 3.35rem;
+  transition:
+    border-color 160ms ease,
+    outline-color 160ms ease,
+    outline-width 160ms ease;
+}
+
+.krz-private-course__card:hover .krz-private-course__card-inner,
+.krz-private-course__card:focus-within .krz-private-course__card-inner {
+  border-color: #9f795c;
+  outline: 2px solid #9f795c;
+}
+
+.krz-private-course__card.is-featured .krz-private-course__card-inner {
+  border-color: #8b4d22;
+}
+
+.krz-private-course__card-title {
+  border: 0;
+  clear: none;
+  color: #361e0c;
+  font-family: "Spectral", Georgia, serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 36px;
+  margin: 0;
+  margin-right: -0.2em;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krz-private-course__card-line {
+  background: #8c8077;
+  display: block;
+  height: 2px;
+  margin: 0.7rem 0 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 220ms ease;
+  width: 28px;
+}
+
+.krz-private-course__card:hover .krz-private-course__card-line,
+.krz-private-course__card:focus-within .krz-private-course__card-line {
+  transform: scaleX(1);
+}
+
+.krz-private-course__tagline {
+  color: #7d451b;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 34px;
+  margin: 0.7rem 0 0;
+  max-width: 280px;
+  text-align: center;
+}
+
+.krz-private-course__tagline p {
+  margin: 0;
+}
+
+.krz-private-course__tagline p + p {
+  margin-top: 1rem;
+}
+
+.krz-private-course__separator {
+  border: 1.5px solid #9b6038;
+  border-radius: 999px;
+  display: block;
+  height: 25px;
+  margin: 1.35rem 0 1.55rem;
+  width: 10px;
+}
+
+.krz-private-course__details {
+  color: #361e0c;
+  display: block;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 34px;
+  text-align: center;
+}
+
+.krz-private-course__price {
+  color: #7d451b;
+  display: block;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  margin: 2rem 0 2.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.krz-private-course__button {
+  align-items: center;
+  appearance: none;
+  background: #8b4d22;
+  border: 1px solid #8b4d22;
+  border-radius: 999px;
+  color: #e5d9ce;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.4em;
+  line-height: 24px;
+  min-height: 54px;
+  min-width: 190px;
+  padding: 0.95rem 1.55rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.krz-private-course__button:hover,
+.krz-private-course__button:focus {
+  background: #653617;
+  border-color: #653617;
+  color: #fff;
+  text-decoration: none;
+}
+
+.krz-private-course__button:focus-visible {
+  outline: 2px solid #653617;
+  outline-offset: 4px;
+}
+
+.krz-private-course__badge {
+  background: #8b4d22;
+  border-radius: 999px;
+  color: #fff;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  left: 50%;
+  line-height: 1.2;
+  min-width: 138px;
+  padding: 0.55rem 1.1rem;
+  position: absolute;
+  top: -1.25rem;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.krz-private-course__pagination {
+  display: none;
+}
+
+.krz-private-course__amelia {
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.krz-private-course__empty {
+  color: #7d451b;
+  font-family: "Manrope", Arial, sans-serif;
+  text-align: center;
+}
+
+/* ==========================================================
+   DESKTOP FORMULA GRID
+   ========================================================== */
+
+@media screen and (min-width: 992px) {
+  .krz-private-course__swiper,
+  .krz-private-course__swiper.swiper {
+    overflow: visible;
   }
 
-  @supports (overflow: clip) {
-    .krz-private-course {
-      overflow-x: clip;
-    }
+  .krz-private-course__packages.swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1.15rem;
+    margin-right: -1.15rem;
+    transform: none !important;
+    width: auto !important;
   }
 
-  .krz-private-course__floating-layer,
-  .krz-private-course__floating {
-    display: none;
-  }
-
-  .krz-private-course__container {
-    overflow-x: hidden;
-  }
-
-  @supports (overflow: clip) {
-    .krz-private-course__container {
-      overflow-x: clip;
-    }
+  .krz-private-course__packages.swiper-wrapper > .swiper-slide {
+    flex: 0 0 33.333333% !important;
+    margin-right: 0 !important;
+    max-width: 33.333333% !important;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    transform: none !important;
+    width: 33.333333% !important;
   }
 }
 
+/* ==========================================================
+   TABLET / MOBILE SWIPER
+   ========================================================== */
+
+@media screen and (max-width: 991.98px) {
+  .krz-private-course {
+    --krz-private-course-padding-top: 7rem;
+    --krz-private-course-padding-bottom: 6rem;
+    --krz-private-course-formula-gap: 4.5rem;
+  }
+
+  .krz-private-course__floating-layer,
+  .krz-private-course__overflow-layer {
+    display: none;
+  }
+
+  .krz-private-course__intro-container,
+  .krz-private-course__formula-container {
+    overflow-x: hidden;
+  }
+
+  .krz-private-course__packages.swiper-wrapper {
+    align-items: stretch;
+    justify-content: flex-start !important;
+  }
+
+  .krz-private-course__packages > .swiper-slide {
+    display: flex;
+    flex: 0 0 min(84vw, 300px) !important;
+    height: auto;
+    max-width: min(84vw, 300px) !important;
+    width: min(84vw, 300px) !important;
+  }
+
+  .krz-private-course__card {
+    display: flex;
+    flex: 1 1 100%;
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .krz-private-course__card-inner {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .krz-private-course__pagination {
+    background: rgba(125, 69, 27, 0.22);
+    display: block;
+    height: 2px;
+    margin: 2.4rem auto 0;
+    max-width: 230px;
+    overflow: hidden;
+    position: relative;
+    width: calc(100% - 90px);
+  }
+
+  .krz-private-course__pagination span {
+    background: #7d451b;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition:
+      transform 280ms ease,
+      width 280ms ease;
+    width: 25%;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
 @media screen and (max-width: 767px) {
   .krz-private-course {
-    padding-bottom: 4rem;
-    padding-top: 4rem;
+    --krz-private-course-padding-top: 4rem;
+    --krz-private-course-padding-bottom: 4.4rem;
+    --krz-private-course-formula-gap: 3.8rem;
   }
 
   .krz-private-course__title {
     font-size: 30px;
-    letter-spacing: 0.2em;
     line-height: 48px;
-    margin-right: -0.2em;
   }
 
   .krz-private-course__kicker {
-    font-size: 16px;
-    letter-spacing: 0.4em;
-    line-height: 28px;
-    margin-right: -0.4em;
     margin-top: 1rem;
   }
 
@@ -260,27 +597,71 @@
     margin-top: 1.45rem;
   }
 
-  .krz-private-course__mobile-images {
-    margin-top: 2.5rem;
+  .krz-private-course__formula-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
-  .krz-private-course__mobile-image {
-    width: clamp(195px, 57vw, 255px);
+  .krz-private-course__formula-title {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    line-height: 35px;
+    margin-bottom: 2rem;
+    margin-right: -0.2em;
   }
 
-  .krz-private-course__mobile-image:nth-child(1) {
-    left: clamp(-65px, -12vw, -30px);
-    top: clamp(95px, 28vw, 135px);
+  .krz-private-course__swiper {
+    overflow: visible;
+    padding-left: 42px;
+    padding-right: 42px;
   }
 
-  .krz-private-course__mobile-image:nth-child(2) {
-    right: clamp(-65px, -12vw, -30px);
-    top: 0;
+  .krz-private-course__packages > .swiper-slide {
+    margin-bottom: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .krz-private-course__card-inner {
+    border-radius: 14px;
+    margin-bottom: 2rem;
+    min-height: 330px;
+    padding: 2.75rem 1.15rem 2.25rem;
+  }
+
+  .krz-private-course__tagline {
+    max-width: 190px;
+  }
+
+  .krz-private-course__separator {
+    height: 21px;
+    margin: 1rem 0 1.15rem;
+    width: 8px;
+  }
+
+  .krz-private-course__price {
+    margin: 1.35rem 0 1.7rem;
+  }
+
+  .krz-private-course__button {
+    min-height: 40px;
+    min-width: 148px;
+    padding: 0.75rem 1rem 0.75rem 1.28rem;
+  }
+
+  .krz-private-course__badge {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 16px;
+    min-width: 116px;
+    padding: 0.44rem 0.9rem;
+    top: -1rem;
   }
 }
 
 @media screen and (max-width: 390px) {
-
   .krz-private-course__mobile-image {
     width: 220px;
   }
@@ -292,12 +673,10 @@
 
   .krz-private-course__mobile-image:nth-child(2) {
     right: -55px;
-    top: 0;
   }
 }
 
 @media screen and (max-width: 340px) {
-
   .krz-private-course__mobile-image {
     width: 205px;
   }
@@ -310,4 +689,33 @@
   .krz-private-course__mobile-image:nth-child(2) {
     right: -62px;
   }
+}
+
+/* ==========================================================
+   GUTENBERG
+   ========================================================== */
+
+.editor-styles-wrapper .krz-private-course__surface {
+  min-height: 500px;
+}
+
+.editor-styles-wrapper .krz-private-course__floating-layer,
+.editor-styles-wrapper .krz-private-course__overflow-layer {
+  pointer-events: none;
+}
+
+/* ==========================================================
+   OVERLAP ADJACENCY FIX
+   ========================================================== */
+
+/*
+ * The external overflow layer for the right image sits between two
+ * .krz-block elements in the DOM. Restore the global overlap behavior
+ * that would normally be provided by .krz-block + .krz-block.
+ */
+.krz-block
++ .krz-private-course__overflow-layer
++ .krz-private-course {
+  --krz-overlap-offset: var(--krz-block-overlap);
+  margin-top: calc(var(--krz-block-overlap) * -1);
 }

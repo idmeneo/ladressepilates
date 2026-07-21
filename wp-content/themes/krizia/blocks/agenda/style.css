@@ -1,29 +1,67 @@
-.krz-agenda {
-  --krz-agenda-card-overlap: clamp(-7rem, -5.5vw, -4.5rem);
+/**
+ * Agenda block.
+ *
+ * @package Krizia
+ */
 
-  background: #fff;
-  padding-bottom: clamp(5rem, 8vw, 7rem);
-  padding-top: 0;
+/* ==========================================================
+   BLOCK AND EXTERNAL OVERLAPPING CARD
+   ========================================================== */
+
+.krz-agenda {
+  --krz-agenda-background: #fff;
+  --krz-agenda-padding-bottom: clamp(5rem, 8vw, 7rem);
+
+  min-height: 1px;
+  overflow: visible;
+  padding: 0 0 var(--krz-agenda-padding-bottom);
   position: relative;
   width: 100%;
-  z-index: 53;
+}
+
+/*
+ * Exception volontaire :
+ * la carte est rendue hors du bloc afin de ne pas être enfermée dans
+ * le contexte d'empilement de .krz-agenda. Elle peut donc passer
+ * réellement devant la section précédente.
+ */
+.krz-agenda__overflow-layer {
+  --krz-agenda-card-overlap: clamp(4.5rem, 5.5vw, 7rem);
+
+  margin-top: calc(var(--krz-agenda-card-overlap) * -1);
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+}
+
+.krz-agenda__surface {
+  background: var(--krz-agenda-background);
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.krz-agenda__spacer {
+  min-height: 0;
 }
 
 .krz-agenda__container {
   max-width: 1140px;
   position: relative;
+  z-index: 1;
 }
 
 .krz-agenda__card {
   background: #fff;
   border-radius: 12px;
-  margin-bottom: var(--krz-agenda-card-overlap);
-  margin-top: 0;
+  margin: 0;
   padding: 0;
   position: relative;
-  transform: translateY(-2rem);
   width: 100%;
-  z-index: 54;
+  z-index: 2;
 }
 
 .krz-agenda__body {
@@ -252,7 +290,11 @@
 
 @media screen and (max-width: 767px) {
   .krz-agenda {
-    --krz-agenda-card-overlap: -3.2rem;
+    --krz-agenda-padding-bottom: 4rem;
+  }
+
+  .krz-agenda__overflow-layer {
+    --krz-agenda-card-overlap: 3.2rem;
   }
 
   .krz-agenda__card {
@@ -400,4 +442,18 @@
   line-height: 34px;
   margin: 3rem 0 0;
   text-align: center;
+}
+
+
+
+/* ==========================================================
+   GUTENBERG
+   ========================================================== */
+
+.editor-styles-wrapper .krz-agenda__overflow-layer {
+  margin-top: -3rem;
+}
+
+.editor-styles-wrapper .krz-agenda {
+  min-height: 1px;
 }

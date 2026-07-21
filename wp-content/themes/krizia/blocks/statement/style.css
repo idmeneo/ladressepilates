@@ -1,20 +1,59 @@
+/**
+ * Statement block.
+ *
+ * @package Krizia
+ */
+
+/* ==========================================================
+   BLOCK
+   ========================================================== */
+
 .krz-statement {
-  align-items: center;
-  background-position: center center;
-  background-size: cover;
+  --krz-statement-padding-top: clamp(5rem, 8vw, 7rem);
+  --krz-statement-padding-bottom: clamp(5rem, 8vw, 7rem);
+
   color: #fff;
-  display: flex;
-  justify-content: center;
   min-height: clamp(620px, 56vw, 820px);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   text-align: center;
   width: 100%;
 }
 
+/* ==========================================================
+   SURFACE
+   ========================================================== */
+
+.krz-statement__surface {
+  align-items: center;
+  background-image: var(--krz-statement-background-image);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  min-height: clamp(620px, 56vw, 820px);
+  overflow: hidden;
+  padding:
+    calc(
+      var(--krz-statement-padding-top) +
+      var(--krz-overlap-offset, 0px)
+    )
+    0
+    var(--krz-statement-padding-bottom);
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+/* ==========================================================
+   CONTENT
+   ========================================================== */
+
 .krz-statement__container {
   max-width: 1140px;
   position: relative;
+  width: 100%;
   z-index: 2;
 }
 
@@ -69,8 +108,19 @@
   margin: 0;
 }
 
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
 @media screen and (max-width: 767px) {
   .krz-statement {
+    --krz-statement-padding-top: 4rem;
+    --krz-statement-padding-bottom: 4rem;
+
+    min-height: 430px;
+  }
+
+  .krz-statement__surface {
     min-height: 430px;
   }
 
@@ -93,4 +143,27 @@
     line-height: 46px;
     margin-right: -0.4em;
   }
+}
+
+/* ==========================================================
+   GUTENBERG
+   ========================================================== */
+
+.editor-styles-wrapper .krz-statement__surface {
+  min-height: 430px;
+}
+
+/* ==========================================================
+   PRIVATE COURSE -> STATEMENT OVERLAP FIX
+   ========================================================== */
+
+/*
+ * WordPress layout styles can add a block gap between consecutive blocks.
+ * Force the standard Krizia overlap when Statement follows Private Course.
+ * The Statement min-height is unrelated to the visible gap.
+ */
+.krz-private-course + .krz-statement {
+  --krz-overlap-offset: var(--krz-block-overlap);
+  margin-block-start: calc(var(--krz-block-overlap) * -1) !important;
+  margin-top: calc(var(--krz-block-overlap) * -1) !important;
 }

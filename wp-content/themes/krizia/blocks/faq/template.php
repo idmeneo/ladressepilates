@@ -29,14 +29,17 @@ if (isset($block) && is_array($block)) {
 }
 ?>
 
-<section id="<?php echo esc_attr($block_id); ?>" class="krz-faq">
+<section id="<?php echo esc_attr($block_id); ?>" class="krz-block krz-block--rounded krz-faq"
+    style="--krz-stack:12;"
+    data-krz-animation-section>
+    <div class="krz-block__surface krz-faq__surface">
     <div class="container krz-faq__container">
         <?php if ($title) : ?>
-            <h2 class="krz-faq__title"><?php echo esc_html($title); ?></h2>
+            <h2 class="krz-faq__title" data-krz-animate="animate__bounceInLeft"><?php echo esc_html($title); ?></h2>
         <?php endif; ?>
 
         <?php if ($kicker) : ?>
-            <p class="krz-faq__kicker"><?php echo esc_html($kicker); ?></p>
+            <p class="krz-faq__kicker" data-krz-animate="animate__bounceInRight"><?php echo esc_html($kicker); ?></p>
         <?php endif; ?>
 
         <?php if ($items) : ?>
@@ -48,7 +51,7 @@ if (isset($block) && is_array($block)) {
                     $item_id  = $block_id . '-item-' . $index;
                     ?>
 
-                    <article class="krz-faq__item<?php echo $index === 0 ? ' is-open' : ''; ?>">
+                    <article class="krz-faq__item<?php echo $index === 0 ? ' is-open' : ''; ?>" data-krz-animate="<?php echo $index % 2 === 0 ? 'animate__bounceInLeft' : 'animate__bounceInRight'; ?>">
                         <?php if ($question) : ?>
                             <button
                                 class="krz-faq__question"
@@ -74,4 +77,6 @@ if (isset($block) && is_array($block)) {
             </div>
         <?php endif; ?>
     </div>
+    </div>
+</div>
 </section>

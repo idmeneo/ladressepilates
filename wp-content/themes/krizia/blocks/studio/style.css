@@ -1,16 +1,59 @@
+/**
+ * Studio block.
+ *
+ * @package Krizia
+ */
+
+/* ==========================================================
+   STUDIO
+   ========================================================== */
+
 .krz-studio {
-  background: #e7dccf;
-  padding: clamp(6rem, 12vw, 10.8rem) 0;
+  --krz-section-background: #e8ddd1;
+  --krz-studio-padding-top: clamp(8rem, 14vw, 12.8rem);
+  --krz-studio-padding-bottom: clamp(6rem, 12vw, 10.8rem);
+
+  text-align: center;
+  width: 100%;
+  z-index: 19 !important;
+}
+
+/* ==========================================================
+   SURFACE
+   ========================================================== */
+
+.krz-studio__surface {
+  background: var(--krz-section-background);
+
+  /*
+   * Le padding supérieur naturel du Studio est additionné
+   * à la compensation de la superposition globale.
+   */
+  padding:
+    calc(
+      var(--krz-studio-padding-top) +
+      var(--krz-overlap-offset, 0px)
+    )
+    0
+    var(--krz-studio-padding-bottom);
+
   position: relative;
   text-align: center;
   width: 100%;
-  z-index: 52;
 }
+
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
 
 .krz-studio__container {
   max-width: 1140px;
   text-align: center;
 }
+
+/* ==========================================================
+   TITLE
+   ========================================================== */
 
 .krz-studio__title {
   border: 0;
@@ -28,6 +71,10 @@
   text-transform: uppercase;
 }
 
+/* ==========================================================
+   GALLERY
+   ========================================================== */
+
 .krz-studio__gallery {
   margin-bottom: 2rem;
   margin-left: auto;
@@ -43,6 +90,10 @@
   width: 100%;
 }
 
+/* ==========================================================
+   TEXT
+   ========================================================== */
+
 .krz-studio__text {
   color: #5d4a3f;
   font-family: "Manrope", Arial, sans-serif;
@@ -55,16 +106,29 @@
   text-align: center;
 }
 
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
 @media screen and (max-width: 991px) {
+  .krz-studio {
+    --krz-studio-padding-top: 9rem;
+    --krz-studio-padding-bottom: 8rem;
+  }
+
   .krz-studio__image {
     height: 430px;
   }
 }
 
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
 @media screen and (max-width: 767px) {
   .krz-studio {
-    padding-bottom: 8rem;
-    padding-top: 7.6rem;
+    --krz-studio-padding-top: 9rem;
+    --krz-studio-padding-bottom: 8rem;
   }
 
   .krz-studio__title {
@@ -95,4 +159,12 @@
     line-height: 34px;
     max-width: none;
   }
+}
+
+/* ==========================================================
+   GUTENBERG EDITOR
+   ========================================================== */
+
+.editor-styles-wrapper .krz-studio__surface {
+  min-height: 500px;
 }

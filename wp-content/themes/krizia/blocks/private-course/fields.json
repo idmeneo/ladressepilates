@@ -52,6 +52,52 @@
         "return_format": "url",
         "preview_size": "medium",
         "library": "all"
+      },
+      {
+        "key": "field_private_course_formula_tab",
+        "label": "Formules",
+        "name": "",
+        "type": "tab",
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_private_formula_title",
+        "label": "Titre",
+        "name": "private_formula_title",
+        "type": "text",
+        "default_value": "Les formules"
+      },
+      {
+        "key": "field_private_formula_button_text",
+        "label": "Texte des boutons",
+        "name": "private_formula_button_text",
+        "type": "text",
+        "default_value": "M’inscrire"
+      },
+      {
+        "key": "field_private_formula_featured_package",
+        "label": "ID du package mis en avant",
+        "name": "private_formula_featured_package",
+        "type": "number",
+        "instructions": "Optionnel. Laisser vide pour ne mettre aucun package en avant.",
+        "min": 1
+      },
+      {
+        "key": "field_private_formula_featured_badge",
+        "label": "Texte du badge",
+        "name": "private_formula_featured_badge",
+        "type": "text",
+        "default_value": "Coup de cœur"
+      },
+      {
+        "key": "field_private_formula_maximum_packages",
+        "label": "Nombre maximum de packages",
+        "name": "private_formula_maximum_packages",
+        "type": "number",
+        "instructions": "Laisser vide ou saisir 0 pour afficher tous les packages visibles.",
+        "default_value": 0,
+        "min": 0
       }
     ],
     "location": [
@@ -70,7 +116,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
+    "description": "Présentation des cours privés et formules Amelia dans une seule section.",
     "show_in_rest": 1
   }
 ]

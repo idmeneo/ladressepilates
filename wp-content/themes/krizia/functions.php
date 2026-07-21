@@ -128,6 +128,21 @@ function wp_bootstrap_starter_scripts() {
     );
 
     wp_enqueue_style(
+        'animate-css',
+        get_template_directory_uri() . '/assets/vendor/animate/animate.min.css',
+        array(),
+        '4.1.1'
+    );
+
+    wp_enqueue_script(
+        'krizia-animations',
+        get_template_directory_uri() . '/assets/js/krz-animations.js',
+        array(),
+        filemtime( get_template_directory() . '/assets/js/krz-animations.js' ),
+        true
+    );
+
+    wp_enqueue_style(
         'krizia-header',
         get_template_directory_uri() . '/assets/css/header.css',
         array( 'wp-bootstrap-starter-style' ),
@@ -402,3 +417,26 @@ function krizia_register_acf_blocks() {
     }
 }
 add_action( 'acf/init', 'krizia_register_acf_blocks' );
+
+function krizia_editor_assets() {
+
+    wp_enqueue_style(
+        'animate-css-editor',
+        get_template_directory_uri() . '/assets/vendor/animate/animate.min.css',
+        array(),
+        '4.1.1'
+    );
+
+    wp_enqueue_script(
+        'krizia-animations-editor',
+        get_template_directory_uri() . '/assets/js/krz-animations.js',
+        array(),
+        filemtime( get_template_directory() . '/assets/js/krz-animations.js' ),
+        true
+    );
+}
+
+add_action(
+    'enqueue_block_editor_assets',
+    'krizia_editor_assets'
+);

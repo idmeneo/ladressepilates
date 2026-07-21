@@ -1,11 +1,39 @@
+/**
+ * Newsletter block.
+ *
+ * @package Krizia
+ */
+
+/* ==========================================================
+   BLOCK AND SURFACE
+   ========================================================== */
+
 .krz-newsletter {
+  --krz-newsletter-padding-top: clamp(5rem, 8vw, 7rem);
+  --krz-newsletter-padding-bottom: clamp(5rem, 8vw, 7rem);
+
+  min-height: 1px;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+}
+
+.krz-newsletter__surface {
   align-items: center;
+  background-image: var(--krz-newsletter-background);
   background-position: center center;
   background-size: cover;
   color: #fff;
   display: flex;
   min-height: clamp(480px, 44.9vw, 647px);
   overflow: hidden;
+  padding:
+    calc(
+      var(--krz-newsletter-padding-top) +
+      var(--krz-overlap-offset, 0px)
+    )
+    0
+    var(--krz-newsletter-padding-bottom);
   position: relative;
   text-align: center;
   width: 100%;
@@ -22,6 +50,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ==========================================================
+   CONTENT
+   ========================================================== */
 
 .krz-newsletter__title {
   border: 0;
@@ -54,6 +86,10 @@
 .krz-newsletter__text p {
   margin: 0;
 }
+
+/* ==========================================================
+   FORM
+   ========================================================== */
 
 .krz-newsletter__form {
   align-items: center;
@@ -128,8 +164,17 @@
   margin-bottom: 0;
 }
 
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
 @media screen and (max-width: 767px) {
   .krz-newsletter {
+    --krz-newsletter-padding-top: 4.2rem;
+    --krz-newsletter-padding-bottom: 4.2rem;
+  }
+
+  .krz-newsletter__surface {
     min-height: 430px;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -158,6 +203,7 @@
   .krz-newsletter__input {
     font-size: 16px;
     height: 46px;
+    min-width: 0;
     width: 100%;
   }
 
@@ -171,4 +217,12 @@
     margin-top: 0.75rem;
     min-width: 210px;
   }
+}
+
+/* ==========================================================
+   GUTENBERG
+   ========================================================== */
+
+.editor-styles-wrapper .krz-newsletter__surface {
+  min-height: 480px;
 }
