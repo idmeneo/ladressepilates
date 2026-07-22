@@ -27,13 +27,7 @@
   background: var(--krz-formation-background);
   min-height: clamp(620px, 52vw, 760px);
   overflow: hidden;
-  padding:
-    calc(
-      var(--krz-formation-padding-top) +
-      var(--krz-overlap-offset, 0px)
-    )
-    0
-    var(--krz-formation-padding-bottom);
+  padding: 0;
   position: relative;
   width: 100%;
 }
@@ -212,4 +206,18 @@
 
 .editor-styles-wrapper .krz-formation__surface {
   min-height: 520px;
+}
+
+/* ==========================================================
+   STATEMENT -> FORMATION OVERLAP FIX
+   ========================================================== */
+
+/*
+ * Force le chevauchement standard lorsque Formation suit Statement.
+ * La règle margin-block-start neutralise également le block gap
+ * éventuellement ajouté par WordPress.
+ */
+.krz-statement + .krz-formation {
+  margin-block-start: calc(var(--krz-block-overlap) * -1) !important;
+  margin-top: calc(var(--krz-block-overlap) * -1) !important;
 }
