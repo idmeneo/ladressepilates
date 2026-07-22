@@ -1,270 +1,214 @@
 (function () {
   'use strict';
 
-  var sectionSelector = '[data-krz-animation-section]';
-  var elementSelector = '[data-krz-animate]';
-  var initializedAttribute = 'data-krz-animation-ready';
+  var animationSettings = {
+    textCharsUp: {
+      yPercent: 110,
+      duration: 0.85,
+      stagger: 0.035,
+      ease: 'power3.out',
+      start: 'top 85%'
+    },
+
+    fadeUp: {
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      start: 'top 88%'
+    }
+  };
 
   /**
-   * Retourne le nom complet de la classe Animate.css.
-   *
-   * bounceInLeft devient animate__bounceInLeft.
+   * Vérifie que GSAP et ses plugins sont disponibles.
    */
-  function getAnimationClass(element) {
-    var animation = element.getAttribute('data-krz-animate');
-
-    if (!animation) {
-      return '';
-    }
-
-    if (animation.indexOf('animate__') === 0) {
-      return animation;
-    }
-
-    return 'animate__' + animation;
+  function hasGsap() {
+    return (
+      typeof window.gsap !== 'undefined' &&
+      typeof window.ScrollTrigger !== 'undefined' &&
+      typeof window.SplitText !== 'undefined'
+    );
   }
 
   /**
-   * Convertit une valeur HTML en nombre.
+   * Anime un texte caractère par caractère.
    */
-  function parseNumber(value) {
-    if (value === null || value === '') {
-      return null;
-    }
+  function initCharsUpAnimation(element) {
+    var settings = animationSettings.textCharsUp;
 
-    var parsed = parseInt(value, 10);
-
-    return Number.isNaN(parsed) ? null : parsed;
-  }
-
-  /**
-   * Prépare le délai et la durée d’un élément.
-   */
-  function prepareElement(element, index) {
-    var explicitDelay = parseNumber(
-      element.getAttribute('data-krz-delay')
+    var delay = parseFloat(
+      element.getAttribute('data-krz-delay') || '0'
     );
 
-    var delayStep = parseNumber(
-      element.getAttribute('data-krz-delay-step')
-    );
-
-    var duration = parseNumber(
-      element.getAttribute('data-krz-duration')
-    );
-
-    var delay = explicitDelay;
-
-    if (delay === null && delayStep !== null) {
-      delay = index * delayStep;
-    }
-
-    if (delay !== null) {
-      element.style.animationDelay = delay + 'ms';
-    }
-
-    if (duration !== null) {
-      element.style.animationDuration = duration + 'ms';
-    }
-  }
-
-  /**
-   * Lance l’animation.
-   */
-  function animateElement(element) {
-    if (element.getAttribute('data-krz-animated') === 'true') {
+    if (element.dataset.krzAnimationReady === 'true') {
       return;
     }
 
-    var animationClass = getAnimationClass(element);
+    element.dataset.krzAnimationReady = 'true';
 
-    if (!animationClass) {
-      return;
-    }
+    var settings = animationSettings.textCharsUp;
 
-    element.setAttribute('data-krz-animated', 'true');
-
-    /*
-     * Deux frames permettent au navigateur de calculer
-     * correctement l’état initial.
-     */
-    window.requestAnimationFrame(function () {
-      element.classList.add('krz-animation-pending');
-
-      window.requestAnimationFrame(function () {
-        element.classList.remove('krz-animation-pending');
-
-        element.classList.add(
-          'animate__animated',
-          animationClass
-        );
-
-        element.addEventListener(
-          'animationend',
-          function handleAnimationEnd() {
-            element.classList.add('krz-animation-complete');
-
-            element.removeEventListener(
-              'animationend',
-              handleAnimationEnd
-            );
-          }
-        );
-      });
+    var split = new SplitText(element, {
+      type: 'words,chars',
+      charsClass: 'krz-split-char',
+      wordsClass: 'krz-split-word',
+      aria: 'auto'
     });
+
+    var animation = gsap.from(split.chars, {
+      yPercent: settings.yPercent,
+      opacity: 0,
+      duration: settings.duration,
+      stagger: settings.stagger,
+      delay: delay,
+      ease: settings.ease,
+      paused: true
+    });
+
+    var trigger = ScrollTrigger.create({
+      trigger: element,
+      start: settings.start,
+      once: true,
+
+      onEnter: function () {
+        animation.play();
+      }
+    });
+
+    element.__krzSplitText = split;
+    element.__krzAnimation = animation;
+    element.__krzScrollTrigger = trigger;
   }
 
   /**
-   * Initialise une section.
+   * Anime un élément avec un fade-up.
    */
-  function initAnimationSection(section) {
-    if (
-      section.getAttribute(initializedAttribute) === 'true'
-    ) {
+  function initFadeUpAnimation(element) {
+    if (element.dataset.krzAnimationReady === 'true') {
       return;
     }
 
-    var elements = section.querySelectorAll(elementSelector);
+    element.dataset.krzAnimationReady = 'true';
 
-    if (!elements.length) {
-      return;
-    }
+    var settings = animationSettings.fadeUp;
 
-    section.setAttribute(initializedAttribute, 'true');
+    var delay = parseFloat(
+      element.getAttribute('data-krz-delay') || '0'
+    );
 
-    elements.forEach(function (element, index) {
-      prepareElement(element, index);
+    var animation = gsap.from(element, {
+      y: settings.y,
+      opacity: 0,
+      duration: settings.duration,
+      delay: delay,
+      ease: settings.ease,
+      paused: true
     });
+
+    var trigger = ScrollTrigger.create({
+      trigger: element,
+      start: settings.start,
+      once: true,
+
+      onEnter: function () {
+        animation.play();
+      }
+    });
+
+    element.__krzAnimation = animation;
+    element.__krzScrollTrigger = trigger;
+  }
+
+  /**
+   * Initialise les animations présentes dans un contexte.
+   */
+  function initKrzAnimations(context) {
+    var root = context || document;
 
     var reduceMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
 
-    /*
-     * En réduction des mouvements, on laisse simplement
-     * les contenus visibles.
-     */
     if (reduceMotion) {
-      elements.forEach(function (element) {
-        element.classList.add('krz-animation-complete');
-      });
-
-      return;
-    }
-
-    /*
-     * Fallback pour les anciens navigateurs.
-     */
-    if (!('IntersectionObserver' in window)) {
-      elements.forEach(function (element) {
-        animateElement(element);
-      });
-
-      return;
-    }
-
-    /*
-     * Chaque élément est observé séparément.
-     * Les animations se déclenchent donc aussi au scroll.
-     */
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          animateElement(entry.target);
-          observer.unobserve(entry.target);
+      root
+        .querySelectorAll('[data-krz-animation]')
+        .forEach(function (element) {
+          element.style.opacity = '';
+          element.style.transform = '';
         });
-      },
-      {
-        threshold: 0.05,
-        rootMargin: '0px 0px -5% 0px'
-      }
+
+      return;
+    }
+
+    if (!hasGsap()) {
+      console.warn(
+        'Krizia animations: GSAP, ScrollTrigger ou SplitText est absent.'
+      );
+
+      return;
+    }
+
+    gsap.registerPlugin(
+      ScrollTrigger,
+      SplitText
     );
 
-    elements.forEach(function (element) {
-      observer.observe(element);
-    });
+    root
+      .querySelectorAll(
+        '[data-krz-animation="text-chars-up"]'
+      )
+      .forEach(function (element) {
+        initCharsUpAnimation(element);
+      });
+
+    root
+      .querySelectorAll(
+        '[data-krz-animation="fade-up"]'
+      )
+      .forEach(function (element) {
+        initFadeUpAnimation(element);
+      });
+
+    ScrollTrigger.refresh();
   }
 
   /**
-   * Initialise les animations dans un contexte donné.
+   * Détruit une animation avant un nouveau rendu ACF.
    */
-  function initKrzAnimations(context) {
+  function resetKrzAnimation(element) {
+    if (element.__krzScrollTrigger) {
+      element.__krzScrollTrigger.kill();
+    }
+
+    if (element.__krzAnimation) {
+      element.__krzAnimation.kill();
+    }
+
+    if (element.__krzSplitText) {
+      element.__krzSplitText.revert();
+    }
+
+    delete element.__krzScrollTrigger;
+    delete element.__krzAnimation;
+    delete element.__krzSplitText;
+
+    delete element.dataset.krzAnimationReady;
+
+    element.style.opacity = '';
+    element.style.transform = '';
+  }
+
+  function resetKrzAnimations(context) {
     var root = context || document;
-    var sections = [];
 
-    if (
-      root.matches &&
-      root.matches(sectionSelector)
-    ) {
-      sections.push(root);
-    }
-
-    if (root.querySelectorAll) {
-      root
-        .querySelectorAll(sectionSelector)
-        .forEach(function (section) {
-          sections.push(section);
-        });
-    }
-
-    sections.forEach(function (section) {
-      initAnimationSection(section);
-    });
+    root
+      .querySelectorAll('[data-krz-animation]')
+      .forEach(function (element) {
+        resetKrzAnimation(element);
+      });
   }
 
   /**
-   * Réinitialise un bloc ACF après son rendu.
-   */
-  function resetAnimationContext(context) {
-    if (!context) {
-      return;
-    }
-
-    var sections = [];
-
-    if (
-      context.matches &&
-      context.matches(sectionSelector)
-    ) {
-      sections.push(context);
-    }
-
-    if (context.querySelectorAll) {
-      context
-        .querySelectorAll(sectionSelector)
-        .forEach(function (section) {
-          sections.push(section);
-        });
-    }
-
-    sections.forEach(function (section) {
-      section.removeAttribute(initializedAttribute);
-
-      section
-        .querySelectorAll(elementSelector)
-        .forEach(function (element) {
-          var animationClass = getAnimationClass(element);
-
-          element.removeAttribute('data-krz-animated');
-          element.classList.remove(
-            'animate__animated',
-            'krz-animation-pending',
-            'krz-animation-complete'
-          );
-
-          if (animationClass) {
-            element.classList.remove(animationClass);
-          }
-        });
-    });
-  }
-
-  /**
-   * Initialisation front-end.
+   * Front-end.
    */
   function onReady() {
     initKrzAnimations(document);
@@ -280,7 +224,7 @@
   }
 
   /**
-   * Aperçu ACF Gutenberg.
+   * Aperçu des blocs ACF Gutenberg.
    */
   if (
     window.acf &&
@@ -294,11 +238,15 @@
             ? $block[0]
             : document;
 
-        resetAnimationContext(context);
+        resetKrzAnimations(context);
         initKrzAnimations(context);
       }
     );
   }
 
+  /**
+   * Fonctions pratiques pour la console.
+   */
   window.initKrzAnimations = initKrzAnimations;
-})( );
+  window.resetKrzAnimations = resetKrzAnimations;
+})();

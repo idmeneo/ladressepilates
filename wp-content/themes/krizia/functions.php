@@ -127,11 +127,43 @@ function wp_bootstrap_starter_scripts() {
         filemtime( get_stylesheet_directory() . '/style.css' )
     );
 
-    wp_enqueue_style(
-        'animate-css',
-        get_template_directory_uri() . '/assets/vendor/animate/animate.min.css',
+    wp_enqueue_script(
+        'krizia-gsap',
+        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js',
         array(),
-        '4.1.1'
+        '3.13.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'krizia-scroll-trigger',
+        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
+        array( 'krizia-gsap' ),
+        '3.13.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'krizia-split-text',
+        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js',
+        array( 'krizia-gsap' ),
+        '3.13.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'krizia-animations',
+        get_template_directory_uri() . '/assets/js/krz-animations.js',
+        array(
+            'krizia-gsap',
+            'krizia-scroll-trigger',
+            'krizia-split-text',
+        ),
+        filemtime(
+            get_template_directory() .
+            '/assets/js/krz-animations.js'
+        ),
+        true
     );
 
     wp_enqueue_script(
@@ -419,13 +451,6 @@ function krizia_register_acf_blocks() {
 add_action( 'acf/init', 'krizia_register_acf_blocks' );
 
 function krizia_editor_assets() {
-
-    wp_enqueue_style(
-        'animate-css-editor',
-        get_template_directory_uri() . '/assets/vendor/animate/animate.min.css',
-        array(),
-        '4.1.1'
-    );
 
     wp_enqueue_script(
         'krizia-animations-editor',

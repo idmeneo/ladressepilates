@@ -94,7 +94,7 @@ if ( isset( $block ) && is_array( $block ) ) {
 
                 <h2
                     class="krz-studio__title"
-                    data-krz-animate="animate__bounceInDown"
+                    data-krz-animation="text-chars-up"
                 >
                     <?php echo esc_html( $title ); ?>
                 </h2>
