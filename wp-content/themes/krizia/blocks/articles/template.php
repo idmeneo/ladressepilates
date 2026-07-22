@@ -53,7 +53,7 @@ if ( isset( $block ) && is_array( $block ) ) {
                 <?php if ( $title ) : ?>
                     <h2
                         class="krz-articles__title"
-                        data-krz-animate="animate__bounceInLeft"
+                        data-krz-animation="text-chars-up"
                     >
                         <?php echo esc_html( $title ); ?>
                     </h2>
@@ -62,8 +62,11 @@ if ( isset( $block ) && is_array( $block ) ) {
                 <?php if ( $kicker ) : ?>
                     <p
                         class="krz-articles__kicker"
-                        data-krz-animate="animate__bounceInRight"
+                        data-krz-animation="text-words-up"
+                        data-krz-delay="0.16"
                     >
+                        <?php echo esc_html( $kicker ); ?>
+                    </p>
                         <?php echo esc_html( $kicker ); ?>
                     </p>
                 <?php endif; ?>
@@ -72,7 +75,8 @@ if ( isset( $block ) && is_array( $block ) ) {
             <?php if ( $posts ) : ?>
                 <div
                     class="krz-articles__swiper swiper"
-                    data-krz-animate="animate__bounceInUp"
+                    data-krz-animation="fade-up"
+                    data-krz-delay="0.30"
                 >
                     <div class="krz-articles__row swiper-wrapper">
                         <?php foreach ( $posts as $post_item ) : ?>
