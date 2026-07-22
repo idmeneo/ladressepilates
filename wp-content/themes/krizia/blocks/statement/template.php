@@ -49,7 +49,7 @@ if ( isset( $block ) && is_array( $block ) ) {
                 <?php if ( $kicker ) : ?>
                     <p
                         class="krz-statement__kicker"
-                        data-krz-animate="animate__bounceInLeft"
+                        data-krz-animation="text-chars-up"
                     >
                         <?php echo esc_html( $kicker ); ?>
                     </p>
@@ -58,7 +58,7 @@ if ( isset( $block ) && is_array( $block ) ) {
                 <?php if ( $text ) : ?>
                     <div
                         class="krz-statement__text"
-                        data-krz-animate="animate__bounceInRight"
+                        data-krz-animation="text-words-up"
                     >
                         <?php echo wp_kses_post( nl2br( $text ) ); ?>
                     </div>
