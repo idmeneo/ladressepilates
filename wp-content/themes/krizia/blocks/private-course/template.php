@@ -115,7 +115,8 @@ if ( isset( $block ) && is_array( $block ) ) {
 >
     <div
         class="krz-private-course__floating krz-private-course__floating--right"
-        data-krz-animate="animate__bounceInRight"
+        data-krz-animation="fade-up"
+        data-krz-delay="0.1"
     >
         <img
             src="<?php echo esc_url( $image_right_data['url'] ); ?>"
@@ -138,7 +139,8 @@ if ( isset( $block ) && is_array( $block ) ) {
 >
     <div
         class="krz-private-course__floating krz-private-course__floating--left"
-        data-krz-animate="animate__bounceInLeft"
+        data-krz-animation="fade-up"
+        data-krz-delay="0.2"
     >
         <img
             src="<?php echo esc_url( $image_left_data['url'] ); ?>"
@@ -154,32 +156,44 @@ if ( isset( $block ) && is_array( $block ) ) {
 
         <div class="container krz-private-course__intro-container">
 
-            <div
-                class="row justify-content-center text-center"
-                data-krz-animate="animate__bounceInDown"
-            >
+            <div class="row justify-content-center text-center">
                 <div class="col-12 col-lg-6">
 
                     <?php if ( $title ) : ?>
-                        <h2 class="krz-private-course__title">
+                        <h2
+                            class="krz-private-course__title"
+                            data-krz-animation="text-chars-up"
+                        >
                             <?php echo esc_html( $title ); ?>
                         </h2>
                     <?php endif; ?>
 
                     <?php if ( $kicker ) : ?>
-                        <p class="krz-private-course__kicker">
+                        <p
+                            class="krz-private-course__kicker"
+                            data-krz-animation="text-words-up"
+                            data-krz-delay="0.16"
+                        >
                             <?php echo esc_html( $kicker ); ?>
                         </p>
                     <?php endif; ?>
 
                     <?php if ( $text ) : ?>
-                        <div class="krz-private-course__text">
+                        <div
+                            class="krz-private-course__text"
+                            data-krz-animation="text-words-up"
+                            data-krz-delay="0.3"
+                        >
                             <?php echo wp_kses_post( $text ); ?>
                         </div>
                     <?php endif; ?>
 
                     <?php if ( $text_small ) : ?>
-                        <div class="krz-private-course__text krz-private-course__text--small">
+                        <div
+                            class="krz-private-course__text krz-private-course__text--small"
+                            data-krz-animation="text-words-up"
+                            data-krz-delay="0.44"
+                        >
                             <?php echo wp_kses_post( wpautop( $text_small ) ); ?>
                         </div>
                     <?php endif; ?>
@@ -187,6 +201,8 @@ if ( isset( $block ) && is_array( $block ) ) {
                     <span
                         class="krz-private-course__dot"
                         aria-hidden="true"
+                        data-krz-animation="fade-up"
+                        data-krz-delay="0.56"
                     ></span>
 
                 </div>
@@ -198,7 +214,8 @@ if ( isset( $block ) && is_array( $block ) ) {
             >
                 <div
                     class="krz-private-course__mobile-image"
-                    data-krz-animate="animate__bounceInLeft"
+                    data-krz-animation="fade-up"
+                    data-krz-delay="0.1"
                 >
                     <img
                         src="<?php echo esc_url( $image_left_data['url'] ); ?>"
@@ -210,7 +227,8 @@ if ( isset( $block ) && is_array( $block ) ) {
 
                 <div
                     class="krz-private-course__mobile-image"
-                    data-krz-animate="animate__bounceInRight"
+                    data-krz-animation="fade-up"
+                    data-krz-delay="0.24"
                 >
                     <img
                         src="<?php echo esc_url( $image_right_data['url'] ); ?>"
@@ -230,7 +248,7 @@ if ( isset( $block ) && is_array( $block ) ) {
                     <div class="col-12">
                         <h2
                             class="krz-private-course__formula-title"
-                            data-krz-animate="animate__bounceInDown"
+                            data-krz-animation="text-chars-up"
                         >
                             <?php echo esc_html( $formula_title ); ?>
                         </h2>
@@ -241,7 +259,8 @@ if ( isset( $block ) && is_array( $block ) ) {
             <?php if ( $packages ) : ?>
                 <div
                     class="krz-private-course__swiper swiper"
-                    data-krz-animate="animate__bounceInUp"
+                    data-krz-animation="fade-up"
+                    data-krz-delay="0.18"
                 >
                     <div class="krz-private-course__packages swiper-wrapper">
 

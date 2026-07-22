@@ -38,7 +38,10 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 # Woocommerce
 # Footer
 --------------------------------------------------------------*/
-
+html,
+body {
+  overflow-x: clip;
+}
 /* ==========================================================
    KRIZIA — ANIMATIONS GSAP
    ========================================================== */
