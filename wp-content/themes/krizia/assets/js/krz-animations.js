@@ -7,7 +7,7 @@
       duration: 0.95,
       stagger: 0.022,
       ease: 'power2.out',
-      start: 'top 85%'
+      start: 'top 78%'
     },
 
     textWordsUp: {
@@ -15,14 +15,14 @@
       duration: 0.75,
       stagger: 0.05,
       ease: 'power2.out',
-      start: 'top 85%'
+      start: 'top 78%'
     },
 
     fadeUp: {
       y: 40,
       duration: 0.7,
       ease: 'power2.out',
-      start: 'top 88%'
+      start: 'top 78%'
     }
   };
 
@@ -34,6 +34,16 @@
       typeof window.gsap !== 'undefined' &&
       typeof window.ScrollTrigger !== 'undefined' &&
       typeof window.SplitText !== 'undefined'
+    );
+  }
+
+  /**
+   * Retourne la section d’animation parente.
+   */
+  function getAnimationTrigger(element) {
+    return (
+      element.closest('[data-krz-animation-section]') ||
+      element
     );
   }
 
@@ -82,9 +92,10 @@
     });
 
     var trigger = ScrollTrigger.create({
-      trigger: element,
+      trigger: getAnimationTrigger(element),
       start: settings.start,
       once: true,
+      invalidateOnRefresh: true,
 
       onEnter: function () {
         animation.play();
@@ -138,9 +149,10 @@
     });
 
     var trigger = ScrollTrigger.create({
-      trigger: element,
+      trigger: getAnimationTrigger(element),
       start: settings.start,
       once: true,
+      invalidateOnRefresh: true,
 
       onEnter: function () {
         animation.play();
@@ -182,9 +194,10 @@
     });
 
     var trigger = ScrollTrigger.create({
-      trigger: element,
+      trigger: getAnimationTrigger(element),
       start: settings.start,
       once: true,
+      invalidateOnRefresh: true,
 
       onEnter: function () {
         animation.play();
@@ -305,6 +318,10 @@
   function onReady() {
     initKrzAnimations(document);
   }
+
+  window.addEventListener('load', function () {
+    ScrollTrigger.refresh();
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener(
