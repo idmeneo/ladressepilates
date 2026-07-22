@@ -60,7 +60,7 @@ $surface_style = sprintf(
             <ul
                 class="krz-quote-band__nav"
                 aria-label="<?php echo esc_attr__( 'Équipements', 'krizia' ); ?>"
-                data-krz-animate="animate__bounceInDown"
+                data-krz-animation="fade-up"
             >
                 <?php foreach ( $items as $index => $item ) : ?>
                     <?php $title = $item['title'] ?? ''; ?>
@@ -81,7 +81,8 @@ $surface_style = sprintf(
 
             <div
                 class="krz-quote-band__swiper swiper"
-                data-krz-animate="animate__bounceInUp"
+                data-krz-animation="fade-up"
+                data-krz-delay="0.18"
             >
                 <div class="swiper-wrapper">
                     <?php foreach ( $items as $item ) : ?>
