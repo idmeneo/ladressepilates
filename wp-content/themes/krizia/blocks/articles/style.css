@@ -316,3 +316,8 @@
 .editor-styles-wrapper .krz-articles__surface {
   min-height: 520px;
 }
+
+.krz-faq + .krz-articles {
+  margin-block-start: calc(var(--krz-block-overlap) * -1);
+  margin-top: calc(var(--krz-block-overlap) * -1);
+}

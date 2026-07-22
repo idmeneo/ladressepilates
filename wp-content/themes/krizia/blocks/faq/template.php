@@ -92,6 +92,5 @@ if (isset($block) && is_array($block)) {
             </div>
         <?php endif; ?>
     </div>
-    </div>
 </div>
 </section>

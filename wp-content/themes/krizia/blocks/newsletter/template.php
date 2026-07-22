@@ -28,7 +28,7 @@ if ( isset( $block ) && is_array( $block ) ) {
 <section
     id="<?php echo esc_attr( $block_id ); ?>"
     class="krz-block krz-block--rounded krz-newsletter"
-    style="--krz-stack:11;"
+    style="--krz-stack:10;"
     data-krz-animation-section
 >
     <div
