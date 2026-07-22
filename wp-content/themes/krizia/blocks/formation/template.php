@@ -43,7 +43,7 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
                         <?php if ( $title ) : ?>
                             <h2
                                 class="krz-formation__title"
-                                data-krz-animate="animate__bounceInLeft"
+                                data-krz-animation="text-chars-up"
                             >
                                 <?php echo esc_html( $title ); ?>
                             </h2>
@@ -52,7 +52,8 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
                         <?php if ( $kicker ) : ?>
                             <p
                                 class="krz-formation__kicker"
-                                data-krz-animate="animate__bounceInLeft"
+                                data-krz-animation="text-words-up"
+                                data-krz-delay="0.18"
                             >
                                 <?php echo esc_html( $kicker ); ?>
                             </p>
@@ -61,7 +62,8 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
                         <?php if ( $text ) : ?>
                             <div
                                 class="krz-formation__text"
-                                data-krz-animate="animate__bounceInLeft"
+                                data-krz-animation="fade-up"
+                                data-krz-delay="0.34"
                             >
                                 <?php echo wp_kses_post( wpautop( $text ) ); ?>
                             </div>
@@ -70,7 +72,8 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
                         <?php if ( $text_alt ) : ?>
                             <div
                                 class="krz-formation__text krz-formation__text--alt"
-                                data-krz-animate="animate__bounceInLeft"
+                                data-krz-animation="fade-up"
+                                data-krz-delay="0.52"
                             >
                                 <?php echo wp_kses_post( wpautop( $text_alt ) ); ?>
                             </div>
