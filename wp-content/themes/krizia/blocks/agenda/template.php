@@ -104,14 +104,15 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
                         aria-hidden="true"
                         loading="lazy"
                         decoding="async"
-                        data-krz-animate="animate__bounceInLeft"
+                        data-krz-animation="fade-up"
                     >
                 <?php endif; ?>
 
                 <?php if ( $title ) : ?>
                     <h2
                         class="krz-agenda__title"
-                        data-krz-animate="animate__bounceInRight"
+                        data-krz-animation="text-chars-up"
+                        data-krz-delay="0.15"
                     >
                         <?php echo esc_html( $title ); ?>
                     </h2>
@@ -119,10 +120,11 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
 
                 <?php if ( $events ) : ?>
                     <div class="krz-agenda__list">
-
+                        <?php $event_index = 0; ?>
                         <?php foreach ( $events as $event ) : ?>
                             <?php
                             $event_id = absint( $event['id'] ?? 0 );
+                            $event_delay = min( 0.25 + ( $event_index * 0.12 ), 0.61 );
                             $name     = $event['name'] ?? '';
                             $text     = $event['description'] ?? '';
                             $start    = $event['start'] ?? '';
@@ -181,7 +183,8 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
 
                             <article
                                 class="krz-agenda__event"
-                                data-krz-animate="animate__bounceInLeft"
+                                data-krz-animation="fade-up"
+                                data-krz-delay="<?php echo esc_attr( $event_delay ); ?>"
                             >
                                 <div class="krz-agenda__date">
                                     <?php if ( $day ) : ?>
@@ -258,6 +261,7 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
                                 </div>
                             </article>
 
+                        <?php $event_index++; ?>
                         <?php endforeach; ?>
 
                     </div>
@@ -270,7 +274,11 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
 
                 <?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
 
-                    <p class="krz-agenda__empty">
+                    <p
+                        class="krz-agenda__empty"
+                        data-krz-animation="fade-up"
+                        data-krz-delay="0.25"
+                    >
                         Aucun événement Amelia futur et visible n’est synchronisé.
                     </p>
 
