@@ -67,8 +67,6 @@ if ( isset( $block ) && is_array( $block ) ) {
                     >
                         <?php echo esc_html( $kicker ); ?>
                     </p>
-                        <?php echo esc_html( $kicker ); ?>
-                    </p>
                 <?php endif; ?>
             </div>
 
