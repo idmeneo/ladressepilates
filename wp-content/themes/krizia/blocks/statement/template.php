@@ -59,6 +59,7 @@ if ( isset( $block ) && is_array( $block ) ) {
                     <div
                         class="krz-statement__text"
                         data-krz-animation="text-words-up"
+                        data-krz-delay="0.15"
                     >
                         <?php echo wp_kses_post( nl2br( $text ) ); ?>
                     </div>
