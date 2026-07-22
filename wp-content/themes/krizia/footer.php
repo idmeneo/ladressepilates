@@ -100,6 +100,7 @@ if (
         id="colophon"
         class="krz-footer"
         role="contentinfo"
+        style="--krz-stack:9;"
     >
         <div class="container krz-footer__container">
             <div class="row krz-footer__main-row">

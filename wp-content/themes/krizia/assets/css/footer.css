@@ -1,9 +1,20 @@
 .krz-footer {
+  --krz-footer-overlap: var(--krz-block-overlap, 48px);
+  --krz-footer-padding-top: clamp(4.2rem, 7vw, 6.6rem);
+
   background: #7d451b;
   color: #fff;
-  padding: clamp(4.2rem, 7vw, 6.6rem) 0 1.5rem;
+  margin-top: calc(var(--krz-footer-overlap) * -1);
+  padding:
+    calc(
+      var(--krz-footer-padding-top) +
+      var(--krz-footer-overlap)
+    )
+    0
+    1.5rem;
   position: relative;
   width: 100%;
+  z-index: 9;
 }
 
 .krz-footer *,
