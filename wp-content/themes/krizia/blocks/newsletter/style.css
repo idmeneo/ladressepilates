@@ -120,7 +120,6 @@
   align-items: center;
   background: #7d451b;
   border: 1px solid #7d451b;
-  border-radius: 9999px;
   color: #e5d9ce;
   cursor: pointer;
   display: inline-flex;
@@ -210,6 +209,7 @@
   .krz-newsletter__button {
     display: inline-flex;
     font-size: 14px;
+    border-radius: 9999px;
     height: 46px;
     letter-spacing: 0.4em;
     line-height: 24px;

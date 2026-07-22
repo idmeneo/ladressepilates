@@ -41,7 +41,7 @@ if ( isset( $block ) && is_array( $block ) ) {
                 <?php if ( $title ) : ?>
                     <h2
                         class="krz-newsletter__title"
-                        data-krz-animate="animate__bounceInLeft"
+                        data-krz-animation="text-chars-up"
                     >
                         <?php echo esc_html( $title ); ?>
                     </h2>
@@ -50,7 +50,8 @@ if ( isset( $block ) && is_array( $block ) ) {
                 <?php if ( $text ) : ?>
                     <div
                         class="krz-newsletter__text"
-                        data-krz-animate="animate__bounceInRight"
+                        data-krz-animation="text-words-up"
+                        data-krz-delay="0.16"
                     >
                         <?php echo wp_kses_post( wpautop( $text ) ); ?>
                     </div>
@@ -60,6 +61,8 @@ if ( isset( $block ) && is_array( $block ) ) {
                     class="krz-newsletter__form"
                     action="<?php echo esc_url( $form_action ); ?>"
                     method="post"
+                    data-krz-animation="fade-up"
+                    data-krz-delay="0.32"
                 >
                     <label
                         class="screen-reader-text"
@@ -88,7 +91,11 @@ if ( isset( $block ) && is_array( $block ) ) {
                 </form>
 
                 <?php if ( $privacy_text ) : ?>
-                    <div class="krz-newsletter__privacy">
+                    <div
+                        class="krz-newsletter__privacy"
+                        data-krz-animation="fade-up"
+                        data-krz-delay="0.46"
+                    >
                         <?php echo wp_kses_post( wpautop( $privacy_text ) ); ?>
                     </div>
                 <?php endif; ?>
