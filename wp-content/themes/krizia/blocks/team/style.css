@@ -98,19 +98,6 @@
   width: 100%;
 }
 
-/*
- * Desktop:
- * the grid animates as one element. Member animations are neutralized.
- */
-@media screen and (min-width: 768px) {
-  .krz-team__member.animate__animated {
-    animation-name: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-  }
-}
-
 /* ==========================================================
    TEXT
    ========================================================== */
@@ -178,18 +165,6 @@
     padding-left: 0;
     padding-right: 0;
     width: 100%;
-  }
-
-  /*
-   * Mobile:
-   * the grid animation is neutralized and each member alternates
-   * bounceInLeft / bounceInRight.
-   */
-  .krz-team__grid.animate__animated {
-    animation-name: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
   }
 
   .krz-team__card img {

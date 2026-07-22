@@ -48,7 +48,7 @@ if ( isset( $block ) && is_array( $block ) ) {
             <?php if ( $title ) : ?>
                 <h2
                     class="krz-team__title"
-                    data-krz-animate="animate__bounceInLeft"
+                    data-krz-animation="text-chars-up"
                 >
                     <?php echo esc_html( $title ); ?>
                 </h2>
@@ -57,7 +57,8 @@ if ( isset( $block ) && is_array( $block ) ) {
             <?php if ( $kicker ) : ?>
                 <p
                     class="krz-team__kicker"
-                    data-krz-animate="animate__bounceInRight"
+                    data-krz-animation="text-words-up"
+                    data-krz-delay="0.16"
                 >
                     <?php echo esc_html( $kicker ); ?>
                 </p>
@@ -66,22 +67,17 @@ if ( isset( $block ) && is_array( $block ) ) {
             <?php if ( $members ) : ?>
                 <div
                     class="row justify-content-center krz-team__grid"
-                    data-krz-animate="animate__bounceInUp"
+                    data-krz-animation="fade-up"
+                    data-krz-delay="0.30"
                 >
                     <?php foreach ( $members as $index => $member ) : ?>
                         <?php
                         $image = $member['image'] ?? '';
                         $alt   = $member['alt'] ?? '';
 
-                        $mobile_animation = 0 === $index % 2
-                            ? 'animate__bounceInLeft'
-                            : 'animate__bounceInRight';
-                        ?>
-
-                        <?php if ( $image ) : ?>
+                        if ( $image ) : ?>
                             <div
                                 class="col-12 col-sm-4 col-lg-3 krz-team__member"
-                                data-krz-animate="<?php echo esc_attr( $mobile_animation ); ?>"
                             >
                                 <article class="krz-team__card">
                                     <img
@@ -100,7 +96,8 @@ if ( isset( $block ) && is_array( $block ) ) {
             <?php if ( $text ) : ?>
                 <div
                     class="krz-team__text"
-                    data-krz-animate="animate__bounceInUp"
+                    data-krz-animation="fade-up"
+                    data-krz-delay="0.48"
                 >
                     <?php echo wp_kses_post( wpautop( $text ) ); ?>
                 </div>
