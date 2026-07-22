@@ -93,7 +93,7 @@
   border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 999px;
   display: inline-block;
-  height: 34px;
+  height: 25px;
   margin-bottom: 1.5rem;
   width: 11px;
 }
@@ -126,7 +126,7 @@
   color: rgba(255, 255, 255, 0.9);
   font-family: "Manrope", Arial, sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 34px;
   margin: 0 auto 3rem;
