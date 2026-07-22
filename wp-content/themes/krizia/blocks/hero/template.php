@@ -16,9 +16,17 @@ $button     = get_field('hero_button');
 
 $background_url = $background ?: $default_background;
 
-$button_url    = is_array($button) && ! empty($button['url']) ? $button['url'] : '#reservation';
-$button_title  = is_array($button) && ! empty($button['title']) ? $button['title'] : 'Réserver ma séance';
-$button_target = is_array($button) && ! empty($button['target']) ? $button['target'] : '_self';
+$button_url    = is_array($button) && ! empty($button['url'])
+    ? $button['url']
+    : '#reservation';
+
+$button_title = is_array($button) && ! empty($button['title'])
+    ? $button['title']
+    : 'Réserver ma séance';
+
+$button_target = is_array($button) && ! empty($button['target'])
+    ? $button['target']
+    : '_self';
 
 $block_id = 'krz-hero-' . uniqid();
 
@@ -33,7 +41,6 @@ if (isset($block) && is_array($block)) {
     id="<?php echo esc_attr($block_id); ?>"
     class="krz-block krz-block--rounded krz-hero"
     style="--krz-stack:20;"
-    data-krz-animation-section
 >
 
     <div
@@ -58,41 +65,42 @@ if (isset($block) && is_array($block)) {
 
                     <div class="krz-hero__content">
 
-                        <h1
-                            class="krz-hero__title"
-                            data-krz-animate="bounceInLeft"
-                            data-krz-delay="0"
-                        >
+                        <?php if ($title) : ?>
 
-                            <?php echo esc_html($title); ?>
+                            <h1
+                                class="krz-hero__title"
+                                data-krz-animation="text-chars-up"
+                            >
+                                <?php echo esc_html($title); ?>
+                            </h1>
 
-                            <?php if ($label) : ?>
+                        <?php endif; ?>
 
-                                <span
-                                    class="krz-hero__label"
-                                    data-krz-animate="bounceInLeft"
-                                    data-krz-delay="120"
-                                >
-                                    <?php echo esc_html($label); ?>
-                                </span>
+                        <?php if ($label) : ?>
 
-                            <?php endif; ?>
+                            <span
+                                class="krz-hero__label"
+                                data-krz-animation="text-chars-up"
+                                data-krz-delay="0.35"
+                            >
+                                <?php echo esc_html($label); ?>
+                            </span>
 
-                        </h1>
+                        <?php endif; ?>
 
                         <span
                             class="krz-hero__mark"
                             aria-hidden="true"
-                            data-krz-animate="bounceInLeft"
-                            data-krz-delay="240"
+                            data-krz-animation="fade-up"
+                            data-krz-delay="0.65"
                         ></span>
 
                         <?php if ($heading) : ?>
 
                             <h2
                                 class="krz-hero__heading"
-                                data-krz-animate="bounceInLeft"
-                                data-krz-delay="360"
+                                data-krz-animation="text-words-up"
+                                data-krz-delay="0.80"
                             >
                                 <?php echo esc_html($heading); ?>
                             </h2>
@@ -103,8 +111,8 @@ if (isset($block) && is_array($block)) {
 
                             <p
                                 class="krz-hero__text"
-                                data-krz-animate="bounceInLeft"
-                                data-krz-delay="480"
+                                data-krz-animation="text-words-up"
+                                data-krz-delay="1.05"
                             >
                                 <?php echo wp_kses_post(nl2br($text)); ?>
                             </p>
@@ -117,8 +125,8 @@ if (isset($block) && is_array($block)) {
                                 class="krz-hero__button"
                                 href="<?php echo esc_url($button_url); ?>"
                                 target="<?php echo esc_attr($button_target); ?>"
-                                data-krz-animate="bounceInLeft"
-                                data-krz-delay="600"
+                                data-krz-animation="fade-up"
+                                data-krz-delay="1.35"
                             >
                                 <?php echo esc_html($button_title); ?>
                             </a>
