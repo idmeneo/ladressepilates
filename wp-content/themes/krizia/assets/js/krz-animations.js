@@ -3,10 +3,18 @@
 
   var animationSettings = {
     textCharsUp: {
-      yPercent: 110,
-      duration: 0.85,
-      stagger: 0.035,
-      ease: 'power3.out',
+      yPercent: 70,
+      duration: 0.95,
+      stagger: 0.022,
+      ease: 'power2.out',
+      start: 'top 85%'
+    },
+
+    textWordsUp: {
+      yPercent: 45,
+      duration: 0.75,
+      stagger: 0.05,
+      ease: 'power2.out',
       start: 'top 85%'
     },
 
@@ -33,12 +41,6 @@
    * Anime un texte caractère par caractère.
    */
   function initCharsUpAnimation(element) {
-    var settings = animationSettings.textCharsUp;
-
-    var delay = parseFloat(
-      element.getAttribute('data-krz-delay') || '0'
-    );
-
     if (element.dataset.krzAnimationReady === 'true') {
       return;
     }
@@ -46,6 +48,10 @@
     element.dataset.krzAnimationReady = 'true';
 
     var settings = animationSettings.textCharsUp;
+
+    var delay = parseFloat(
+      element.getAttribute('data-krz-delay') || '0'
+    );
 
     var split = new SplitText(element, {
       type: 'words,chars',
@@ -61,7 +67,74 @@
       stagger: settings.stagger,
       delay: delay,
       ease: settings.ease,
-      paused: true
+      force3D: true,
+      willChange: 'transform, opacity',
+      paused: true,
+      onComplete: function () {
+        gsap.set(split.chars, {
+          clearProps: 'willChange'
+        });
+      }
+    });
+
+    gsap.set(element, {
+      visibility: 'visible'
+    });
+
+    var trigger = ScrollTrigger.create({
+      trigger: element,
+      start: settings.start,
+      once: true,
+
+      onEnter: function () {
+        animation.play();
+      }
+    });
+
+    element.__krzSplitText = split;
+    element.__krzAnimation = animation;
+    element.__krzScrollTrigger = trigger;
+  }
+
+  function initWordsUpAnimation(element) {
+    if (element.dataset.krzAnimationReady === 'true') {
+      return;
+    }
+
+    element.dataset.krzAnimationReady = 'true';
+
+    var settings = animationSettings.textWordsUp;
+
+    var delay = parseFloat(
+      element.getAttribute('data-krz-delay') || '0'
+    );
+
+    var split = new SplitText(element, {
+      type: 'words',
+      wordsClass: 'krz-split-word',
+      aria: 'auto'
+    });
+
+    var animation = gsap.from(split.words, {
+      yPercent: settings.yPercent,
+      opacity: 0,
+      duration: settings.duration,
+      stagger: settings.stagger,
+      delay: delay,
+      ease: settings.ease,
+      force3D: true,
+      willChange: 'transform, opacity',
+      paused: true,
+
+      onComplete: function () {
+        gsap.set(split.words, {
+          clearProps: 'willChange'
+        });
+      }
+    });
+
+    gsap.set(element, {
+      visibility: 'visible'
     });
 
     var trigger = ScrollTrigger.create({
@@ -104,6 +177,10 @@
       paused: true
     });
 
+    gsap.set(element, {
+      visibility: 'visible'
+    });
+
     var trigger = ScrollTrigger.create({
       trigger: element,
       start: settings.start,
@@ -118,6 +195,16 @@
     element.__krzScrollTrigger = trigger;
   }
 
+  function revealAnimations(root) {
+    root
+      .querySelectorAll('[data-krz-animation]')
+      .forEach(function (element) {
+        element.style.visibility = 'visible';
+        element.style.opacity = '';
+        element.style.transform = '';
+      });
+  }
+
   /**
    * Initialise les animations présentes dans un contexte.
    */
@@ -129,17 +216,13 @@
     ).matches;
 
     if (reduceMotion) {
-      root
-        .querySelectorAll('[data-krz-animation]')
-        .forEach(function (element) {
-          element.style.opacity = '';
-          element.style.transform = '';
-        });
-
+      revealAnimations(root);
       return;
     }
 
     if (!hasGsap()) {
+      revealAnimations(root);
+
       console.warn(
         'Krizia animations: GSAP, ScrollTrigger ou SplitText est absent.'
       );
@@ -158,6 +241,14 @@
       )
       .forEach(function (element) {
         initCharsUpAnimation(element);
+      });
+
+    root
+      .querySelectorAll(
+        '[data-krz-animation="text-words-up"]'
+      )
+      .forEach(function (element) {
+        initWordsUpAnimation(element);
       });
 
     root
@@ -195,6 +286,7 @@
 
     element.style.opacity = '';
     element.style.transform = '';
+    element.style.visibility = '';
   }
 
   function resetKrzAnimations(context) {

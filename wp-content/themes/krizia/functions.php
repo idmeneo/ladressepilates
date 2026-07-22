@@ -5,6 +5,14 @@
  * @package WP_Bootstrap_Starter
  */
 
+/**
+ * Indique immédiatement que JavaScript est actif.
+ */
+function krz_add_js_class() {
+    echo "<script>document.documentElement.classList.add('krz-js');</script>\n";
+}
+add_action('wp_head', 'krz_add_js_class', 1);
+
 if ( ! function_exists( 'wp_bootstrap_starter_setup' ) ) :
 function wp_bootstrap_starter_setup() {
     load_theme_textdomain( 'wp-bootstrap-starter', get_template_directory() . '/languages' );

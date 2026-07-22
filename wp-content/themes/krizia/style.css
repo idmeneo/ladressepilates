@@ -40,6 +40,26 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 --------------------------------------------------------------*/
 
 /* ==========================================================
+   KRIZIA — ANIMATIONS GSAP
+   ========================================================== */
+
+.krz-js [data-krz-animation] {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .krz-js [data-krz-animation] {
+    visibility: visible;
+  }
+}
+
+.krz-split-char,
+.krz-split-word {
+  display: inline-block;
+  backface-visibility: hidden;
+}
+
+/* ==========================================================
    KRIZIA — VARIABLES GLOBALES
    ========================================================== */
 
@@ -174,53 +194,4 @@ Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, 
 
   -webkit-mask: none !important;
   mask: none !important;
-}
-
-/* ==========================================================
-   KRIZIA — ANIMATIONS GLOBALES
-   ========================================================== */
-
-@media (prefers-reduced-motion: no-preference) {
-  [data-krz-animate]:not(.animate__animated) {
-    opacity: 0;
-  }
-}
-
-[data-krz-animate] {
-  --animate-duration: var(
-    --krz-element-duration,
-    var(--krz-animation-duration)
-  );
-
-  --animate-delay: var(
-    --krz-element-delay,
-    0ms
-  );
-
-  backface-visibility: hidden;
-  will-change: opacity, transform;
-}
-
-[data-krz-animate].animate__animated {
-  animation-duration: var(--animate-duration);
-  animation-fill-mode: both;
-}
-
-[data-krz-animate].krz-animation-complete {
-  opacity: 1;
-  will-change: auto;
-}
-
-/* ==========================================================
-   KRIZIA — RÉDUCTION DES MOUVEMENTS
-   ========================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  [data-krz-animate] {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    will-change: auto !important;
-  }
 }
