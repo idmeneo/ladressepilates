@@ -113,7 +113,8 @@ if ( isset( $block ) && is_array( $block ) ) {
                         class="krz-studio__image"
                         loading="lazy"
                         decoding="async"
-                        data-krz-animate="animate__bounceInLeft"
+                        data-krz-animation="fade-up"
+                        data-krz-delay="0.15"
                     >
 
                 </div>
@@ -126,7 +127,8 @@ if ( isset( $block ) && is_array( $block ) ) {
                         class="krz-studio__image"
                         loading="lazy"
                         decoding="async"
-                        data-krz-animate="animate__bounceInRight"
+                        data-krz-animation="fade-up"
+                        data-krz-delay="0.35"
                     >
 
                 </div>
@@ -137,7 +139,8 @@ if ( isset( $block ) && is_array( $block ) ) {
 
                 <p
                     class="krz-studio__text"
-                    data-krz-animate="animate__bounceInUp"
+                    data-krz-animation="text-words-up"
+                    data-krz-delay="0.45"
                 >
                     <?php echo wp_kses_post( nl2br( $text ) ); ?>
                 </p>
