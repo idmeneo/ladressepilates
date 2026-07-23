@@ -1,5 +1,5 @@
 .krz-articles {
-  --krz-articles-background: #e8ddd1;
+  --krz-articles-background: #EBE7E2;
   --krz-articles-padding-top: clamp(6rem, 10vw, 9rem);
   --krz-articles-padding-bottom: clamp(6rem, 10vw, 9rem);
 
@@ -30,7 +30,7 @@
 }
 
 .krz-articles__heading {
-  margin-bottom: clamp(3rem, 5vw, 4.6rem);
+  margin-bottom: clamp(2rem, 3.5vw, 3.2rem);
   text-align: center;
 }
 

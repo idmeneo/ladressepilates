@@ -104,12 +104,6 @@ if ( isset( $block ) && is_array( $block ) ) {
                                     </span>
 
                                     <span class="krz-articles__content">
-                                        <time
-                                            class="krz-articles__date"
-                                            datetime="<?php echo esc_attr( get_the_date( 'c', $post_id ) ); ?>"
-                                        >
-                                            <?php echo esc_html( $date ); ?>
-                                        </time>
 
                                         <h3 class="krz-articles__card-title">
                                             <?php echo esc_html( $post_title ); ?>
