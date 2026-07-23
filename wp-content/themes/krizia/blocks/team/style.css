@@ -9,7 +9,7 @@
    ========================================================== */
 
 .krz-team {
-  --krz-team-background: #e8ddd1;
+  --krz-team-background: #EBE7E2;
   --krz-team-padding-top: clamp(6rem, 12vw, 10.8rem);
   --krz-team-padding-bottom: clamp(6rem, 12vw, 10.8rem);
 
@@ -77,7 +77,7 @@
    ========================================================== */
 
 .krz-team__grid {
-  margin-top: clamp(3rem, 5vw, 4.7rem);
+  margin-top: clamp(2rem, 3.5vw, 3.2rem);
   row-gap: 1.5rem;
 }
 
