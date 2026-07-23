@@ -43,6 +43,18 @@ $surface_style = sprintf(
     '--krz-quote-band-background-image:linear-gradient(rgba(50,35,27,.44),rgba(50,35,27,.44)),url(\'%s\');',
     esc_url( $background )
 );
+
+$first_item       = $items[0] ?? array();
+$first_background = $first_item['background'] ?? '';
+
+if ( ! $first_background ) {
+    $first_background = $background;
+}
+
+$background_style = sprintf(
+    'background-image:linear-gradient(rgba(50,35,27,.44),rgba(50,35,27,.44)),url(\'%s\');',
+    esc_url( $first_background )
+);
 ?>
 
 <section
@@ -51,10 +63,18 @@ $surface_style = sprintf(
     style="--krz-stack:14;"
     data-krz-animation-section
 >
+    <div class="krz-block__surface krz-quote-band__surface">
+
     <div
-        class="krz-block__surface krz-quote-band__surface"
-        style="<?php echo esc_attr( $surface_style ); ?>"
-    >
+        class="krz-quote-band__background krz-quote-band__background--first is-active"
+        style="<?php echo esc_attr( $background_style ); ?>"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="krz-quote-band__background krz-quote-band__background--second"
+        aria-hidden="true"
+    ></div>
         <div class="container krz-quote-band__container">
 
             <ul
@@ -86,9 +106,19 @@ $surface_style = sprintf(
             >
                 <div class="swiper-wrapper">
                     <?php foreach ( $items as $item ) : ?>
-                        <?php $text = $item['text'] ?? ''; ?>
+                        <?php
+                        $text            = $item['text'] ?? '';
+                        $item_background = $item['background'] ?? '';
 
-                        <div class="swiper-slide">
+                        if ( ! $item_background ) {
+                            $item_background = $background;
+                        }
+                        ?>
+
+                        <div
+                            class="swiper-slide"
+                            data-quote-background="<?php echo esc_url( $item_background ); ?>"
+                        >
                             <?php if ( $text ) : ?>
                                 <div class="krz-quote-band__text">
                                     <?php echo wp_kses_post( wpautop( $text ) ); ?>

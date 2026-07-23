@@ -22,6 +22,15 @@
         "min": 1,
         "sub_fields": [
           {
+            "key": "field_quote_band_item_background",
+            "label": "Image d’arrière-plan",
+            "name": "background",
+            "type": "image",
+            "return_format": "url",
+            "preview_size": "large",
+            "library": "all"
+          },
+          {
             "key": "field_quote_band_item_title",
             "label": "Titre",
             "name": "title",
