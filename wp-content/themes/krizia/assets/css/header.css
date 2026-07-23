@@ -287,10 +287,14 @@ body.home #masthead .krizia-header-booking {
   color: rgba(255, 255, 255, 0.86);
   font-family: "Manrope", Arial, sans-serif;
   font-size: 0.86rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.42em;
   padding: 0.5rem clamp(0.95rem, 2.1vw, 2.25rem);
   text-transform: uppercase;
+}
+
+body.home #masthead .krizia-header-booking {
+  background: rgba(255, 255, 255, 0.1); 
 }
 
 body.home #masthead .navbar-nav > li > a:hover,
