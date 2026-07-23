@@ -13,7 +13,7 @@
   --krz-formation-padding-top: 0px;
   --krz-formation-padding-bottom: 0px;
 
-  min-height: clamp(620px, 52vw, 760px);
+  min-height: 0;
   overflow: visible;
   position: relative;
   width: 100%;
@@ -25,7 +25,7 @@
 
 .krz-formation__surface {
   background: var(--krz-formation-background);
-  min-height: clamp(620px, 52vw, 760px);
+  min-height: 0;
   overflow: hidden;
   padding: 0;
   position: relative;
@@ -44,16 +44,33 @@
 }
 
 .krz-formation__row {
-  min-height: clamp(620px, 52vw, 760px);
+  align-items: stretch;
+  min-height: 0;
+}
+
+.krz-formation__row > [class*="col-"] {
+  min-height: 0;
+  position: relative;
 }
 
 .krz-formation__content {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: clamp(2rem, 7vw, 9rem);
-  min-height: 100%;
-  padding: clamp(4rem, 7vw, 7.5rem) clamp(1.25rem, 3vw, 3rem);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 600px;
+  min-height: 0;
+  width: 100%;
+
+  padding:
+    clamp(8rem, 10vw, 10rem)    /* haut */
+    0                           /* droite */
+    clamp(11rem, 14vw, 13rem)   /* bas */
+    clamp(1rem, 2vw, 2rem);     /* gauche */
 }
 
 /* ==========================================================
@@ -82,7 +99,7 @@
   font-weight: 700;
   letter-spacing: 0.4em;
   line-height: 28px;
-  margin: 2rem 0 0;
+  margin: 1.25rem 0 0;
   margin-right: -0.4em;
   text-transform: uppercase;
 }
@@ -94,11 +111,11 @@
   font-weight: 400;
   letter-spacing: 0.04em;
   line-height: 34px;
-  margin-top: clamp(2.8rem, 4vw, 4.2rem);
+  margin-top: 2rem;
 }
 
 .krz-formation__text--alt {
-  margin-top: clamp(2.4rem, 3.4vw, 3.4rem);
+  margin-top: 1.5rem;
 }
 
 .krz-formation__text p {
@@ -125,9 +142,11 @@
 .krz-formation__image {
   display: block;
   height: 100%;
-  min-height: clamp(620px, 52vw, 760px);
+  inset: 0;
+  min-height: 0;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 40%;
+  position: absolute;
   width: 100%;
 }
 
@@ -136,20 +155,40 @@
    ========================================================== */
 
 @media screen and (max-width: 991px) {
+
   .krz-formation,
   .krz-formation__surface,
   .krz-formation__row {
     min-height: 0;
   }
 
+  .krz-formation__row > [class*="col-"] {
+    min-height: 0;
+    position: relative;
+  }
+
   .krz-formation__content {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5rem 2rem;
+    min-height: 0;
+
+    /* Plus aucun padding horizontal */
+    padding:
+      4.5rem
+      0
+      4.5rem
+      0;
   }
 
   .krz-formation__image {
-    min-height: 520px;
+    position: relative;
+    inset: auto;
+
+    /* On enlève complètement le recadrage desktop */
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    object-fit: initial;
+    object-position: initial;
   }
 }
 
@@ -196,7 +235,8 @@
   }
 
   .krz-formation__image {
-    min-height: 360px;
+    height: 360px;
+    min-height: 0;
   }
 }
 
