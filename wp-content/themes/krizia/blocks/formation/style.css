@@ -235,7 +235,6 @@
   }
 
   .krz-formation__image {
-    height: 360px;
     min-height: 0;
   }
 }
