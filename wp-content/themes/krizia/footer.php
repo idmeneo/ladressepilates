@@ -108,7 +108,7 @@ if (
     >
         <div class="container krz-footer__container">
             <div class="row krz-footer__main-row">
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-lg-5 mt-4">
                     <?php if ($footer_title) : ?>
                         <h2 class="krz-footer__title">
                             <?php echo esc_html($footer_title); ?>
