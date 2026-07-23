@@ -3,7 +3,20 @@
 --------------------------------------------------------------*/
 .krz-single {
   background: #f6f3ee;
-  overflow: hidden;
+  overflow-x: clip;
+}
+
+.krz-single__related {
+  --krz-articles-background: #e8ddd1;
+  --krz-articles-padding-top: clamp(4.5rem, 7vw, 6.5rem);
+  --krz-articles-padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+@media screen and (max-width: 767px) {
+  .krz-single__related {
+    --krz-articles-padding-top: 4rem;
+    --krz-articles-padding-bottom: 4rem;
+  }
 }
 
 .krz-single__hero {
@@ -150,11 +163,8 @@
   padding-left: 2rem;
 }
 
-.krz-single__related {
-  background: #e8ddd1;
-}
-
 @media screen and (max-width: 767px) {
+
   .krz-single__hero {
     padding: 8.5rem 0 4rem;
   }

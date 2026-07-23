@@ -164,6 +164,9 @@ function krizia_enqueue_global_styles() {
             array( 'krizia-header', 'krizia-footer' ),
             krizia_asset_version( 'assets/css/single.css' )
         );
+
+        krizia_enqueue_block_style( 'articles' );
+        krizia_enqueue_block_script( 'articles' );
     }
 }
 
