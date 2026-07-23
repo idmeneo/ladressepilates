@@ -102,7 +102,7 @@
 .krz-newsletter__input {
   background: #fff;
   border: 0;
-  border-radius: 0;
+  border-radius: 5px 0 0 5px;
   color: #35281f;
   font-family: "Manrope", Arial, sans-serif;
   font-size: 16px;
@@ -135,6 +135,7 @@
   text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
+  border-radius: 0 5px 5px 0;
 }
 
 .krz-newsletter__button:hover,
@@ -203,6 +204,7 @@
     height: 46px;
     min-width: 0;
     width: 100%;
+    border-radius: 5px;
   }
 
   .krz-newsletter__button {
