@@ -45,18 +45,12 @@ if (function_exists('wp_body_open')) {
 
                         $krizia_home_button_show  = krizia_get_option('header_home_button_show', true);
                         $krizia_home_button_text  = krizia_get_option('header_home_button_text', 'Réserver');
-                        $krizia_home_button_link  = krizia_get_option('header_home_button_link');
-                        $krizia_home_button_url   = krizia_get_link_url($krizia_home_button_link, '#reservation');
-                        $krizia_home_button_target = krizia_get_link_target($krizia_home_button_link);
 
                         $krizia_scroll_logo_line_1 = krizia_get_option('header_scroll_logo_line_1', 'L’Adresse');
                         $krizia_scroll_logo_line_2 = krizia_get_option('header_scroll_logo_line_2', 'Pilates');
 
                         $krizia_scroll_button_show  = krizia_get_option('header_scroll_button_show', true);
                         $krizia_scroll_button_text  = krizia_get_option('header_scroll_button_text', 'Réserver');
-                        $krizia_scroll_button_link  = krizia_get_option('header_scroll_button_link');
-                        $krizia_scroll_button_url   = krizia_get_link_url($krizia_scroll_button_link, '#reservation');
-                        $krizia_scroll_button_target = krizia_get_link_target($krizia_scroll_button_link);
 
                         $krizia_home_navigation   = krizia_get_option('header_home_navigation', array());
                         $krizia_scroll_navigation = krizia_get_option('header_scroll_navigation', array());
@@ -83,7 +77,11 @@ if (function_exists('wp_body_open')) {
                     </button>
 
                     <?php if (is_front_page() && $krizia_home_button_show) : ?>
-                        <a class="krizia-mobile-booking" href="<?php echo esc_url($krizia_home_button_url); ?>" target="<?php echo esc_attr($krizia_home_button_target); ?>">
+                        <a
+                            class="krizia-mobile-booking amelia-popup"
+                            href="#reservation"
+                            role="button"
+                        >
                             <?php echo esc_html($krizia_home_button_text); ?>
                         </a>
                     <?php endif; ?>
@@ -114,7 +112,11 @@ if (function_exists('wp_body_open')) {
                             </ul>
 
                             <?php if ($krizia_home_button_show) : ?>
-                                <a class="krizia-header-booking" href="<?php echo esc_url($krizia_home_button_url); ?>" target="<?php echo esc_attr($krizia_home_button_target); ?>">
+                                <a
+                                    class="krizia-header-booking amelia-popup"
+                                    href="#reservation"
+                                    role="button"
+                                >
                                     <?php echo esc_html($krizia_home_button_text); ?>
                                 </a>
                             <?php endif; ?>
@@ -176,7 +178,11 @@ if (function_exists('wp_body_open')) {
                             </ul>
 
                             <?php if ($krizia_scroll_button_show) : ?>
-                                <a class="krizia-scroll-booking" href="<?php echo esc_url($krizia_scroll_button_url); ?>" target="<?php echo esc_attr($krizia_scroll_button_target); ?>">
+                                <a
+                                    class="krizia-scroll-booking amelia-popup"
+                                    href="#reservation"
+                                    role="button"
+                                >
                                     <?php echo esc_html($krizia_scroll_button_text); ?>
                                 </a>
                             <?php endif; ?>

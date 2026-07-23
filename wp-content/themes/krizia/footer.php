@@ -94,8 +94,12 @@ if (
     )
         ? $footer_booking['title']
         : 'Réserver';
-    ?>
+    
 
+    $amelia_booking_shortcode = krizia_get_option(
+        'amelia_booking_shortcode'
+    );
+?>
     <footer
         id="contact"
         class="krz-footer"
@@ -152,10 +156,18 @@ if (
 
                     <?php if ($booking_text) : ?>
                         <a
-                            class="krz-footer__booking"
-                            href="<?php echo esc_url($booking_url); ?>"
-                            target="<?php echo esc_attr($booking_target); ?>"
-                            <?php echo '_blank' === $booking_target ? 'rel="noopener noreferrer"' : ''; ?>
+                            class="krz-footer__booking<?php echo $amelia_booking_shortcode ? ' amelia-popup' : ''; ?>"
+                            href="<?php echo esc_url(
+                                $amelia_booking_shortcode
+                                    ? '#reservation'
+                                    : $booking_url
+                            ); ?>"
+                            <?php if (!$amelia_booking_shortcode) : ?>
+                                target="<?php echo esc_attr($booking_target); ?>"
+                                <?php echo '_blank' === $booking_target ? 'rel="noopener noreferrer"' : ''; ?>
+                            <?php else : ?>
+                                role="button"
+                            <?php endif; ?>
                         >
                             <?php echo esc_html($booking_text); ?>
                         </a>
@@ -221,6 +233,15 @@ if (
             <?php endif; ?>
         </div>
     </footer>
+    <?php if ($amelia_booking_shortcode) : ?>
+        <div class="krizia-amelia-popup">
+            <?php
+            echo do_shortcode(
+                wp_kses_post($amelia_booking_shortcode)
+            );
+            ?>
+        </div>
+    <?php endif; ?>
 <?php endif; ?>
 
 </div><!-- #page -->
