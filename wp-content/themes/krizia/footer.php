@@ -97,7 +97,7 @@ if (
     ?>
 
     <footer
-        id="colophon"
+        id="contact"
         class="krz-footer"
         role="contentinfo"
         style="--krz-stack:9;"

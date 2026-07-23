@@ -57,6 +57,9 @@ if (function_exists('wp_body_open')) {
                         $krizia_scroll_button_link  = krizia_get_option('header_scroll_button_link');
                         $krizia_scroll_button_url   = krizia_get_link_url($krizia_scroll_button_link, '#reservation');
                         $krizia_scroll_button_target = krizia_get_link_target($krizia_scroll_button_link);
+
+                        $krizia_home_navigation   = krizia_get_option('header_home_navigation', array());
+                        $krizia_scroll_navigation = krizia_get_option('header_scroll_navigation', array());
                         ?>
 
                         <?php if (is_front_page()) : ?>
@@ -88,10 +91,26 @@ if (function_exists('wp_body_open')) {
                     <?php if (is_front_page()) : ?>
                         <div id="main-nav" class="collapse navbar-collapse">
                             <ul class="navbar-nav krizia-home-menu">
-                                <li class="nav-item"><a class="nav-link" href="#krz-studio-block_995e36c8c753a55fa4b4ef27cb4399de"><?php esc_html_e('Le studio', 'krizia'); ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#krz-private-course-block_1d7e34dd5fcacd3ca2fc7051ff256add"><?php esc_html_e('Cours privés', 'krizia'); ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#krz-formation-block_55b8fef78f3f0be00ddd0371e5f162ec"><?php esc_html_e('Formation continue', 'krizia'); ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#colophon"><?php esc_html_e('Contact', 'krizia'); ?></a></li>
+                                <?php if (!empty($krizia_home_navigation)) : ?>
+                                    <?php foreach ($krizia_home_navigation as $item) :
+                                        if (empty($item['link'])) {
+                                            continue;
+                                        }
+
+                                        $link   = $item['link'];
+                                        $url    = !empty($link['url']) ? $link['url'] : '#';
+                                        $title  = !empty($link['title']) ? $link['title'] : '';
+                                        $target = !empty($link['target']) ? $link['target'] : '_self';
+                                    ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link"
+                                            href="<?php echo esc_url($url); ?>"
+                                            target="<?php echo esc_attr($target); ?>">
+                                                <?php echo esc_html($title); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </ul>
 
                             <?php if ($krizia_home_button_show) : ?>
@@ -134,10 +153,26 @@ if (function_exists('wp_body_open')) {
 
                         <div id="krizia-scroll-nav" class="collapse navbar-collapse">
                             <ul class="navbar-nav krizia-scroll-menu">
-                                <li class="nav-item"><a class="nav-link" href="#krz-studio-block_995e36c8c753a55fa4b4ef27cb4399de"><?php esc_html_e('Le studio', 'krizia'); ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#krz-private-course-block_1d7e34dd5fcacd3ca2fc7051ff256add"><?php esc_html_e('Cours privés', 'krizia'); ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#krz-formation-block_55b8fef78f3f0be00ddd0371e5f162ec"><?php esc_html_e('Formation continue', 'krizia'); ?></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#krz-contact-block_8b4d22_7d451b"><?php esc_html_e('Contact', 'krizia'); ?></a></li>
+                                <?php if (!empty($krizia_scroll_navigation)) : ?>
+                                    <?php foreach ($krizia_scroll_navigation as $item) :
+                                        if (empty($item['link'])) {
+                                            continue;
+                                        }
+
+                                        $link   = $item['link'];
+                                        $url    = !empty($link['url']) ? $link['url'] : '#';
+                                        $title  = !empty($link['title']) ? $link['title'] : '';
+                                        $target = !empty($link['target']) ? $link['target'] : '_self';
+                                    ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link"
+                                            href="<?php echo esc_url($url); ?>"
+                                            target="<?php echo esc_attr($target); ?>">
+                                                <?php echo esc_html($title); ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </ul>
 
                             <?php if ($krizia_scroll_button_show) : ?>
