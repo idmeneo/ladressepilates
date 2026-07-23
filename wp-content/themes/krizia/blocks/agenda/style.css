@@ -75,9 +75,9 @@
 
 .krz-agenda__logo {
   display: block;
-  height: 126px;
+  height: 190px;
   margin: 0 auto 2.25rem;
-  max-height: 126px;
+  max-height: 200px;
   max-width: 116px;
   object-fit: contain;
   width: auto;
@@ -110,7 +110,14 @@
   display: grid;
   grid-template-columns: 16% 1fr 20%;
   min-height: 175px;
-  padding: 2rem 0;
+  padding: 3rem 0.75rem 3rem 0;
+
+  transition: background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.krz-agenda__event:hover,
+.krz-agenda__event:focus-within {
+  background-color: #EBE7E2;
 }
 
 .krz-agenda__date {
@@ -227,12 +234,14 @@
 }
 
 .krz-agenda__duration::before {
-  border: 1px solid currentColor;
-  border-radius: 50%;
   content: "";
   display: inline-block;
-  height: 12px;
-  width: 12px;
+  flex: 0 0 auto;
+
+  width: 13px;
+  height: 13px;
+
+  background: url("../../assets/images/icons/duration.png") center / contain no-repeat;
 }
 
 .krz-agenda__action {
@@ -286,6 +295,13 @@
   border-color: #653617;
   color: #e5d9ce;
   text-decoration: none;
+}
+
+@media screen and (max-width: 992px) {
+  .krz-agenda__date em {
+    font-size: 12px;
+    padding: 0.25rem 0.5rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -358,11 +374,11 @@
   }
 
   .krz-agenda__date em {
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 0.04em;
     line-height: 16px;
     min-width: 0;
-    padding: 0.5rem 0.75rem;
+    padding: 0.16rem 0.16rem;
   }
 
   .krz-agenda__content {
@@ -392,8 +408,8 @@
   }
 
   .krz-agenda__duration::before {
-    height: 8px;
-    width: 8px;
+    height: 13px;
+    width: 13px;
   }
 
   .krz-agenda__action {
