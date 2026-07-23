@@ -105,7 +105,7 @@ if ( isset( $block ) && is_array( $block ) ) {
                 class="row no-gutters justify-content-center align-items-stretch krz-studio__gallery"
             >
 
-                <div class="col-6 col-md-5 col-lg-4 px-2">
+                <div class="col-6 col-md-5 px-2">
 
                     <img
                         src="<?php echo esc_url( $image_1_url ); ?>"
@@ -119,7 +119,7 @@ if ( isset( $block ) && is_array( $block ) ) {
 
                 </div>
 
-                <div class="col-6 col-md-5 col-lg-4 px-2">
+                <div class="col-6 col-md-5 px-2">
 
                     <img
                         src="<?php echo esc_url( $image_2_url ); ?>"

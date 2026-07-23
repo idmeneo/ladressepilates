@@ -10,8 +10,8 @@
 
 .krz-studio {
   --krz-section-background: #e8ddd1;
-  --krz-studio-padding-top: clamp(8rem, 14vw, 12.8rem);
-  --krz-studio-padding-bottom: clamp(6rem, 12vw, 10.8rem);
+  --krz-studio-padding-top: clamp(4rem, 8vw, 7rem);
+  --krz-studio-padding-bottom: clamp(6rem, 10vw, 9rem);
 
   text-align: center;
   width: 100%;
@@ -112,8 +112,8 @@
 
 @media screen and (max-width: 991px) {
   .krz-studio {
-    --krz-studio-padding-top: 9rem;
-    --krz-studio-padding-bottom: 8rem;
+    --krz-studio-padding-top: 5rem;
+    --krz-studio-padding-bottom: 6rem;
   }
 
   .krz-studio__image {
@@ -127,8 +127,8 @@
 
 @media screen and (max-width: 767px) {
   .krz-studio {
-    --krz-studio-padding-top: 9rem;
-    --krz-studio-padding-bottom: 8rem;
+    --krz-studio-padding-top: 4rem;
+    --krz-studio-padding-bottom: 5rem;
   }
 
   .krz-studio__title {
