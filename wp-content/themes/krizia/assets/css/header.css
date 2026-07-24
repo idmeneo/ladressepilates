@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Jaguar';
+    src:
+        url('../fonts/Jaguar.woff') format('woff'),
+        url('../fonts/Jaguar.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /*--------------------------------------------------------------
 # Header / Navigation
 --------------------------------------------------------------*/

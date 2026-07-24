@@ -3,7 +3,15 @@
  *
  * @package Krizia
  */
-
+@font-face {
+    font-family: 'Jaguar';
+    src:
+        url('../../assets/fonts/Jaguar.woff') format('woff'),
+        url('../../assets/fonts/Jaguar.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 /* ==========================================================
    HERO
    ========================================================== */
