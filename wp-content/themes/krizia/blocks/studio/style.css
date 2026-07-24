@@ -140,7 +140,8 @@
   }
 
   .krz-studio__gallery {
-    max-width: 265px;
+    max-width: 380px;
+    width: 100%;
   }
 
   .krz-studio__gallery .col-6 {
@@ -149,8 +150,11 @@
   }
 
   .krz-studio__image {
+    aspect-ratio: 132.5 / 185;
     border-radius: 4px;
-    height: 185px;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
   }
 
   .krz-studio__text {
