@@ -14,64 +14,19 @@ $image_2 = get_field( 'studio_image_2' );
 $text    = get_field( 'studio_text' ) ?: 'Lorem ipsum dolor sit amet consectetur. Eget velit non ipsum commodo quis mauris metus. Cursus praesent pellentesque ultricies eu nisi. Facilisi in est in at mollis eget. Nec amet viverra consectetur quis. Aliquam quisque urna mi enim lectus faucibus sit.';
 
 /*
- * Les champs image ACF peuvent retourner une URL,
- * un tableau ou un identifiant selon leur configuration.
+ * Images.
+ *
+ * Les champs ACF retournent un tableau.
+ * On affiche la taille medium_large.
  */
-$image_1_url = $default_image_1;
-$image_1_alt = '';
 
-if ( is_array( $image_1 ) ) {
-    $image_1_url = ! empty( $image_1['url'] )
-        ? $image_1['url']
-        : $default_image_1;
+$image_1_id = is_array( $image_1 ) && ! empty( $image_1['ID'] )
+    ? absint( $image_1['ID'] )
+    : 0;
 
-    $image_1_alt = ! empty( $image_1['alt'] )
-        ? $image_1['alt']
-        : '';
-} elseif ( is_numeric( $image_1 ) ) {
-    $attachment_url = wp_get_attachment_image_url(
-        (int) $image_1,
-        'full'
-    );
-
-    $image_1_url = $attachment_url ?: $default_image_1;
-    $image_1_alt = get_post_meta(
-        (int) $image_1,
-        '_wp_attachment_image_alt',
-        true
-    );
-} elseif ( is_string( $image_1 ) && $image_1 !== '' ) {
-    $image_1_url = $image_1;
-}
-
-$image_2_url = $default_image_2;
-$image_2_alt = '';
-
-if ( is_array( $image_2 ) ) {
-    $image_2_url = ! empty( $image_2['url'] )
-        ? $image_2['url']
-        : $default_image_2;
-
-    $image_2_alt = ! empty( $image_2['alt'] )
-        ? $image_2['alt']
-        : '';
-} elseif ( is_numeric( $image_2 ) ) {
-    $attachment_url = wp_get_attachment_image_url(
-        (int) $image_2,
-        'full'
-    );
-
-    $image_2_url = $attachment_url ?: $default_image_2;
-    $image_2_alt = get_post_meta(
-        (int) $image_2,
-        '_wp_attachment_image_alt',
-        true
-    );
-} elseif ( is_string( $image_2 ) && $image_2 !== '' ) {
-    $image_2_url = $image_2;
-}
-
-$block_id = 'krz-studio-' . uniqid();
+$image_2_id = is_array( $image_2 ) && ! empty( $image_2['ID'] )
+    ? absint( $image_2['ID'] )
+    : 0;
 
 if ( isset( $block ) && is_array( $block ) ) {
     $block_id = ! empty( $block['anchor'] )
@@ -107,29 +62,71 @@ if ( isset( $block ) && is_array( $block ) ) {
 
                 <div class="col-6 col-md-5 px-2">
 
-                    <img
-                        src="<?php echo esc_url( $image_1_url ); ?>"
-                        alt="<?php echo esc_attr( $image_1_alt ); ?>"
-                        class="krz-studio__image"
-                        loading="lazy"
-                        decoding="async"
-                        data-krz-animation="fade-up"
-                        data-krz-delay="0.15"
-                    >
+                    <?php if ( $image_1_id ) : ?>
+
+                        <?php
+                        echo wp_get_attachment_image(
+                            $image_1_id,
+                            'medium_large',
+                            false,
+                            array(
+                                'class'              => 'krz-studio__image',
+                                'loading'            => 'lazy',
+                                'decoding'           => 'async',
+                                'data-krz-animation' => 'fade-up',
+                                'data-krz-delay'     => '0.15',
+                            )
+                        );
+                        ?>
+
+                    <?php else : ?>
+
+                        <img
+                            src="<?php echo esc_url( $default_image_1 ); ?>"
+                            alt=""
+                            class="krz-studio__image"
+                            loading="lazy"
+                            decoding="async"
+                            data-krz-animation="fade-up"
+                            data-krz-delay="0.15"
+                        >
+
+                    <?php endif; ?>
 
                 </div>
 
                 <div class="col-6 col-md-5 px-2">
 
-                    <img
-                        src="<?php echo esc_url( $image_2_url ); ?>"
-                        alt="<?php echo esc_attr( $image_2_alt ); ?>"
-                        class="krz-studio__image"
-                        loading="lazy"
-                        decoding="async"
-                        data-krz-animation="fade-up"
-                        data-krz-delay="0.35"
-                    >
+                    <?php if ( $image_2_id ) : ?>
+
+                        <?php
+                        echo wp_get_attachment_image(
+                            $image_2_id,
+                            'medium_large',
+                            false,
+                            array(
+                                'class'              => 'krz-studio__image',
+                                'loading'            => 'lazy',
+                                'decoding'           => 'async',
+                                'data-krz-animation' => 'fade-up',
+                                'data-krz-delay'     => '0.35',
+                            )
+                        );
+                        ?>
+
+                    <?php else : ?>
+
+                        <img
+                            src="<?php echo esc_url( $default_image_2 ); ?>"
+                            alt=""
+                            class="krz-studio__image"
+                            loading="lazy"
+                            decoding="async"
+                            data-krz-animation="fade-up"
+                            data-krz-delay="0.35"
+                        >
+
+                    <?php endif; ?>
 
                 </div>
 

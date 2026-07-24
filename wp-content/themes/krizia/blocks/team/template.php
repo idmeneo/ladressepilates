@@ -70,25 +70,55 @@ if ( isset( $block ) && is_array( $block ) ) {
                     data-krz-animation="fade-up"
                     data-krz-delay="0.30"
                 >
-                    <?php foreach ( $members as $index => $member ) : ?>
+                    <?php foreach ( $members as $member ) : ?>
                         <?php
-                        $image = $member['image'] ?? '';
-                        $alt   = $member['alt'] ?? '';
+                        $image = $member['image'] ?? null;
 
-                        if ( $image ) : ?>
-                            <div
-                                class="col-12 col-sm-4 col-lg-3 krz-team__member"
-                            >
+                        $image_id = is_array( $image ) && ! empty( $image['ID'] )
+                            ? absint( $image['ID'] )
+                            : 0;
+
+                        $fallback_url = is_string( $image ) ? $image : '';
+                        ?>
+
+                        <?php if ( $image_id || $fallback_url ) : ?>
+
+                            <div class="col-12 col-sm-4 col-lg-3 krz-team__member">
+
                                 <article class="krz-team__card">
-                                    <img
-                                        src="<?php echo esc_url( $image ); ?>"
-                                        alt="<?php echo esc_attr( $alt ); ?>"
-                                        loading="lazy"
-                                        decoding="async"
-                                    >
+
+                                    <?php if ( $image_id ) : ?>
+
+                                        <?php
+                                        echo wp_get_attachment_image(
+                                            $image_id,
+                                            'medium',
+                                            false,
+                                            array(
+                                                'loading'  => 'lazy',
+                                                'decoding' => 'async',
+                                                'sizes'    => '(min-width: 992px) 25vw, (min-width: 576px) 33vw, 100vw',
+                                            )
+                                        );
+                                        ?>
+
+                                    <?php else : ?>
+
+                                        <img
+                                            src="<?php echo esc_url( $fallback_url ); ?>"
+                                            alt="<?php echo esc_attr( $member['alt'] ?? '' ); ?>"
+                                            loading="lazy"
+                                            decoding="async"
+                                        >
+
+                                    <?php endif; ?>
+
                                 </article>
+
                             </div>
+
                         <?php endif; ?>
+
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>

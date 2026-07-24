@@ -9,7 +9,11 @@
 
 $default_logo = get_template_directory_uri() . '/assets/images/logo-brown.png';
 
-$logo           = get_field( 'agenda_logo' ) ?: $default_logo;
+$logo = get_field( 'agenda_logo' );
+
+$logo_id = is_array( $logo ) && ! empty( $logo['ID'] )
+    ? absint( $logo['ID'] )
+    : 0;
 $title          = get_field( 'agenda_title' ) ?: 'Agenda';
 $button_text    = get_field( 'agenda_button_text' ) ?: 'M’inscrire';
 $maximum_events = absint( get_field( 'agenda_maximum_events' ) );
@@ -97,15 +101,37 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
             <div class="krz-agenda__body">
 
                 <?php if ( $logo ) : ?>
-                    <img
-                        class="krz-agenda__logo"
-                        src="<?php echo esc_url( $logo ); ?>"
-                        alt=""
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                        data-krz-animation="fade-up"
-                    >
+                    <?php if ( $logo_id ) : ?>
+
+                        <?php
+                        echo wp_get_attachment_image(
+                            $logo_id,
+                            'medium',
+                            false,
+                            array(
+                                'class'              => 'krz-agenda__logo',
+                                'alt'                => '',
+                                'aria-hidden'        => 'true',
+                                'loading'            => 'lazy',
+                                'decoding'           => 'async',
+                                'data-krz-animation' => 'fade-up',
+                            )
+                        );
+                        ?>
+
+                    <?php else : ?>
+
+                        <img
+                            class="krz-agenda__logo"
+                            src="<?php echo esc_url( $default_logo ); ?>"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            data-krz-animation="fade-up"
+                        >
+
+                    <?php endif; ?>
                 <?php endif; ?>
 
                 <?php if ( $title ) : ?>

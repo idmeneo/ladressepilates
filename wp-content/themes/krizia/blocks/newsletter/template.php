@@ -6,8 +6,24 @@
  */
 
 $default_background = get_template_directory_uri() . '/assets/images/newsletter.jpg';
+$background = get_field( 'newsletter_background' );
 
-$background      = get_field( 'newsletter_background' ) ?: $default_background;
+$background_id = is_array( $background ) && ! empty( $background['ID'] )
+    ? absint( $background['ID'] )
+    : 0;
+
+$background_url = '';
+
+if ( $background_id ) {
+    $background_url = wp_get_attachment_image_url(
+        $background_id,
+        'krizia-hero'
+    );
+}
+
+if ( ! is_string( $background_url ) || '' === $background_url ) {
+    $background_url = $default_background;
+}
 $title           = get_field( 'newsletter_title' ) ?: 'Newsletter';
 $text            = get_field( 'newsletter_text' ) ?: 'Inscrivez-vous pour recevoir les actualités de L’Adresse Pilates.';
 $placeholder     = get_field( 'newsletter_placeholder' ) ?: 'Votre email';
@@ -33,7 +49,7 @@ if ( isset( $block ) && is_array( $block ) ) {
 >
     <div
         class="krz-block__surface krz-newsletter__surface"
-        style="--krz-newsletter-background: linear-gradient(rgba(50, 35, 27, 0.44), rgba(50, 35, 27, 0.44)), url('<?php echo esc_url( $background ); ?>');"
+        style="--krz-newsletter-background: linear-gradient(rgba(50, 35, 27, 0.44), rgba(50, 35, 27, 0.44)), url('<?php echo esc_url( $background_url ); ?>');"
     >
         <div class="container krz-newsletter__container">
             <div class="krz-newsletter__content">

@@ -161,3 +161,16 @@ function wp_bootstrap_starter_password_form() {
     </form>';
 }
 add_filter( 'the_password_form', 'wp_bootstrap_starter_password_form' );
+
+function krizia_setup() {
+    add_theme_support( 'post-thumbnails' );
+
+    add_image_size(
+        'krizia-hero',
+        1920,
+        1080,
+        true
+    );
+}
+
+add_action( 'after_setup_theme', 'krizia_setup' );

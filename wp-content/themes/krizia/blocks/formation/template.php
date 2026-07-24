@@ -5,15 +5,30 @@
  * @package Krizia
  */
 
-$default_image = get_template_directory_uri() . '/assets/images/formation.jpg';
+$default_image = get_template_directory_uri()
+    . '/assets/images/formation.jpg';
 
 $title      = get_field( 'formation_title' ) ?: 'Formation continue';
 $kicker     = get_field( 'formation_kicker' ) ?: 'Approfondir sa pratique';
-$text       = get_field( 'formation_text' ) ?: 'La formation continue s’adresse aux enseignants souhaitant enrichir leur pratique, affiner leur regard et approfondir leur compréhension du mouvement.';
+$text       = get_field( 'formation_text' )
+    ?: 'La formation continue s’adresse aux enseignants souhaitant enrichir leur pratique, affiner leur regard et approfondir leur compréhension du mouvement.';
 $text_alt   = get_field( 'formation_text_alt' ) ?: '';
-$image      = get_field( 'formation_image' ) ?: $default_image;
+$image      = get_field( 'formation_image' );
 $image_side = get_field( 'formation_image_side' ) ?: 'right';
 
+/*
+ * Image.
+ *
+ * Le champ ACF retourne un tableau.
+ * On utilise la taille large.
+ */
+$image_id = is_array( $image ) && ! empty( $image['ID'] )
+    ? absint( $image['ID'] )
+    : 0;
+
+/*
+ * Identifiant du bloc.
+ */
 $block_id = 'krz-formation-' . uniqid();
 
 if ( isset( $block ) && is_array( $block ) ) {
@@ -22,8 +37,13 @@ if ( isset( $block ) && is_array( $block ) ) {
         : 'krz-formation-' . $block['id'];
 }
 
-$image_first_class = 'left' === $image_side ? ' order-lg-1' : ' order-lg-2';
-$text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
+$image_first_class = 'left' === $image_side
+    ? ' order-lg-1'
+    : ' order-lg-2';
+
+$text_first_class = 'left' === $image_side
+    ? ' order-lg-2'
+    : ' order-lg-1';
 ?>
 
 <section
@@ -35,21 +55,27 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
     <div class="krz-block__surface krz-formation__surface">
 
         <div class="container-fluid krz-formation__container">
+
             <div class="row no-gutters align-items-stretch krz-formation__row">
 
-                <div class="col-12 col-lg-6<?php echo esc_attr( $text_first_class ); ?>">
+                <div
+                    class="col-12 col-lg-6<?php echo esc_attr( $text_first_class ); ?>"
+                >
                     <div class="krz-formation__content">
 
                         <?php if ( $title ) : ?>
+
                             <h2
                                 class="krz-formation__title"
                                 data-krz-animation="text-chars-up"
                             >
                                 <?php echo esc_html( $title ); ?>
                             </h2>
+
                         <?php endif; ?>
 
                         <?php if ( $kicker ) : ?>
+
                             <p
                                 class="krz-formation__kicker"
                                 data-krz-animation="text-words-up"
@@ -57,9 +83,11 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
                             >
                                 <?php echo esc_html( $kicker ); ?>
                             </p>
+
                         <?php endif; ?>
 
                         <?php if ( $text ) : ?>
+
                             <div
                                 class="krz-formation__text"
                                 data-krz-animation="fade-up"
@@ -67,9 +95,11 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
                             >
                                 <?php echo wp_kses_post( wpautop( $text ) ); ?>
                             </div>
+
                         <?php endif; ?>
 
                         <?php if ( $text_alt ) : ?>
+
                             <div
                                 class="krz-formation__text krz-formation__text--alt"
                                 data-krz-animation="fade-up"
@@ -77,24 +107,48 @@ $text_first_class  = 'left' === $image_side ? ' order-lg-2' : ' order-lg-1';
                             >
                                 <?php echo wp_kses_post( wpautop( $text_alt ) ); ?>
                             </div>
+
                         <?php endif; ?>
 
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-6<?php echo esc_attr( $image_first_class ); ?>">
-                    <?php if ( $image ) : ?>
+                <div
+                    class="col-12 col-lg-6<?php echo esc_attr( $image_first_class ); ?>"
+                >
+
+                    <?php if ( $image_id ) : ?>
+
+                        <?php
+                        echo wp_get_attachment_image(
+                            $image_id,
+                            'large',
+                            false,
+                            array(
+                                'class'    => 'krz-formation__image',
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                                'sizes'    => '(min-width: 992px) 50vw, 100vw',
+                            )
+                        );
+                        ?>
+
+                    <?php else : ?>
+
                         <img
                             class="krz-formation__image"
-                            src="<?php echo esc_url( $image ); ?>"
+                            src="<?php echo esc_url( $default_image ); ?>"
                             alt=""
                             loading="lazy"
                             decoding="async"
                         >
+
                     <?php endif; ?>
+
                 </div>
 
             </div>
+
         </div>
 
     </div>

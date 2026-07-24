@@ -5,10 +5,63 @@
  * @package Krizia
  */
 
-$default_background = get_template_directory_uri() . '/assets/images/studio-wide.jpg';
+$default_background = get_template_directory_uri()
+    . '/assets/images/studio-wide.jpg';
 
-$background = get_field( 'quote_band_background' ) ?: $default_background;
+$background = get_field( 'quote_band_background' );
 $items      = get_field( 'quote_band_items' );
+
+/*
+ * Image de fond principale.
+ *
+ * Le champ ACF retourne un tableau.
+ * On utilise la taille krizia-hero.
+ */
+$background_id = is_array( $background ) && ! empty( $background['ID'] )
+    ? absint( $background['ID'] )
+    : 0;
+
+$background_url = '';
+
+if ( $background_id ) {
+    $background_url = wp_get_attachment_image_url(
+        $background_id,
+        'krizia-hero'
+    );
+}
+
+if ( ! is_string( $background_url ) || '' === $background_url ) {
+    $background_url = $default_background;
+}
+
+/*
+ * Convertit une image ACF en URL krizia-hero.
+ *
+ * @param mixed  $image        Valeur du champ ACF.
+ * @param string $fallback_url URL utilisée en fallback.
+ *
+ * @return string
+ */
+$get_background_url = static function ( $image, $fallback_url ) {
+    $image_id = is_array( $image ) && ! empty( $image['ID'] )
+        ? absint( $image['ID'] )
+        : 0;
+
+    $image_url = '';
+
+    if ( $image_id ) {
+        $image_url = wp_get_attachment_image_url(
+            $image_id,
+            'krizia-hero'
+        );
+    }
+
+    if ( ! is_string( $image_url ) || '' === $image_url ) {
+        $image_url = $fallback_url;
+    }
+
+    return $image_url;
+};
 
 if ( ! $items ) {
     $items = array(
@@ -31,6 +84,9 @@ if ( ! $items ) {
     );
 }
 
+/*
+ * Identifiant du bloc.
+ */
 $block_id = 'krz-quote-band-' . uniqid();
 
 if ( isset( $block ) && is_array( $block ) ) {
@@ -39,21 +95,20 @@ if ( isset( $block ) && is_array( $block ) ) {
         : 'krz-quote-band-' . $block['id'];
 }
 
-$surface_style = sprintf(
-    '--krz-quote-band-background-image:linear-gradient(rgba(50,35,27,.44),rgba(50,35,27,.44)),url(\'%s\');',
-    esc_url( $background )
-);
-
+/*
+ * Première image affichée.
+ */
 $first_item       = $items[0] ?? array();
-$first_background = $first_item['background'] ?? '';
+$first_background = $first_item['background'] ?? null;
 
-if ( ! $first_background ) {
-    $first_background = $background;
-}
+$first_background_url = $get_background_url(
+    $first_background,
+    $background_url
+);
 
 $background_style = sprintf(
     'background-image:linear-gradient(rgba(50,35,27,.44),rgba(50,35,27,.44)),url(\'%s\');',
-    esc_url( $first_background )
+    esc_url( $first_background_url )
 );
 ?>
 
@@ -65,16 +120,17 @@ $background_style = sprintf(
 >
     <div class="krz-block__surface krz-quote-band__surface">
 
-    <div
-        class="krz-quote-band__background krz-quote-band__background--first is-active"
-        style="<?php echo esc_attr( $background_style ); ?>"
-        aria-hidden="true"
-    ></div>
+        <div
+            class="krz-quote-band__background krz-quote-band__background--first is-active"
+            style="<?php echo esc_attr( $background_style ); ?>"
+            aria-hidden="true"
+        ></div>
 
-    <div
-        class="krz-quote-band__background krz-quote-band__background--second"
-        aria-hidden="true"
-    ></div>
+        <div
+            class="krz-quote-band__background krz-quote-band__background--second"
+            aria-hidden="true"
+        ></div>
+
         <div class="container krz-quote-band__container">
 
             <ul
@@ -105,19 +161,21 @@ $background_style = sprintf(
                 data-krz-delay="0.18"
             >
                 <div class="swiper-wrapper">
+
                     <?php foreach ( $items as $item ) : ?>
                         <?php
                         $text            = $item['text'] ?? '';
-                        $item_background = $item['background'] ?? '';
+                        $item_background = $item['background'] ?? null;
 
-                        if ( ! $item_background ) {
-                            $item_background = $background;
-                        }
+                        $item_background_url = $get_background_url(
+                            $item_background,
+                            $background_url
+                        );
                         ?>
 
                         <div
                             class="swiper-slide"
-                            data-quote-background="<?php echo esc_url( $item_background ); ?>"
+                            data-quote-background="<?php echo esc_url( $item_background_url ); ?>"
                         >
                             <?php if ( $text ) : ?>
                                 <div class="krz-quote-band__text">
@@ -125,14 +183,20 @@ $background_style = sprintf(
                                 </div>
                             <?php endif; ?>
                         </div>
+
                     <?php endforeach; ?>
+
                 </div>
             </div>
 
-            <div class="krz-quote-band__pagination" aria-hidden="true">
+            <div
+                class="krz-quote-band__pagination"
+                aria-hidden="true"
+            >
                 <span></span>
             </div>
 
         </div>
+
     </div>
 </section>

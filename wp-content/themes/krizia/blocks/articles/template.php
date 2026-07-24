@@ -83,10 +83,10 @@ if ( isset( $block ) && is_array( $block ) ) {
                             $post_title = get_the_title( $post_id );
                             $post_url   = get_permalink( $post_id );
                             $excerpt    = get_the_excerpt( $post_id );
-                            $image      = get_the_post_thumbnail_url( $post_id, 'large' );
+                            $thumbnail_id = get_post_thumbnail_id( $post_id );
                             $date       = get_the_date( 'd.m.Y', $post_id );
 
-                            if ( ! $image ) {
+                            if ( ! $thumbnail_id ) {
                                 $image = get_template_directory_uri() . '/assets/images/studio-wide.jpg';
                             }
                             ?>
@@ -94,13 +94,35 @@ if ( isset( $block ) && is_array( $block ) ) {
                             <article class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0 krz-articles__slide swiper-slide">
                                 <a class="krz-articles__card" href="<?php echo esc_url( $post_url ); ?>">
                                     <span class="krz-articles__image-wrap">
-                                        <img
-                                            class="krz-articles__image"
-                                            src="<?php echo esc_url( $image ); ?>"
-                                            alt="<?php echo esc_attr( $post_title ); ?>"
-                                            loading="lazy"
-                                            decoding="async"
-                                        >
+
+                                        <?php if ( $thumbnail_id ) : ?>
+
+                                            <?php
+                                            echo wp_get_attachment_image(
+                                                $thumbnail_id,
+                                                'medium',
+                                                false,
+                                                array(
+                                                    'class'    => 'krz-articles__image',
+                                                    'loading'  => 'lazy',
+                                                    'decoding' => 'async',
+                                                    'sizes'    => '(min-width: 992px) 33vw, (min-width: 768px) 50vw, 100vw',
+                                                )
+                                            );
+                                            ?>
+
+                                        <?php else : ?>
+
+                                            <img
+                                                class="krz-articles__image"
+                                                src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/studio-wide.jpg' ); ?>"
+                                                alt="<?php echo esc_attr( $post_title ); ?>"
+                                                loading="lazy"
+                                                decoding="async"
+                                            >
+
+                                        <?php endif; ?>
+
                                     </span>
 
                                     <span class="krz-articles__content">

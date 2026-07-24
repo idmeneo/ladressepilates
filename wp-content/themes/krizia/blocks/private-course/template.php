@@ -40,47 +40,13 @@ if ( $maximum_packages > 0 ) {
  *
  * @return array
  */
-$normalize_image = static function ( $image, $default_url ) {
-    $normalized = array(
-        'url' => $default_url,
-        'alt' => '',
-    );
+$image_left_id = is_array( $image_left ) && ! empty( $image_left['ID'] )
+    ? absint( $image_left['ID'] )
+    : 0;
 
-    if ( is_array( $image ) ) {
-        if ( ! empty( $image['url'] ) ) {
-            $normalized['url'] = $image['url'];
-        }
-
-        if ( ! empty( $image['alt'] ) ) {
-            $normalized['alt'] = $image['alt'];
-        }
-
-        return $normalized;
-    }
-
-    if ( is_numeric( $image ) ) {
-        $attachment_id  = (int) $image;
-        $attachment_url = wp_get_attachment_image_url( $attachment_id, 'full' );
-
-        if ( $attachment_url ) {
-            $normalized['url'] = $attachment_url;
-        }
-
-        $normalized['alt'] = (string) get_post_meta(
-            $attachment_id,
-            '_wp_attachment_image_alt',
-            true
-        );
-
-        return $normalized;
-    }
-
-    if ( is_string( $image ) && '' !== $image ) {
-        $normalized['url'] = $image;
-    }
-
-    return $normalized;
-};
+$image_right_id = is_array( $image_right ) && ! empty( $image_right['ID'] )
+    ? absint( $image_right['ID'] )
+    : 0;
 
 /**
  * Format an Amelia price without unnecessary decimals.
@@ -95,9 +61,6 @@ $format_price = static function ( $price ) {
 
     return number_format_i18n( $price, $decimals ) . ' €';
 };
-
-$image_left_data  = $normalize_image( $image_left, $default_image_left );
-$image_right_data = $normalize_image( $image_right, $default_image_right );
 
 $block_id = 'krz-private-course-' . uniqid();
 
@@ -118,12 +81,30 @@ if ( isset( $block ) && is_array( $block ) ) {
         data-krz-animation="fade-up"
         data-krz-delay="0.1"
     >
-        <img
-            src="<?php echo esc_url( $image_right_data['url'] ); ?>"
-            alt=""
-            loading="lazy"
-            decoding="async"
-        >
+        <?php if ( $image_right_id ) : ?>
+
+            <?php
+            echo wp_get_attachment_image(
+                $image_right_id,
+                'medium_large',
+                false,
+                array(
+                    'loading'  => 'lazy',
+                    'decoding' => 'async',
+                )
+            );
+            ?>
+
+        <?php else : ?>
+
+            <img
+                src="<?php echo esc_url( $default_image_right ); ?>"
+                alt=""
+                loading="lazy"
+                decoding="async"
+            >
+
+        <?php endif; ?>
     </div>
 </div>
 
@@ -142,12 +123,30 @@ if ( isset( $block ) && is_array( $block ) ) {
         data-krz-animation="fade-up"
         data-krz-delay="0.2"
     >
-        <img
-            src="<?php echo esc_url( $image_left_data['url'] ); ?>"
-            alt=""
-            loading="lazy"
-            decoding="async"
-        >
+        <?php if ( $image_left_id ) : ?>
+
+            <?php
+            echo wp_get_attachment_image(
+                $image_left_id,
+                'medium_large',
+                false,
+                array(
+                    'loading'            => 'lazy',
+                    'decoding'           => 'async',
+                )
+            );
+            ?>
+
+        <?php else : ?>
+
+            <img
+                src="<?php echo esc_url( $default_image_left ); ?>"
+                alt=""
+                loading="lazy"
+                decoding="async"
+            >
+
+        <?php endif; ?>
     </div>
 
 </div>
@@ -217,12 +216,30 @@ if ( isset( $block ) && is_array( $block ) ) {
                     data-krz-animation="fade-up"
                     data-krz-delay="0.1"
                 >
-                    <img
-                        src="<?php echo esc_url( $image_left_data['url'] ); ?>"
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                    >
+                    <?php if ( $image_left_id ) : ?>
+
+                        <?php
+                        echo wp_get_attachment_image(
+                            $image_left_id,
+                            'medium_large',
+                            false,
+                            array(
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                            )
+                        );
+                        ?>
+
+                    <?php else : ?>
+
+                        <img
+                            src="<?php echo esc_url( $default_image_left ); ?>"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    <?php endif; ?>
                 </div>
 
                 <div
@@ -230,12 +247,30 @@ if ( isset( $block ) && is_array( $block ) ) {
                     data-krz-animation="fade-up"
                     data-krz-delay="0.24"
                 >
-                    <img
-                        src="<?php echo esc_url( $image_right_data['url'] ); ?>"
-                        alt=""
-                        loading="lazy"
-                        decoding="async"
-                    >
+                    <?php if ( $image_right_id ) : ?>
+
+                        <?php
+                        echo wp_get_attachment_image(
+                            $image_right_id,
+                            'medium_large',
+                            false,
+                            array(
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                            )
+                        );
+                        ?>
+
+                    <?php else : ?>
+
+                        <img
+                            src="<?php echo esc_url( $default_image_right ); ?>"
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    <?php endif; ?>
                 </div>
             </div>
 
