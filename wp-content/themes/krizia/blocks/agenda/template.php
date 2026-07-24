@@ -191,11 +191,11 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
                                 : '';
 
                             $start_time = $start_date
-                                ? wp_date( 'H\hi', $start_date->getTimestamp(), $timezone )
+                                ? wp_date( 'H:i', $start_date->getTimestamp(), $timezone )
                                 : '';
 
                             $end_time = $end_date
-                                ? wp_date( 'H\hi', $end_date->getTimestamp(), $timezone )
+                                ? wp_date( 'H:i', $end_date->getTimestamp(), $timezone )
                                 : '';
 
                             $time_range = '';
@@ -219,7 +219,7 @@ $format_duration = static function ( $start, $end ) use ( $timezone ) {
 
                                     <?php if ( $month ) : ?>
                                         <span>
-                                            <?php echo esc_html( mb_strtoupper( $month ) ); ?>
+                                            <?php echo esc_html( mb_strtolower( $month ) ); ?>
                                         </span>
                                     <?php endif; ?>
 

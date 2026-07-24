@@ -120,6 +120,12 @@
   background-color: #EBE7E2;
 }
 
+.krz-agenda__event:hover .krz-agenda__event-title,
+.krz-agenda__event:focus-within .krz-agenda__event-title {
+  color: #7D451B;
+  text-decoration: underline;
+}
+
 .krz-agenda__date {
   color: #9f795c;
   font-family: "Spectral", Georgia, serif;
@@ -148,7 +154,7 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   line-height: 30px;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   text-align: center;
 }
 
@@ -161,7 +167,7 @@
   letter-spacing: 0.4em;
   line-height: 30px;
   margin-right: -0.4em;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   text-align: center;
 }
 
@@ -200,6 +206,9 @@
   margin: 0 0 0.35rem;
   padding: 0;
   text-transform: uppercase;
+  transition:
+    color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    text-decoration-color 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .krz-agenda__text {
@@ -378,7 +387,7 @@
     letter-spacing: 0.04em;
     line-height: 16px;
     min-width: 0;
-    padding: 0.16rem 0.16rem;
+    padding: 0.2rem 0.3rem;
   }
 
   .krz-agenda__content {
