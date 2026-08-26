@@ -233,15 +233,6 @@ if (
             <?php endif; ?>
         </div>
     </footer>
-    <?php if ($amelia_booking_shortcode) : ?>
-        <div class="krizia-amelia-popup">
-            <?php
-            echo do_shortcode(
-                wp_kses_post($amelia_booking_shortcode)
-            );
-            ?>
-        </div>
-    <?php endif; ?>
 <?php endif; ?>
 
 </div><!-- #page -->

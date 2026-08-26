@@ -1,0 +1,79 @@
+[
+	{
+		"key": "group_krizia_block_hero",
+		"title": "Bloc - Hero",
+		"fields": [
+			{
+				"key": "field_hero_title",
+				"label": "Titre",
+				"name": "hero_title",
+				"type": "text",
+				"default_value": "L’Adresse"
+			},
+			{
+				"key": "field_hero_label",
+				"label": "Accroche",
+				"name": "hero_label",
+				"type": "text",
+				"default_value": "Pilates"
+			},
+			{
+				"key": "field_hero_heading",
+				"label": "Titre principal",
+				"name": "hero_heading",
+				"type": "text",
+				"default_value": "Le Pilates sur-mesure"
+			},
+			{
+				"key": "field_hero_text",
+				"label": "Texte",
+				"name": "hero_text",
+				"type": "textarea",
+				"rows": 4,
+				"new_lines": "br"
+			},
+			{
+				"key": "field_hero_button",
+				"label": "Bouton",
+				"name": "hero_button",
+				"type": "link",
+				"return_format": "array"
+			},
+			{
+				"key": "field_hero_background",
+				"label": "Image de fond",
+				"name": "hero_background",
+				"type": "image",
+				"return_format": "array",
+				"preview_size": "medium",
+				"library": "all"
+			},
+			{
+				"key": "field_hero_background_mobile",
+				"label": "Image de fond mobile",
+				"name": "hero_background_mobile",
+				"type": "image",
+				"return_format": "array",
+				"preview_size": "medium",
+				"library": "all"
+			}
+		],
+		"location": [
+			[
+				{
+					"param": "block",
+					"operator": "==",
+					"value": "acf/krizia-hero"
+				}
+			]
+		],
+		"menu_order": 0,
+		"position": "normal",
+		"style": "default",
+		"label_placement": "top",
+		"instruction_placement": "label",
+		"hide_on_screen": "",
+		"active": true,
+		"show_in_rest": 1
+	}
+]

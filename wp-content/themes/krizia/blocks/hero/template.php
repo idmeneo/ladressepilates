@@ -19,6 +19,9 @@ $heading    = get_field( 'hero_heading' ) ?: 'Le Pilates sur-mesure';
 $text       = get_field( 'hero_text' )
     ?: 'L’Adresse Pilates est un lieu dédié à une pratique du Pilates, où chaque personne bénéficie d’une attention réelle et d’un accompagnement sur-mesure.';
 $button     = get_field( 'hero_button' );
+$shortcode_amelia_booking = krizia_get_option(
+    'amelia_booking_shortcode'
+);
 
 /*
  * Image de fond.
@@ -81,7 +84,7 @@ if ( ! is_string( $background_mobile_url ) || $background_mobile_url === '' ) {
  */
 $button_url = is_array( $button ) && ! empty( $button['url'] )
     ? $button['url']
-    : '#reservation';
+    : '';
 
 $button_title = is_array( $button ) && ! empty( $button['title'] )
     ? $button['title']
@@ -94,6 +97,14 @@ $button_target = is_array( $button ) && ! empty( $button['target'] )
 $button_rel = '_blank' === $button_target
     ? 'noopener noreferrer'
     : '';
+
+$has_amelia_booking = is_string( $shortcode_amelia_booking )
+    && '' !== trim( $shortcode_amelia_booking );
+
+if ( $has_amelia_booking ) {
+    $button_target = '';
+    $button_rel    = '';
+}
 
 /*
  * Identifiant du bloc.
@@ -185,18 +196,33 @@ if ( isset( $block ) && is_array( $block ) ) {
 
                         <?php if ( $button_title ) : ?>
 
-                            <a
-                                class="krz-hero__button"
-                                href="<?php echo esc_url( $button_url ); ?>"
-                                target="<?php echo esc_attr( $button_target ); ?>"
-                                <?php if ( $button_rel ) : ?>
-                                    rel="<?php echo esc_attr( $button_rel ); ?>"
-                                <?php endif; ?>
-                                data-krz-animation="fade-up"
-                                data-krz-delay="1.35"
-                            >
+                            <?php if ( $has_amelia_booking ) : ?>
+                                <button
+                                    class="krz-hero__button amelia-popup"
+                                    type="button"
+                                    data-krz-animation="fade-up"
+                                    data-krz-delay="1.35"
+                                >
+                            <?php else : ?>
+                                <a
+                                    class="krz-hero__button"
+                                    href="<?php echo esc_url( $button_url ); ?>"
+                                    target="<?php echo esc_attr( $button_target ); ?>"
+                                    <?php if ( $button_rel ) : ?>
+                                        rel="<?php echo esc_attr( $button_rel ); ?>"
+                                    <?php endif; ?>
+                                    data-krz-animation="fade-up"
+                                    data-krz-delay="1.35"
+                                >
+                            <?php endif; ?>
                                 <?php echo esc_html( $button_title ); ?>
-                            </a>
+                            <?php echo $has_amelia_booking ? '</button>' : '</a>'; ?>
+
+                            <?php if ( $has_amelia_booking ) : ?>
+                                <div class="krizia-amelia-popup">
+                                    <?php echo do_shortcode( wp_kses_post( $shortcode_amelia_booking ) ); ?>
+                                </div>
+                            <?php endif; ?>
 
                         <?php endif; ?>
 
