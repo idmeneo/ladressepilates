@@ -47,6 +47,7 @@
   position: relative;
   text-align: center;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* ==========================================================
@@ -215,9 +216,10 @@
       ),
       var(--krz-hero-background-mobile, var(--krz-hero-background));
     background-position: 56% center;
-    min-height: 100svh;
-    padding-top: 5.5rem;
-    padding-bottom: 2rem;
+    height: 100svh;
+    min-height: 0;
+    padding-top: 7rem;
+    padding-bottom: 1rem;
   }
 
   .krz-hero__container {
