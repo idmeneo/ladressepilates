@@ -5,50 +5,19 @@
  * @package Krizia
  */
 
-if (!function_exists('acf_register_block_type')) {
-    return;
-}
+wp_enqueue_style('krizia-swiper');
 
-acf_register_block_type(
+wp_register_script(
+    'krizia-private-course-script',
+    get_template_directory_uri() . '/blocks/private-course/script.js',
+    array('krizia-swiper'),
+    null,
+    true
+);
+
+register_block_type(
+    __DIR__,
     array(
-        'name'        => 'krizia-private-course',
-        'title'       => __('Cours privés', 'krizia'),
-        'description' => __(
-            'Présentation des cours privés et des formules Amelia.',
-            'krizia'
-        ),
-        'category'    => 'formatting',
-        'icon'        => 'groups',
-
-        'keywords' => array(
-            'cours',
-            'privés',
-            'pilates',
-            'formules',
-            'tarifs',
-        ),
-
-        'render_template' => get_template_directory()
-            . '/blocks/private-course/template.php',
-
-        'enqueue_assets' => static function () {
-            wp_enqueue_style('krizia-swiper');
-            wp_enqueue_script('krizia-swiper');
-
-            krizia_enqueue_block_style('private-course');
-
-            krizia_enqueue_block_script(
-                'private-course',
-                array('krizia-swiper')
-            );
-        },
-
-        'mode' => 'preview',
-
-        'supports' => array(
-            'align'  => false,
-            'anchor' => true,
-            'jsx'    => true,
-        ),
+        'script' => 'krizia-private-course-script',
     )
 );

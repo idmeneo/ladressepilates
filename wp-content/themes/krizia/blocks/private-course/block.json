@@ -1,0 +1,28 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-private-course",
+  "title": "Cours privés",
+  "description": "Présentation des cours privés et des formules Amelia.",
+  "category": "formatting",
+  "icon": "groups",
+  "keywords": [
+    "cours",
+    "privés",
+    "pilates",
+    "formules",
+    "tarifs"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

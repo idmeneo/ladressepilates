@@ -1,0 +1,26 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-statement",
+  "title": "Statement",
+  "description": "Section statement avec image de fond et logo en filigrane.",
+  "category": "formatting",
+  "icon": "format-quote",
+  "keywords": [
+    "statement",
+    "citation",
+    "image"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

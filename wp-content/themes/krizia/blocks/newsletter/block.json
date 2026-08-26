@@ -1,0 +1,26 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-newsletter",
+  "title": "Newsletter",
+  "description": "Section newsletter avec image de fond.",
+  "category": "formatting",
+  "icon": "email-alt",
+  "keywords": [
+    "newsletter",
+    "email",
+    "inscription"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

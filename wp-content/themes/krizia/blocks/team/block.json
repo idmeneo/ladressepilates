@@ -1,0 +1,26 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-team",
+  "title": "Formateurs",
+  "description": "Section de présentation des formateurs.",
+  "category": "formatting",
+  "icon": "groups",
+  "keywords": [
+    "formateurs",
+    "équipe",
+    "team"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

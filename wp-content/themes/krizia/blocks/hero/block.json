@@ -1,0 +1,28 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-hero",
+  "title": "Hero",
+  "description": "Section hero de la page d’accueil.",
+  "category": "formatting",
+  "icon": "cover-image",
+  "keywords": [
+    "hero",
+    "accueil",
+    "bannière"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "script": [
+    "file:./script.js"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

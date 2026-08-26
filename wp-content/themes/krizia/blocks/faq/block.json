@@ -1,0 +1,29 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-faq",
+  "title": "FAQ",
+  "description": "Section FAQ avec accordéon.",
+  "category": "formatting",
+  "icon": "editor-help",
+  "keywords": [
+    "faq",
+    "questions",
+    "accordéon"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "script": [
+    "file:./script.js"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

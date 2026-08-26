@@ -1,0 +1,29 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-agenda",
+  "title": "Agenda",
+  "description": "Section agenda avec liste d’événements.",
+  "category": "formatting",
+  "icon": "calendar-alt",
+  "keywords": [
+    "agenda",
+    "événements",
+    "formation"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "script": [
+    "file:./script.js"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-studio",
+  "title": "Studio",
+  "description": "Section Studio de la page d’accueil.",
+  "category": "formatting",
+  "icon": "format-gallery",
+  "keywords": [
+    "studio",
+    "images",
+    "pilates"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}

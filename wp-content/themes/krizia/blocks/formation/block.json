@@ -1,0 +1,26 @@
+{
+  "apiVersion": 3,
+  "name": "acf/krizia-formation",
+  "title": "Formation",
+  "description": "Section formation continue.",
+  "category": "formatting",
+  "icon": "welcome-learn-more",
+  "keywords": [
+    "formation",
+    "pilates",
+    "enseignement"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "jsx": true
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "acf": {
+    "blockVersion": 3,
+    "renderTemplate": "./template.php",
+    "hideFieldsInSidebar": true
+  }
+}
