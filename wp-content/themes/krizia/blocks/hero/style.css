@@ -29,6 +29,14 @@
 
 .krz-hero__surface {
   align-items: center;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(53, 40, 31, .64) 0%,
+      rgba(53, 40, 31, .50) 50%,
+      rgba(53, 40, 31, .28) 100%
+    ),
+    var(--krz-hero-background);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -198,6 +206,14 @@
 
 @media screen and (max-width: 767px) {
   .krz-hero__surface {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(53, 40, 31, .64) 0%,
+        rgba(53, 40, 31, .50) 50%,
+        rgba(53, 40, 31, .28) 100%
+      ),
+      var(--krz-hero-background-mobile, var(--krz-hero-background));
     background-position: 56% center;
     min-height: 100svh;
     padding-top: 5.5rem;

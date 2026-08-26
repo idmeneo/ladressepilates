@@ -12,6 +12,7 @@ $default_background = get_template_directory_uri()
  * Contenu ACF.
  */
 $background = get_field( 'hero_background' );
+$background_mobile = get_field( 'hero_background_mobile' );
 $title      = get_field( 'hero_title' ) ?: 'L’Adresse';
 $label      = get_field( 'hero_label' ) ?: 'Pilates';
 $heading    = get_field( 'hero_heading' ) ?: 'Le Pilates sur-mesure';
@@ -51,6 +52,28 @@ if ( $background_id ) {
  */
 if ( ! is_string( $background_url ) || $background_url === '' ) {
     $background_url = $default_background;
+}
+
+$background_mobile_id  = 0;
+$background_mobile_url = $background_url;
+
+if ( is_array( $background_mobile ) ) {
+    $background_mobile_id = ! empty( $background_mobile['ID'] )
+        ? absint( $background_mobile['ID'] )
+        : 0;
+} elseif ( is_numeric( $background_mobile ) ) {
+    $background_mobile_id = absint( $background_mobile );
+}
+
+if ( $background_mobile_id ) {
+    $background_mobile_url = wp_get_attachment_image_url(
+        $background_mobile_id,
+        'krizia-hero'
+    );
+}
+
+if ( ! is_string( $background_mobile_url ) || $background_mobile_url === '' ) {
+    $background_mobile_url = $background_url;
 }
 
 /*
@@ -93,14 +116,8 @@ if ( isset( $block ) && is_array( $block ) ) {
     <div
         class="krz-block__surface krz-hero__surface"
         style="
-            background-image:
-                linear-gradient(
-                    90deg,
-                    rgba(53, 40, 31, .64) 0%,
-                    rgba(53, 40, 31, .50) 50%,
-                    rgba(53, 40, 31, .28) 100%
-                ),
-                url('<?php echo esc_url( $background_url ); ?>');
+            --krz-hero-background: url('<?php echo esc_url( $background_url ); ?>');
+            --krz-hero-background-mobile: url('<?php echo esc_url( $background_mobile_url ); ?>');
         "
     >
 
