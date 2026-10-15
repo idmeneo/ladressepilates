@@ -142,9 +142,9 @@
   }
 
   .krz-faq__question {
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 0.04em;
-    line-height: 34px;
+    line-height: 25px;
     padding: 1rem 1.55rem 0.85rem 0;
   }
 
@@ -153,9 +153,9 @@
   }
 
   .krz-faq__answer {
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.04em;
-    line-height: 34px;
+    line-height: 25px;
     }
 
     .krz-faq__answer-inner {

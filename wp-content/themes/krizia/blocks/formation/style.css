@@ -221,9 +221,9 @@
 
   .krz-formation__text,
   .krz-formation__text strong {
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.04em;
-    line-height: 34px;
+    line-height: 25px;
   }
 
   .krz-formation__text {
